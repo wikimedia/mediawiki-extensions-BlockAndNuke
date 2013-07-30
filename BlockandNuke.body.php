@@ -6,7 +6,7 @@ if( !defined( 'MEDIAWIKI' ) )
 class SpecialBlock_Nuke extends SpecialPage {
 	function __construct() {
 		wfLoadExtensionMessages( 'BlockandNuke' );
-	//restrict access only to admin
+		//restrict access only to admin
 		parent::__construct( 'blockandnuke', 'blockandnuke' );
 
 	}
@@ -162,24 +162,21 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 
 	function blockUser($user, $user_id) {
-				global $wgUser, $wgOut;
+		global $wgUser, $wgOut;
 
-				// if($user_id[$c]== 0){$user_id = $this->uid}
+		// if($user_id[$c]== 0){$user_id = $this->uid}
 
-				 for($c = 0; $c < max( count($user), count($user_id) ); $c++ ){
+		for($c = 0; $c < max( count($user), count($user_id) ); $c++ ){
 
-					 $blk = new Block($user[$c], $user_id[$c], $wgUser->getID(), wfMsg('block-message'),
-							wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
-					if($blk->insert()) {
-						$log = new LogPage('block');
-					$log->addEntry('block', Title::makeTitle( NS_USER, $this->targetUser ),
-								'Blocked through Special:BlockandNuke', array('infinite',   $user[$c],  'nocreate')
-								);
-
-
-				  }
-				}
+			$blk = new Block($user[$c], $user_id[$c], $wgUser->getID(), wfMsg('block-message'),
+				wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
+			if($blk->insert()) {
+				$log = new LogPage('block');
+				$log->addEntry('block', Title::makeTitle( NS_USER, $user[$c] ),
+					'Blocked through Special:BlockandNuke', array('infinite',   $user[$c],  'nocreate'));
+			}
 		}
+	}
 
 	function doDelete( $pages ) {
 
