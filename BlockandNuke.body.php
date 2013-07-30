@@ -32,15 +32,14 @@ class SpecialBlock_Nuke extends SpecialPage {
 			if($user){
 				$wgOut->addHTML( wfMsg( "block-banhammer" ) );
 				$this->getNewPages($user);
-			}else {	}
+			}
 
 			if($pages){
 				$this->blockUser($user_2, $user_id);
 				$this->doDelete( $pages );
-			}else {	 }
-		}
-		else {
-		$this->whiteList();
+			}
+		} else {
+			$this->whiteList();
 		}
 
 	}
@@ -58,8 +57,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			array( 'DISTINCT rc_user', 'rc_user_text' ),
 			array( 'rc_new' => 1 ), # OR (rc_log_type = "upload" AND rc_log_action = "upload")
 			__METHOD__,
-			array( 'ORDER BY' => 'rc_user_text ASC' )
-		);
+			array( 'ORDER BY' => 'rc_user_text ASC' ) );
 		$names=array();
 		while( $row = $dbr->fetchObject( $result ) ) {
 			$names[]=array($row->rc_user_text, $row->rc_user);
@@ -71,8 +69,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 				'action' => $this->getTitle()->getLocalURL( 'action=submit' ),
 				'method' => 'post')).
 			HTML::hidden( 'wpEditToken', $wgUser->editToken() ).
-			( '<ul>' )
-		);
+			( '<ul>' ) );
 
 		//make into links  $sk = $wgUser->getSkin();
 
@@ -91,8 +88,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$wgOut->addHTML(
 			"</ul>\n" .
 			Xml::submitButton( wfMsg( 'block-submit-user' ) ).
-			"</form>"
-		);
+			"</form>" );
 
 
 	}
@@ -102,11 +98,10 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array(
-				'action' => $this->getTitle()->getLocalURL( 'action=delete' ),
-				'method' => 'post')).
+					'action' => $this->getTitle()->getLocalURL( 'action=delete' ),
+					'method' => 'post')).
 			HTML::hidden( 'wpEditToken', $wgUser->editToken() ).
-			( '<ul>' )
-		);
+			( '<ul>' ) );
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( 'recentchanges',
@@ -143,13 +138,13 @@ class SpecialBlock_Nuke extends SpecialPage {
 				));
 			$name=array();
 			while( $row = $dbr->fetchObject( $result ) ) {
-			$name[]=array($row->rc_user_text, $row->rc_user);
+				$name[]=array($row->rc_user_text, $row->rc_user);
 			}
 
 			foreach($name as $infos) {
 				list($user_2, $user_id) = $infos;
 				$wgOut->addHTML(HTML::hidden( 'names_2[]', $user_2).
-				HTML::hidden( 'userid[]', $user_id));
+					HTML::hidden( 'userid[]', $user_id));
 			}
 		}
 

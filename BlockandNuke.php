@@ -5,7 +5,7 @@ if( !defined( 'MEDIAWIKI' ) )
 //path of the extension
 $dir = dirname(__FILE__) . '/';
 
-//load internationalization file. 
+//load internationalization file.
 $wgExtensionMessagesFiles['BlockandNuke'] = $dir . 'BlockandNuke.i18n.php';
 
 //setup instructions
@@ -22,10 +22,12 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgGroupPermissions['sysop']['blockandnuke'] = true;
 $wgAvailableRights[] = 'blockandnuke';
 
-// Location of the Special:Extension class 'Block_Nuke'. Load this php code. 
+// Location of the Special:Extension class 'Block_Nuke'. Load this php code.
 $wgAutoloadClasses['SpecialBlock_Nuke'] = $dir . 'BlockandNuke.body.php';
 
 //Tell MediaWiki about the new special page and its class name 'Block_Nuke'
 $wgSpecialPages['BlockandNuke'] = 'SpecialBlock_Nuke';
 //Under heading 'pagetools' on Special Pages
 $wgSpecialPageGroups['BlockandNuke'] = 'pagetools';
+
+$wgBaNwhitelist = __DIR__ . "/whitelist.txt";
