@@ -5,7 +5,6 @@ if( !defined( 'MEDIAWIKI' ) )
 
 class SpecialBlock_Nuke extends SpecialPage {
 	function __construct() {
-		wfLoadExtensionMessages( 'BlockandNuke' );
 		//restrict access only to admin
 		parent::__construct( 'blockandnuke', 'blockandnuke' );
 
