@@ -31,3 +31,5 @@ $wgSpecialPages['BlockandNuke'] = 'SpecialBlock_Nuke';
 $wgSpecialPageGroups['BlockandNuke'] = 'pagetools';
 
 $wgBaNwhitelist = __DIR__ . "/whitelist.txt";
+
+$wgBaNSpamUser = "Spammer";

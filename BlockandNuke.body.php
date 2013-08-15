@@ -34,7 +34,19 @@ class SpecialBlock_Nuke extends SpecialPage {
 			}
 
 			if($pages){
-				$this->blockUser($user_2, $user_id);
+				global $wgBaNSpamUser;
+				$spammer = User::newFromName( $wgBaNSpamUser );
+				if( class_exists( "UserMerger" ) && $spammer->getID() != 0 )  {
+					$um = new UserMerger( $this );
+					foreach( $user_2 as $u ) {
+						$old = User::newFromName( $u );
+						if( $old->getID() != 0 ) {
+							$um->merge( $old, $spammer );
+						}
+					}
+				} else {
+					$this->blockUser($user_2, $user_id);
+				}
 				$this->doDelete( $pages );
 			}
 		} else {
@@ -88,8 +100,6 @@ class SpecialBlock_Nuke extends SpecialPage {
 			"</ul>\n" .
 			Xml::submitButton( wfMsg( 'block-submit-user' ) ).
 			"</form>" );
-
-
 	}
 
 	function getNewPages($user) {
@@ -121,10 +131,13 @@ class SpecialBlock_Nuke extends SpecialPage {
 			$pages[] = array( Title::makeTitle( $row->rc_namespace, $row->rc_title ), $row->edits );
 		}
 
+		$wgOut->addHtml( "<ul>" );
 		foreach( $pages as $info ) {
 			list($title, $edits) = $info;
+			$wgOut->addHtml( "<li>". Linker::link( $title ) );
 			$wgOut->addHtml(HTML::hidden( 'pages[]', $title));
 		}
+		$wgOut->addHtml( "</ul>\n" );
 
 		foreach($user as $users){
 			$dbr = wfGetDB( DB_SLAVE );
@@ -140,11 +153,19 @@ class SpecialBlock_Nuke extends SpecialPage {
 				$name[]=array($row->rc_user_text, $row->rc_user);
 			}
 
+			$wgOut->addHtml( "<ul>" );
+			$seen = array();
 			foreach($name as $infos) {
 				list($user_2, $user_id) = $infos;
-				$wgOut->addHTML(HTML::hidden( 'names_2[]', $user_2).
-					HTML::hidden( 'userid[]', $user_id));
+				if( !isset( $seen[$user_2] ) ) {
+					$seen[$user_2] = true;
+					$wgOut->addHtml( "<li>" . $user_2 );
+					$wgOut->addHTML(HTML::hidden( 'names_2[]', $user_2).
+						HTML::hidden( 'userid[]', $user_id));
+				}
 			}
+			$wgOut->addHtml( "</ul>\n" );
+
 		}
 
 		$wgOut->addHTML(
@@ -161,13 +182,16 @@ class SpecialBlock_Nuke extends SpecialPage {
 		// if($user_id[$c]== 0){$user_id = $this->uid}
 
 		for($c = 0; $c < max( count($user), count($user_id) ); $c++ ){
+			$thisUser = isset( $user[$c] ) ? $user[$c] : null;
+			$thisUserId = isset( $user_id[$c] ) ? $user_id[$c] : null;
 
-			$blk = new Block($user[$c], $user_id[$c], $wgUser->getID(), wfMsg('block-message'),
+
+			$blk = new Block($thisUser, $thisUserId, $wgUser->getID(), wfMsg('block-message'),
 				wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
 			if($blk->insert()) {
 				$log = new LogPage('block');
-				$log->addEntry('block', Title::makeTitle( NS_USER, $user[$c] ),
-					'Blocked through Special:BlockandNuke', array('infinite',   $user[$c],  'nocreate'));
+				$log->addEntry('block', Title::makeTitle( NS_USER, $thisUser ),
+					'Blocked through Special:BlockandNuke', array('infinite', $thisUser,  'nocreate'));
 			}
 		}
 	}
@@ -184,8 +208,10 @@ class SpecialBlock_Nuke extends SpecialPage {
 				FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );
 			} else {
 				$reason= wfMsg( "block-delete-article" );
-				$article = new Article( $title );
-				$article->doDelete( $reason );
+				if( $title->isKnown() ) {
+					$article = new Article( $title );
+					$article->doDelete( $reason );
+				}
 			}
 		}
 	}
