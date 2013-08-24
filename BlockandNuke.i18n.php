@@ -37,4 +37,5 @@ $messages['en'] = array(
 	'blockandnuke-message' 	   => 'Users blocked by BlockandNuke.',
 	'blockandnuke-banhammer'      => "To block the selected users and delete all their contributions click the button below.",
 	'blockandnuke-nothing-to-do'  => 'Nothing to do!',
+	'blockandnuke-banning'        => 'Banning...',
 );

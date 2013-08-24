@@ -37,14 +37,13 @@ class SpecialBlock_Nuke extends SpecialPage {
 			if($user){
 				$wgOut->addHTML( wfMsg( "blockandnuke-banhammer" ) );
 				$this->getNewPages($user);
-			}
-
-			if($pages || $user_2 || $ips){
+			} elseif( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
+				$wgOut->addHTML( wfMsg( "blockandnuke-banning" ) );
 				BanPests::blockUser($user_2, $user_id, $wgUser, $spammer, $um);
 				BanPests::deletePages( $pages );
 				BanPests::banIPs( $ips, $wgUser );
-			} elseif( !$user ) {
-				$wgOut->addHTML( wfMsg( 'blockandnuke-nothing-to-do' ) )
+			} else {
+				$wgOut->addHTML( wfMsg( 'blockandnuke-nothing-to-do' ) );
 			}
 		} else {
 			$this->showUserForm();
