@@ -11,7 +11,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 	}
 
 	function execute( $par ){
-		global $wgUser, $wgRequest, $wgOut;
+		global $wgUser, $wgRequest, $wgOut, $wgBaNSpamUser;
 
 		if( !$this->userCanExecute( $wgUser ) ){
 			$this->displayRestrictionError();
@@ -21,6 +21,11 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
+		$um = null;
+		$spammer = User::newFromName( $wgBaNSpamUser );
+		if( class_exists( "UserMerger" ) && $spammer->getID() != 0 )  {
+			$um = new UserMerger( $this );
+		}
 		$posted = $wgRequest->wasPosted();
 		if( $posted ) {
 			$user_id = $wgRequest->getArray('userid');
@@ -34,45 +39,20 @@ class SpecialBlock_Nuke extends SpecialPage {
 			}
 
 			if($pages){
-				global $wgBaNSpamUser;
-				$spammer = User::newFromName( $wgBaNSpamUser );
-				if( class_exists( "UserMerger" ) && $spammer->getID() != 0 )  {
-					$um = new UserMerger( $this );
-					foreach( $user_2 as $u ) {
-						$old = User::newFromName( $u );
-						if( $old->getID() != 0 ) {
-							$um->merge( $old, $spammer );
-						}
-					}
-				} else {
-					$this->blockUser($user_2, $user_id);
-				}
-				$this->doDelete( $pages );
+				BanPests::blockUser($user_2, $user_id, $wgUser, $spammer, $um);
+				BanPests::deletePages( $pages );
 			}
 		} else {
-			$this->whiteList();
+			$this->showUserForm();
 		}
 
 	}
 
-	function whiteList() {
-		global $wgOut, $wgUser, $wgBaNwhitelist;
+	function showUserForm() {
+		global $wgOut, $wgUser;
 
-		$fh = fopen($wgBaNwhitelist, 'r');
-		$file = fread($fh,200);
-		$pieces = (preg_split('/\r\n|\r|\n/', $file));
-		fclose($fh);
-
-		$dbr = wfGetDB( DB_SLAVE );
-		$result = $dbr->select( 'recentchanges',
-			array( 'DISTINCT rc_user', 'rc_user_text' ),
-			array( 'rc_new' => 1 ), # OR (rc_log_type = "upload" AND rc_log_action = "upload")
-			__METHOD__,
-			array( 'ORDER BY' => 'rc_user_text ASC' ) );
-		$names=array();
-		while( $row = $dbr->fetchObject( $result ) ) {
-			$names[]=array($row->rc_user_text, $row->rc_user);
-		}
+		$names = BanPests::getBannableUsers();
+		$whitelist = BanPests::getWhitelist();
 
 		$wgOut->addWikiMsg( 'block-tools' );
 		$wgOut->addHTML(
@@ -84,16 +64,14 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		//make into links  $sk = $wgUser->getSkin();
 
-		foreach($names as $user_info){
-			list($user, $user_id) = $user_info;
-
-				if (!in_array($user, $pieces)){
-					$wgOut->addHTML( '<li>'.
-						Xml::check( 'names[]', true,
+		foreach($names as $user){
+			if (!in_array($user, $whitelist)){
+				$wgOut->addHTML( '<li>'.
+					Xml::check( 'names[]', true,
 						array( 'value' =>  $user)).
-						($user).
-						"</li>\n" );
-				}
+					($user).
+					"</li>\n" );
+			}
 
 		}
 		$wgOut->addHTML(
@@ -112,28 +90,10 @@ class SpecialBlock_Nuke extends SpecialPage {
 			HTML::hidden( 'wpEditToken', $wgUser->editToken() ).
 			( '<ul>' ) );
 
-		$dbr = wfGetDB( DB_SLAVE );
-		$result = $dbr->select( 'recentchanges',
-			array( 'rc_namespace', 'rc_title', 'rc_timestamp', 'COUNT(*) AS edits' ),
-			array(
-				'rc_user_text' => $user,
-				'(rc_new = 1) OR (rc_log_type = "upload" AND rc_log_action = "upload")'
-			),
-			__METHOD__,
-			array(
-				'ORDER BY' => 'rc_timestamp DESC',
-				'GROUP BY' => 'rc_namespace, rc_title'
-			)
-		);
-
-		$pages = array();
-		while( $row = $dbr->fetchObject( $result ) ) {
-			$pages[] = array( Title::makeTitle( $row->rc_namespace, $row->rc_title ), $row->edits );
-		}
+		$pages = BanPests::getBannablePages( $user );
 
 		$wgOut->addHtml( "<ul>" );
-		foreach( $pages as $info ) {
-			list($title, $edits) = $info;
+		foreach( $pages as $title ) {
 			$wgOut->addHtml( "<li>". Linker::link( $title ) );
 			$wgOut->addHtml(HTML::hidden( 'pages[]', $title));
 		}
@@ -174,47 +134,4 @@ class SpecialBlock_Nuke extends SpecialPage {
 			"</form>"
 		);
 	}
-
-
-	function blockUser($user, $user_id) {
-		global $wgUser, $wgOut;
-
-		// if($user_id[$c]== 0){$user_id = $this->uid}
-
-		for($c = 0; $c < max( count($user), count($user_id) ); $c++ ){
-			$thisUser = isset( $user[$c] ) ? $user[$c] : null;
-			$thisUserId = isset( $user_id[$c] ) ? $user_id[$c] : null;
-
-
-			$blk = new Block($thisUser, $thisUserId, $wgUser->getID(), wfMsg('block-message'),
-				wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
-			if($blk->insert()) {
-				$log = new LogPage('block');
-				$log->addEntry('block', Title::makeTitle( NS_USER, $thisUser ),
-					'Blocked through Special:BlockandNuke', array('infinite', $thisUser,  'nocreate'));
-			}
-		}
-	}
-
-	function doDelete( $pages ) {
-
-		foreach($pages as $page) {
-
-			$title = Title::newFromURL($page);
-			$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
-			if ($file) {
-				$reason= wfMsg( "block-delete-file" );
-				$oldimage = null; // Must be passed by reference
-				FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );
-			} else {
-				$reason= wfMsg( "block-delete-article" );
-				if( $title->isKnown() ) {
-					$article = new Article( $title );
-					$article->doDelete( $reason );
-				}
-			}
-		}
-	}
-
-
 }

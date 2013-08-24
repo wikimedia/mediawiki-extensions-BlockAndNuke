@@ -22,8 +22,8 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgGroupPermissions['sysop']['blockandnuke'] = true;
 $wgAvailableRights[] = 'blockandnuke';
 
-// Location of the Special:Extension class 'Block_Nuke'. Load this php code.
 $wgAutoloadClasses['SpecialBlock_Nuke'] = $dir . 'BlockandNuke.body.php';
+$wgAutoloadClasses['BanPests'] = $dir . 'BanPests.php';
 
 //Tell MediaWiki about the new special page and its class name 'Block_Nuke'
 $wgSpecialPages['BlockandNuke'] = 'SpecialBlock_Nuke';
@@ -33,3 +33,7 @@ $wgSpecialPageGroups['BlockandNuke'] = 'pagetools';
 $wgBaNwhitelist = __DIR__ . "/whitelist.txt";
 
 $wgBaNSpamUser = "Spammer";
+
+$wgHooks['PerformRetroactiveAutoblock'][] = function ($block, $blockIds) {
+	return true;
+};
