@@ -39,16 +39,22 @@ class BanPests {
 		);
 	}
 
-	static function getBannableIP( User $user ) {
+	static function getBannableIP( $user ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$result = $dbr->select( 'recentchanges',
-			array( 'DISTINCT rc_ip' ),
-			array( 'rc_user_text' => $user->getName() ),
-			__METHOD__,
-			array( 'ORDER BY' => 'rc_ip ASC' ) );
 		$ip = array();
-		while( $row = $dbr->fetchObject( $result ) ) {
-			$ip[] = $row->rc_ip;
+		if( is_array( $user ) ) {
+			foreach( $user as $u ) {
+				$ip = array_merge( $ip, self::getBannableIP( User::newFromName( $u ) ) );
+			}
+		} else {
+			$result = $dbr->select( 'recentchanges',
+				array( 'DISTINCT rc_ip' ),
+				array( 'rc_user_text' => $user->getName() ),
+				__METHOD__,
+				array( 'ORDER BY' => 'rc_ip ASC' ) );
+			while( $row = $dbr->fetchObject( $result ) ) {
+				$ip[] = $row->rc_ip;
+			}
 		}
 		$whitelist = array_flip( self::getWhitelist() );
 		return array_filter( $ip,
@@ -83,15 +89,17 @@ class BanPests {
 		return $pages;
 	}
 
-	static function banIPs( $ip, $banningUser ) {
-		$blk = new Block( $ip, null,
-			$banningUser->getID(), wfMsg('block-message'),
-			wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
-		$blk->isAutoBlocking( true );
-		if( $blk->insert() ) {
-			$log = new LogPage('block');
-			$log->addEntry('block', Title::makeTitle( NS_USER, $ip ),
-				'Blocked through Special:BlockandNuke', array('infinite', $ip,  'nocreate'));
+	static function banIPs( $ips, $banningUser ) {
+		foreach( (array)$ips as $ip ) {
+			$blk = new Block( $ip, null,
+				$banningUser->getID(), wfMsg('block-message'),
+				wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
+			$blk->isAutoBlocking( true );
+			if( $blk->insert() ) {
+				$log = new LogPage('block');
+				$log->addEntry('block', Title::makeTitle( NS_USER, $ip ),
+					'Blocked through Special:BlockandNuke', array('infinite', $ip,  'nocreate'));
+			}
 		}
 	}
 
@@ -138,8 +146,7 @@ class BanPests {
 	}
 
 	static function deletePages( $pages ) {
-
-		foreach($pages as $page) {
+		foreach((array)$pages as $page) {
 			self::deletePage( Title::newFromURL($page) );
 		}
 	}
