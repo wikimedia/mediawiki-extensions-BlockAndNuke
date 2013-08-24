@@ -1,18 +1,18 @@
-Edit file extensions/BlockandNuke/whitelist.txt. 
+The Block and Nuke extension allows sysops to mass block spam accounts and delete all contributions made by those spam accounts, in just two clicks. See further documenatation at the [BlockandNuke page on MediaWiki.org](http://www.mediawiki.org/wiki/Extension:BlockandNuke).
 
-List all registered users whose contributions to your wiki are not spam. This list must be edited manually. 
+Usage
+-----
 
-One username per line. eg
+1. Edit file `extensions/BlockandNuke/whitelist.txt` and add usernames that should be ignored by the extension. This list must be edited manually. 
 
- Admin
- Dorris
- Sam
+One username per line.
 
-Go to Special:BlockandNuke. The special page is listed under Special:SpecialPages, under Page Tools,  BlockandNuke.
+    Admin
+    Dorris
+    Sam
 
-A checklist shows all users who made contributions since last use of this tool and are not listed in whitelist.txt.
+2. Go to Special:Blockandnuke. The special page is listed under Special:SpecialPages, under Other Special Pages as "Block and Nuke". A checklist shows all users who made contributions since last use of this tool and are not listed in whitelist.txt. By default all users are checked.
 
-Default checklist: all checked. 
+3. Select users you would like to block - all their contributions will be deleted. 
 
-Select users you would like to block - all their contributions will be deleted. 
-Click 'Select Users'. Then confirm by clicking the button 'BlockandNuke'.
+4. Click 'Select Users'. Then confirm by clicking the button 'Block and Nuke'.
