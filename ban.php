@@ -49,7 +49,10 @@ class BanHammer extends Maintenance {
 
 		$spammer = User::newFromName( $wgBaNSpamUser );
 		$banningUser = User::newFromName( "WikiSysop" );
-		$um = new UserMerger( null );
+		$um = null;
+		if( class_exists( "UserMerger" ) ) {
+			$um = new UserMerger( null );
+		}
 		if( count( $bannable ) ) {
 			$this->maybeOutput( "Users\n" );
 			foreach( $bannable as $user ) {
