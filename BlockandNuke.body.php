@@ -45,6 +45,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 				BanPests::banIPs( $ips, $wgUser );
 			} elseif( !$user ) {
 				$wgOut->addHTML( wfMsg( 'blockandnuke-nothing-to-do' ) )
+			}
 		} else {
 			$this->showUserForm();
 		}
