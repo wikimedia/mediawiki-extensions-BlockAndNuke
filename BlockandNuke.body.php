@@ -39,9 +39,13 @@ class SpecialBlock_Nuke extends SpecialPage {
 				$this->getNewPages($user);
 			} elseif( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
 				$wgOut->addHTML( wfMsg( "blockandnuke-banning" ) );
-				BanPests::blockUser($user_2, $user_id, $wgUser, $spammer, $um);
-				BanPests::deletePages( $pages );
-				BanPests::banIPs( $ips, $wgUser );
+				$v = false;
+				$v = BanPests::blockUser( $user_2, $user_id, $wgUser, $spammer, $um )
+					|| BanPests::deletePages( $pages, $this )
+					|| BanPests::banIPs( $ips, $wgUser, $this );
+				if(!$v) {
+					$wgOut->addHTML( wfMsg( 'blockandnuke-nothing-to-do' ) );
+				}
 			} else {
 				$wgOut->addHTML( wfMsg( 'blockandnuke-nothing-to-do' ) );
 			}
@@ -96,7 +100,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$ips = BanPests::getBannableIP( $user );
 
 		if( count( $pages ) ) {
-			$wgOut->addHTML( "<h2>Pages</h2>" );
+			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-pages" ) ."</h2>" );
 
 			$wgOut->addHtml( "<ul>" );
 			foreach( $pages as $title ) {
@@ -107,7 +111,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		}
 
 		if( count( $user ) ) {
-			$wgOut->addHTML( "<h2>Users</h2>" );
+			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-Users" ) ."</h2>" );
 
 			foreach($user as $users){
 				$dbr = wfGetDB( DB_SLAVE );
@@ -140,7 +144,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		}
 
 		if( $ips ) {
-			$wgOut->addHTML( "<h2>IP Addresses</h2>" );
+			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-ip-addresses" ) ."</h2>" );
 
 			foreach($ips as $ip) {
 				$wgOut->addHtml( "<ul>" );

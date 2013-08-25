@@ -89,66 +89,90 @@ class BanPests {
 		return $pages;
 	}
 
-	static function banIPs( $ips, $banningUser ) {
+	static function banIPs( $ips, $banningUser, $sp ) {
+		$ret = array();
 		foreach( (array)$ips as $ip ) {
-			$blk = new Block( $ip, null,
-				$banningUser->getID(), wfMsg('block-message'),
-				wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
-			$blk->isAutoBlocking( true );
-			if( $blk->insert() ) {
-				$log = new LogPage('block');
-				$log->addEntry('block', Title::makeTitle( NS_USER, $ip ),
-					'Blocked through Special:BlockandNuke', array('infinite', $ip,  'nocreate'));
+			if( !Block::newFromTarget( $ip ) ) {
+				$blk = new Block( $ip, null,
+					$banningUser->getID(), wfMsg('blockandnuke-message'),
+					wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
+				$blk->isAutoBlocking( true );
+				if( $blk->insert() ) {
+					$log = new LogPage('block');
+					$log->addEntry('block', Title::makeTitle( NS_USER, $ip ),
+						'Blocked through Special:BlockandNuke', array('infinite', $ip,  'nocreate'));
+					$ret[] = $ip;
+					if( $sp ) {
+						$sp->getOutput()->addHTML( wfMessage( "blockandnuke-banned-ip", $ip )->escaped() );
+					}
+				}
 			}
 		}
+		$ret = array_filter( $ret );
+		return $ret ? true : false;
 	}
 
 	static function banUser( $user, $banningUser, $spammer, $um ) {
+		$ret = null;
 		if($user->getID() != 0 && $um ) {
-			$um->merge( $user, $spammer, "block", $banningUser );
+			$ret = $um->merge( $user, $spammer, "block", $banningUser );
 		} else {
-			$blk = new Block($user->getName(), $user->getId(),
-				$banningUser->getID(), wfMsg('block-message'),
-				wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
-			$blk->isAutoBlocking( true );
-			if($blk->insert()) {
-				$log = new LogPage('block');
-				$log->addEntry('block', Title::makeTitle( NS_USER, $user->getName() ),
-					'Blocked through Special:BlockandNuke', array('infinite', $user->getName(),  'nocreate'));
+			if( !Block::newFromTarget( $user->getName() ) ) {
+				$blk = new Block($user->getName(), $user->getId(),
+					$banningUser->getID(), wfMsg('blockandnuke-message'),
+					wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
+				$blk->isAutoBlocking( true );
+				if($ret = $blk->insert()) {
+					$log = new LogPage('block');
+					$log->addEntry('block', Title::makeTitle( NS_USER, $user->getName() ),
+						'Blocked through Special:BlockandNuke', array('infinite', $user->getName(),  'nocreate'));
+				}
 			}
 		}
+		return $ret;
 	}
 
 	static function blockUser($user, $user_id, $banningUser, $spammer, $um) {
+		$ret = array();
 		for($c = 0; $c < max( count($user), count($user_id) ); $c++ ){
 			if( isset( $user[$c] ) ) {
 				$thisUserObj = User::newFromName( $user[$c] );
 			} elseif( isset( $user_id[$c] ) ) {
 				$thisUserObj = User::newFromId( $user_id[$c] );
 			}
-			self::banUser( $thisUserObj, $banningUser, $spammer, $um );
+			$ret[] = self::banUser( $thisUserObj, $banningUser, $spammer, $um );
 		}
+		$ret = array_filter( $ret );
+		return $ret  ? true : false;
 	}
 
-	static function deletePage( $title ) {
+	static function deletePage( $title, $sp = null ) {
+		$ret = null;
 		$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 		if ($file) {
-			$reason= wfMsg( "block-delete-file" );
+			$reason= wfMsg( "blockandnuke-delete-file" );
 			$oldimage = null; // Must be passed by reference
-			FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );
+			$ret = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );
 		} else {
-			$reason= wfMsg( "block-delete-article" );
+			$reason = wfMsg( "blockandnuke-delete-article" );
 			if( $title->isKnown() ) {
 				$article = new Article( $title );
-				$article->doDelete( $reason );
+				$ret = $article->doDelete( $reason );
+				if( $ret && $sp ) {
+					$sp->getOutput()->addHTML( wfMessage( "blockandnuke-deleted-page", $title )->escaped() );
+				}
 			}
 		}
+		return $ret;
 	}
 
-	static function deletePages( $pages ) {
+	static function deletePages( $pages, $sp = null ) {
+		$ret = array();
 		foreach((array)$pages as $page) {
-			self::deletePage( Title::newFromURL($page) );
+			$ret[] = self::deletePage( Title::newFromURL($page), $sp );
 		}
+		$ret = array_filter( $ret );
+		return $ret  ? true : false;
 	}
 
 }
