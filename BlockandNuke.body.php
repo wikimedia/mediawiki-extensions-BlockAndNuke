@@ -111,7 +111,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		}
 
 		if( count( $user ) ) {
-			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-Users" ) ."</h2>" );
+			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-users" ) ."</h2>" );
 
 			foreach($user as $users){
 				$dbr = wfGetDB( DB_SLAVE );

@@ -40,4 +40,7 @@ $messages['en'] = array(
 	'blockandnuke-banning'        => 'Banning...<br>',
 	'blockandnuke-deleted-page'   => "Deleted $1<br>",
 	'blockandnuke-banned-ip'      => "Banned IP $1<br>",
+	'blockandnuke-ip-addresses'   => "IP Addresses",
+	'blockandnuke-users'          => "Users",
+	'blockandnuke-pages'          => "Pages",
 );
