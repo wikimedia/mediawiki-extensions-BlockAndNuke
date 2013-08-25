@@ -103,7 +103,7 @@ class BanPests {
 						'Blocked through Special:BlockandNuke', array('infinite', $ip,  'nocreate'));
 					$ret[] = $ip;
 					if( $sp ) {
-						$sp->getOutput()->addHTML( wfMessage( "blockandnuke-banned-ip", $ip )->escaped() );
+						$sp->getOutput()->addHTML( wfMessage( "blockandnuke-banned-ip", $ip ) );
 					}
 				}
 			}
@@ -159,7 +159,7 @@ class BanPests {
 				$article = new Article( $title );
 				$ret = $article->doDelete( $reason );
 				if( $ret && $sp ) {
-					$sp->getOutput()->addHTML( wfMessage( "blockandnuke-deleted-page", $title )->escaped() );
+					$sp->getOutput()->addHTML( wfMessage( "blockandnuke-deleted-page", $title ) );
 				}
 			}
 		}
