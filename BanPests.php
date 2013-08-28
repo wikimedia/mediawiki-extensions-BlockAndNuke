@@ -89,7 +89,7 @@ class BanPests {
 		return $pages;
 	}
 
-	static function banIPs( $ips, $banningUser, $sp ) {
+	static function banIPs( $ips, $banningUser, $sp = null ) {
 		$ret = array();
 		foreach( (array)$ips as $ip ) {
 			if( !Block::newFromTarget( $ip ) ) {
