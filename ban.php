@@ -58,13 +58,19 @@ class BanHammer extends Maintenance {
 			foreach( $bannable as $user ) {
 				$this->maybeOutput( "\t$user" );
 				$u = User::newFromName( $user );
-				$ips = BanPests::getBannableIP( $u );
+				if ( $u === false ) {
+					$ips = array( $user );
+				} else {
+					$ips = BanPests::getBannableIP( $u );
+				}
 				if( $real ) {
 					$this->maybeOutput( " ... banning\n" );
-					BanPests::banUser( $u, $banningUser, $spammer, $um );
+					if( $u !== false ) {
+						BanPests::banUser( $u, $banningUser, $spammer, $um );
+					}
 					if( $ips ) {
 						foreach($ips as $ip) {
-							$this->maybeOutput( "Ensuring ban on $ip\n" );
+							$this->maybeOutput( "\t\tEnsuring ban on $ip\n" );
 							BanPests::banIPs( $ip, $banningUser  );
 						}
 					}

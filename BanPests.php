@@ -44,9 +44,13 @@ class BanPests {
 		$ip = array();
 		if( is_array( $user ) ) {
 			foreach( $user as $u ) {
-				$ip = array_merge( $ip, self::getBannableIP( User::newFromName( $u ) ) );
+				if ( $u ) {
+					$ip = array_merge( $ip, self::getBannableIP( User::newFromName( $u ) ) );
+				} else {
+					var_dump($u);
+				}
 			}
-		} else {
+		} elseif ( is_object( $user ) ) {
 			$result = $dbr->select( 'recentchanges',
 				array( 'DISTINCT rc_ip' ),
 				array( 'rc_user_text' => $user->getName() ),
@@ -55,6 +59,11 @@ class BanPests {
 			while( $row = $dbr->fetchObject( $result ) ) {
 				$ip[] = $row->rc_ip;
 			}
+		} else {
+			echo "\nWasn't an object, wasn't an array\n";
+			var_dump( $user );
+			debug_print_backtrace();
+			exit;
 		}
 		$whitelist = array_flip( self::getWhitelist() );
 		return array_filter( $ip,
