@@ -46,8 +46,6 @@ class BanPests {
 			foreach( $user as $u ) {
 				if ( $u ) {
 					$ip = array_merge( $ip, self::getBannableIP( User::newFromName( $u ) ) );
-				} else {
-					var_dump($u);
 				}
 			}
 		} elseif ( is_object( $user ) ) {
@@ -60,10 +58,7 @@ class BanPests {
 				$ip[] = $row->rc_ip;
 			}
 		} else {
-			echo "\nWasn't an object, wasn't an array\n";
-			var_dump( $user );
-			debug_print_backtrace();
-			exit;
+			$ip[] = $user;
 		}
 		$whitelist = array_flip( self::getWhitelist() );
 		return array_filter( $ip,
@@ -123,7 +118,9 @@ class BanPests {
 
 	static function banUser( $user, $banningUser, $spammer, $um ) {
 		$ret = null;
-		if($user->getID() != 0 && $um ) {
+		if ( !is_object( $user ) ) {
+			/* Skip this one */
+		} elseif ( $user->getID() != 0 && $um ) {
 			$ret = $um->merge( $user, $spammer, "block", $banningUser );
 		} else {
 			if( !Block::newFromTarget( $user->getName() ) ) {
