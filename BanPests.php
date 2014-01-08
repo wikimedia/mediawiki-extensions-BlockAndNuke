@@ -3,7 +3,14 @@
 class BanPests {
 
 	static function getWhitelist() {
-		global $wgBaNwhitelist;
+		global $wgBaNwhitelist, $wgWhitelist;
+
+		/* Backward compatibility */
+		if ( isset( $wgWhitelist ) && file_exists( $wgWhitelist ) ) {
+			$wgBaNwhitelist = $wgWhitelist;
+		} elseif ( !isset( $wgBaNwhitelist ) || !file_exists( $wgBaNwhitelist ) ) {
+			throw new MWException( 'You need to specify a whitelist!  $wgBaNwhitelist should point to a filename that contains the whitelist.' );
+		}
 
 		$fh = fopen($wgBaNwhitelist, 'r');
 		$file = fread($fh,200);
