@@ -6,6 +6,7 @@ if( !defined( 'MEDIAWIKI' ) )
 $dir = dirname(__FILE__) . '/';
 
 //load internationalization file.
+$wgMessagesDirs['BlockandNuke'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['BlockandNuke'] = $dir . 'BlockandNuke.i18n.php';
 
 //setup instructions
