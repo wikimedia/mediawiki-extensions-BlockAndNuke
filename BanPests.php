@@ -106,7 +106,7 @@ class BanPests {
 			if( !Block::newFromTarget( $ip ) ) {
 				$blk = new Block( $ip, null,
 					$banningUser->getID(), wfMsg('blockandnuke-message'),
-					wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
+					wfTimestamp(), 0, wfGetDB( DB_SLAVE )->getInfinity(), 0, 1, 0, 0, 1);
 				$blk->isAutoBlocking( true );
 				if( $blk->insert() ) {
 					$log = new LogPage('block');
@@ -133,7 +133,7 @@ class BanPests {
 			if( !Block::newFromTarget( $user->getName() ) ) {
 				$blk = new Block($user->getName(), $user->getId(),
 					$banningUser->getID(), wfMsg('blockandnuke-message'),
-					wfTimestamp(), 0, Block::infinity(), 0, 1, 0, 0, 1);
+					wfTimestamp(), 0, wfGetDB( DB_SLAVE )->getInfinity(), 0, 1, 0, 0, 1);
 				$blk->isAutoBlocking( true );
 				if($ret = $blk->insert()) {
 					$log = new LogPage('block');
