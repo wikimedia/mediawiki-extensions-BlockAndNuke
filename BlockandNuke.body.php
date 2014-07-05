@@ -65,7 +65,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			Xml::openElement( 'form', array(
 				'action' => $this->getTitle()->getLocalURL( 'action=submit' ),
 				'method' => 'post')).
-			HTML::hidden( 'wpEditToken', $wgUser->editToken() ).
+			HTML::hidden( 'wpEditToken', $wgUser->getEditToken() ).
 			( '<ul>' ) );
 
 		//make into links  $sk = $wgUser->getSkin();
@@ -93,7 +93,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			Xml::openElement( 'form', array(
 					'action' => $this->getTitle()->getLocalURL( 'action=delete' ),
 					'method' => 'post')).
-			HTML::hidden( 'wpEditToken', $wgUser->editToken() ).
+			HTML::hidden( 'wpEditToken', $wgUser->getEditToken() ).
 			( '<ul>' ) );
 
 		$pages = BanPests::getBannablePages( $user );
