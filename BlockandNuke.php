@@ -28,8 +28,6 @@ $wgAutoloadClasses['BanPests'] = $dir . 'BanPests.php';
 
 //Tell MediaWiki about the new special page and its class name 'Block_Nuke'
 $wgSpecialPages['BlockandNuke'] = 'SpecialBlock_Nuke';
-//Under heading 'pagetools' on Special Pages
-$wgSpecialPageGroups['BlockandNuke'] = 'pagetools';
 
 $wgBaNwhitelist = __DIR__ . "/whitelist.txt";
 

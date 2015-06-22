@@ -165,4 +165,8 @@ class SpecialBlock_Nuke extends SpecialPage {
 			"</form>"
 		);
 	}
+
+	protected function getGroupName() {
+		return 'pagetools';
+	}
 }
