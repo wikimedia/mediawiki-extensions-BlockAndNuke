@@ -104,9 +104,13 @@ class BanPests {
 		$ret = array();
 		foreach( (array)$ips as $ip ) {
 			if( !Block::newFromTarget( $ip ) ) {
-				$blk = new Block( $ip, null,
-					$banningUser->getID(), wfMsg('blockandnuke-message'),
-					wfTimestamp(), 0, wfGetDB( DB_SLAVE )->getInfinity(), 0, 1, 0, 0, 1);
+				$blk = new Block( array(
+					'address'       => $ip,
+					'by'            => $banningUser->getID(),
+					'reason'        => wfMsg( 'blockandnuke-message' ),
+					'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
+					'createAccount' => true,
+					'blockEmail'    => true ) );
 				$blk->isAutoBlocking( true );
 				if( $blk->insert() ) {
 					$log = new LogPage('block');
@@ -131,9 +135,14 @@ class BanPests {
 			$ret = $um->merge( $user, $spammer, "block", $banningUser );
 		} else {
 			if( !Block::newFromTarget( $user->getName() ) ) {
-				$blk = new Block($user->getName(), $user->getId(),
-					$banningUser->getID(), wfMsg('blockandnuke-message'),
-					wfTimestamp(), 0, wfGetDB( DB_SLAVE )->getInfinity(), 0, 1, 0, 0, 1);
+				$blk = new Block( array(
+					'address'       => $user->getName(),
+					'user'          => $user->getID(),
+					'by'            => $banningUser->getID(),
+					'reason'        => wfMsg( 'blockandnuke-message' ),
+					'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
+					'createAccount' => true,
+					'blockEmail'    => true ) );
 				$blk->isAutoBlocking( true );
 				if($ret = $blk->insert()) {
 					$log = new LogPage('block');
