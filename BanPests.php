@@ -23,8 +23,8 @@ class BanPests {
 		$cond = array( 'rc_new' => 1 ); /* Anyone creating new pages */
 		$cond[] = $dbr->makeList(		/* Anyone uploading stuff */
 			array(
-				'rc_log_type' => "upload",
-				'rc_log_action' => "upload"
+				'rc_log_type' => 'upload',
+				'rc_log_action' => 'upload'
 			), LIST_AND );
 		$cond[] = $dbr->makeList( /* New Users older than a day who haven't done anything yet */
 			array(
@@ -81,7 +81,7 @@ class BanPests {
 				array( 'rc_namespace', 'rc_title', 'rc_timestamp', 'COUNT(*) AS edits' ),
 				array(
 					'rc_user_text' => $user,
-					'(rc_new = 1) OR (rc_log_type = "upload" AND rc_log_action = "upload")'
+					'(rc_new = 1) OR (rc_log_type = \'upload\' AND rc_log_action = \'upload\')'
 				),
 				__METHOD__,
 				array(
