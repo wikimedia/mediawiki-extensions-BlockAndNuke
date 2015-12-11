@@ -191,7 +191,7 @@ class BanPests {
 	static function deletePages( $pages, $sp = null ) {
 		$ret = array();
 		foreach((array)$pages as $page) {
-			$ret[] = self::deletePage( Title::newFromURL($page), $sp );
+			$ret[] = self::deletePage( Title::newFromText($page), $sp );
 		}
 		$ret = array_filter( $ret );
 		return $ret  ? true : false;

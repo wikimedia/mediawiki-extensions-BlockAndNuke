@@ -39,7 +39,7 @@ class BanHammer extends Maintenance {
 					$this->maybeOutput( "\t$page" );
 					if( $real ) {
 						$this->maybeOutput( " ... deleting\n" );
-						BanPests::deletePage( Title::newFromURL( $page ) );
+						BanPests::deletePage( $page );
 					} else {
 						$this->maybeOutput( "\n" );
 					}
