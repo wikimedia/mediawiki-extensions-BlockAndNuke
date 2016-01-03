@@ -107,7 +107,7 @@ class BanPests {
 				$blk = new Block( array(
 					'address'       => $ip,
 					'by'            => $banningUser->getID(),
-					'reason'        => wfMsg( 'blockandnuke-message' ),
+					'reason'        => wfMessage( 'blockandnuke-message' )->text(),
 					'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
 					'createAccount' => true,
 					'blockEmail'    => true ) );
@@ -139,7 +139,7 @@ class BanPests {
 					'address'       => $user->getName(),
 					'user'          => $user->getID(),
 					'by'            => $banningUser->getID(),
-					'reason'        => wfMsg( 'blockandnuke-message' ),
+					'reason'        => wfMessage( 'blockandnuke-message' )->text(),
 					'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
 					'createAccount' => true,
 					'blockEmail'    => true ) );
@@ -172,11 +172,11 @@ class BanPests {
 		$ret = null;
 		$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 		if ($file) {
-			$reason= wfMsg( "blockandnuke-delete-file" );
+			$reason= wfMessage( "blockandnuke-delete-file" )->text();
 			$oldimage = null; // Must be passed by reference
 			$ret = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );
 		} else {
-			$reason = wfMsg( "blockandnuke-delete-article" );
+			$reason = wfMessage( "blockandnuke-delete-article" )->text();
 			if( $title->isKnown() ) {
 				$article = new Article( $title );
 				$ret = $article->doDelete( $reason );

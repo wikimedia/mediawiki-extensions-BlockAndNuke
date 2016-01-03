@@ -35,19 +35,19 @@ class SpecialBlock_Nuke extends SpecialPage {
 			$ips = $wgRequest->getArray('ip');
 
 			if($user){
-				$wgOut->addHTML( wfMsg( "blockandnuke-banhammer" ) );
+				$wgOut->addHTML( $this->msg( "blockandnuke-banhammer" )->escaped() );
 				$this->getNewPages($user);
 			} elseif( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
-				$wgOut->addHTML( wfMsg( "blockandnuke-banning" ) );
+				$wgOut->addHTML( $this->msg( "blockandnuke-banning" )->escaped() );
 				$v = false;
 				$v = BanPests::blockUser( $user_2, $user_id, $wgUser, $spammer, $um )
 					|| BanPests::deletePages( $pages, $this )
 					|| BanPests::banIPs( $ips, $wgUser, $this );
 				if(!$v) {
-					$wgOut->addHTML( wfMsg( 'blockandnuke-nothing-to-do' ) );
+					$wgOut->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
 				}
 			} else {
-				$wgOut->addHTML( wfMsg( 'blockandnuke-nothing-to-do' ) );
+				$wgOut->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
 			}
 		} else {
 			$this->showUserForm();
@@ -82,7 +82,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		}
 		$wgOut->addHTML(
 			"</ul>\n" .
-			Xml::submitButton( wfMsg( 'blockandnuke-submit-user' ) ).
+			Xml::submitButton( $this->msg( 'blockandnuke-submit-user' )->text() ).
 			"</form>" );
 	}
 
@@ -100,7 +100,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$ips = BanPests::getBannableIP( $user );
 
 		if( count( $pages ) ) {
-			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-pages" ) ."</h2>" );
+			$wgOut->addHTML( "<h2>". $this->msg( "blockandnuke-pages" )->escaped() ."</h2>" );
 
 			$wgOut->addHtml( "<ul>" );
 			foreach( $pages as $title ) {
@@ -111,7 +111,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		}
 
 		if( count( $user ) ) {
-			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-users" ) ."</h2>" );
+			$wgOut->addHTML( "<h2>". $this->msg( "blockandnuke-users" )->escaped() ."</h2>" );
 
 			foreach($user as $users){
 				$dbr = wfGetDB( DB_SLAVE );
@@ -144,7 +144,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		}
 
 		if( $ips ) {
-			$wgOut->addHTML( "<h2>". wfMsg( "blockandnuke-ip-addresses" ) ."</h2>" );
+			$wgOut->addHTML( "<h2>". $this->msg( "blockandnuke-ip-addresses" )->escaped() ."</h2>" );
 
 			foreach($ips as $ip) {
 				$wgOut->addHtml( "<ul>" );
@@ -161,7 +161,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		$wgOut->addHTML(
 			"</ul>\n" .
-			XML::submitButton( wfMsg( 'blockandnuke' ) ).
+			XML::submitButton( $this->msg( 'blockandnuke' )->text() ).
 			"</form>"
 		);
 	}
