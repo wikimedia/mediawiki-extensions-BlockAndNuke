@@ -1,22 +1,26 @@
 <?php
+
 //user will get this message if the haven't installed the extension
-if( !defined( 'MEDIAWIKI' ) )
+
+if( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
+}
+
 //path of the extension
-$dir = dirname(__FILE__) . '/';
+$dir = __DIR__ . '/';
 
 //load internationalization file.
-$wgMessagesDirs['BlockandNuke'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['BlockandNuke'] = $dir . 'BlockandNuke.i18n.php';
+$wgMessagesDirs['BlockAndNuke'] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['BlockAndNuke'] = $dir . 'BlockandNuke.i18n.php';
 
 //setup instructions
 $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
-	'name'           => 'BlockandNuke',
+	'name'           => 'BlockAndNuke',
 	'description'    => 'Gives sysops the ability to mass delete users and their pages',
-	'descriptionmsg' => 'block-desc',
+	'descriptionmsg' => 'blockandnuke-desc',
 	'author'         => 'Eliora Stahl',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:BlockandNuke',
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:BlockAndNuke',
 );
 
 //Permissions - not recognised as admin
