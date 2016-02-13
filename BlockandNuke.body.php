@@ -65,7 +65,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			Xml::openElement( 'form', array(
 				'action' => $this->getTitle()->getLocalURL( 'action=submit' ),
 				'method' => 'post')).
-			HTML::hidden( 'wpEditToken', $wgUser->getEditToken() ).
+			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ).
 			( '<ul>' ) );
 
 		//make into links  $sk = $wgUser->getSkin();
@@ -93,7 +93,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			Xml::openElement( 'form', array(
 					'action' => $this->getTitle()->getLocalURL( 'action=delete' ),
 					'method' => 'post')).
-			HTML::hidden( 'wpEditToken', $wgUser->getEditToken() ).
+			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ).
 			( '<ul>' ) );
 
 		$pages = BanPests::getBannablePages( $user );
@@ -105,7 +105,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			$wgOut->addHtml( "<ul>" );
 			foreach( $pages as $title ) {
 				$wgOut->addHtml( "<li>". Linker::link( $title ) );
-				$wgOut->addHtml(HTML::hidden( 'pages[]', $title));
+				$wgOut->addHtml(Html::hidden( 'pages[]', $title));
 			}
 			$wgOut->addHtml( "</ul>\n" );
 		}
@@ -135,8 +135,8 @@ class SpecialBlock_Nuke extends SpecialPage {
 						$seen[$user_2] = true;
 						$wgOut->addHtml( "<li>" .
 							Linker::link( Title::newFromText( $user_2, NS_USER ) ) );
-						$wgOut->addHTML(HTML::hidden( 'names_2[]', $user_2).
-							HTML::hidden( 'userid[]', $user_id));
+						$wgOut->addHTML(Html::hidden( 'names_2[]', $user_2).
+							Html::hidden( 'userid[]', $user_id));
 					}
 				}
 				$wgOut->addHtml( "</ul>\n" );
@@ -153,7 +153,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 					$seen[$ip] = true;
 					$wgOut->addHtml( "<li>" .
 						Linker::link( Title::newFromText( $ip, NS_USER ) ) );
-					$wgOut->addHTML(HTML::hidden( 'ip[]', $ip) );
+					$wgOut->addHTML(Html::hidden( 'ip[]', $ip) );
 				}
 				$wgOut->addHtml( "</ul>\n" );
 			}
