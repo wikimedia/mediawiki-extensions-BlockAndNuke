@@ -44,3 +44,6 @@ $wgBaNSpamUser = "Spammer";
 $wgHooks['PerformRetroactiveAutoblock'][] = function ($block, $blockIds) {
 	return true;
 };
+$wgHooks['LanguageGetSpecialPageAliases'][] = function( &$specialPageAliases, $langCode ) {
+        $specialPageAliases['blockandnuke'] = array( 'BlockandNuke' );
+};
