@@ -20,7 +20,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => array(
 		'Eliora Stahl',
 		'...'
-		),
+	),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:BlockAndNuke',
 	'license-name' => 'GPL-3.0+'
 );
@@ -30,8 +30,9 @@ $wgGroupPermissions['sysop']['blockandnuke'] = true;
 $wgAvailableRights[] = 'blockandnuke';
 
 // Load classes
-$wgAutoloadClasses['SpecialBlock_Nuke'] = __DIR__ . '/BlockandNuke.body.php';
+$wgAutoloadClasses['SpecialBlock_Nuke'] = __DIR__ . '/BlockAndNuke.body.php';
 $wgAutoloadClasses['BanPests'] = __DIR__ . '/BanPests.php';
+$wgAutoloadClasses['BlockAndNukeHooks'] = __DIR__ . '/BlockAndNuke.hooks.php';
 
 // Setup special page and its class name 'Block_Nuke'
 $wgSpecialPages['BlockandNuke'] = 'SpecialBlock_Nuke';
@@ -41,9 +42,5 @@ $wgBaNwhitelist = __DIR__ . "/whitelist.txt";
 $wgBaNSpamUser = "Spammer";
 
 // Register hooks
-$wgHooks['PerformRetroactiveAutoblock'][] = function ($block, $blockIds) {
-	return true;
-};
-$wgHooks['LanguageGetSpecialPageAliases'][] = function( &$specialPageAliases, $langCode ) {
-        $specialPageAliases['blockandnuke'] = array( 'BlockandNuke' );
-};
+$wgHooks['PerformRetroactiveAutoblock'][] = 'BlockAndNukeHooks::onPerformRetroactiveAutoblock';
+$wgHooks['LanguageGetSpecialPageAliases'][] = 'BlockAndNukeHooks::onLanguageGetSpecialPageAliases';

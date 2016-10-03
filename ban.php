@@ -31,7 +31,11 @@ class BanHammer extends Maintenance {
 		$bannable = BanPests::getBannableUsers();
 		$pages = BanPests::getBannablePages( $bannable );
 
-		$this->output( sprintf( "Found %d bannable users and %d pages:\n", count( $bannable ), count( $pages ) ) );
+		$this->output(
+			sprintf(
+				"Found %d bannable users and %d pages:\n", count( $bannable ), count( $pages )
+			)
+		);
 		if( count( $pages ) ) {
 			$this->maybeOutput( "Pages\n" );
 			foreach( $pages as $page ) {

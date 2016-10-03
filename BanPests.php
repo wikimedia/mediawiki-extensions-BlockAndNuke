@@ -9,13 +9,15 @@ class BanPests {
 		if ( isset( $wgWhitelist ) && file_exists( $wgWhitelist ) ) {
 			$wgBaNwhitelist = $wgWhitelist;
 		} elseif ( !isset( $wgBaNwhitelist ) || !file_exists( $wgBaNwhitelist ) ) {
-			throw new MWException( 'You need to specify a whitelist!  $wgBaNwhitelist should point to a filename that contains the whitelist.' );
+			throw new MWException(
+				'You need to specify a whitelist!  $wgBaNwhitelist should point to a filename that contains the whitelist.'
+			);
 		}
 
-		$fh = fopen($wgBaNwhitelist, 'r');
-		$file = fread($fh,200);
-		fclose($fh);
-		return (preg_split('/\r\n|\r|\n/', $file));
+		$fh = fopen( $wgBaNwhitelist, 'r' );
+		$file = fread( $fh, 200 );
+		fclose( $fh );
+		return preg_split( '/\r\n|\r|\n/', $file );
 	}
 
 	static function getBannableUsers() {
@@ -25,24 +27,32 @@ class BanPests {
 			array(
 				'rc_log_type' => 'upload',
 				'rc_log_action' => 'upload'
-			), LIST_AND );
+			),
+			LIST_AND
+		);
 		$cond[] = $dbr->makeList( /* New Users older than a day who haven't done anything yet */
 			array(
 				'rc_log_action' => 'create',
 				'rc_log_type' => 'newusers',
-			), LIST_AND );
-		$result = $dbr->select( 'recentchanges',
+			),
+			LIST_AND
+		);
+		$result = $dbr->select(
+			'recentchanges',
 			array( 'DISTINCT rc_user_text' ),
 			$dbr->makeList( $cond, LIST_OR ),
 			__METHOD__,
-			array( 'ORDER BY' => 'rc_user_text ASC' ) );
-		$names=array();
-		while( $row = $dbr->fetchObject( $result ) ) {
+			array( 'ORDER BY' => 'rc_user_text ASC' )
+		);
+		$names = array();
+		foreach( $result as $row ) {
 			$names[] = $row->rc_user_text;
 		}
 		$whitelist = array_flip( self::getWhitelist() );
 		return array_filter( $names,
-			function($u) use ($whitelist) { if( isset( $whitelist[ $u ] ) ) return false; return true; }
+			function( $u ) use ( $whitelist ) {
+				return !isset( $whitelist[ $u ] );
+			}
 		);
 	}
 
@@ -56,12 +66,14 @@ class BanPests {
 				}
 			}
 		} elseif ( is_object( $user ) ) {
-			$result = $dbr->select( 'recentchanges',
+			$result = $dbr->select(
+				'recentchanges',
 				array( 'DISTINCT rc_ip' ),
 				array( 'rc_user_text' => $user->getName() ),
 				__METHOD__,
-				array( 'ORDER BY' => 'rc_ip ASC' ) );
-			while( $row = $dbr->fetchObject( $result ) ) {
+				array( 'ORDER BY' => 'rc_ip ASC' )
+			);
+			foreach( $result as $row ) {
 				$ip[] = $row->rc_ip;
 			}
 		} else {
@@ -69,7 +81,9 @@ class BanPests {
 		}
 		$whitelist = array_flip( self::getWhitelist() );
 		return array_filter( $ip,
-			function($u) use ($whitelist) { if( isset( $whitelist[ $u ] ) ) return false; return true; }
+			function( $u ) use ( $whitelist ) {
+				return !isset( $whitelist[ $u ] );
+			}
 		);
 	}
 
@@ -77,7 +91,8 @@ class BanPests {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = null;
 		if( $user ) {
-			$result = $dbr->select( 'recentchanges',
+			$result = $dbr->select(
+				'recentchanges',
 				array( 'rc_namespace', 'rc_title', 'rc_timestamp', 'COUNT(*) AS edits' ),
 				array(
 					'rc_user_text' => $user,
@@ -92,7 +107,7 @@ class BanPests {
 		}
 		$pages = array();
 		if( $result ) {
-			while( $row = $dbr->fetchObject( $result ) ) {
+			foreach( $result as $row ) {
 				$pages[] = Title::makeTitle( $row->rc_namespace, $row->rc_title );
 			}
 		}
@@ -104,18 +119,25 @@ class BanPests {
 		$ret = array();
 		foreach( (array)$ips as $ip ) {
 			if( !Block::newFromTarget( $ip ) ) {
-				$blk = new Block( array(
-					'address'       => $ip,
-					'by'            => $banningUser->getID(),
-					'reason'        => wfMessage( 'blockandnuke-message' )->text(),
-					'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
-					'createAccount' => true,
-					'blockEmail'    => true ) );
+				$blk = new Block(
+					array(
+						'address'       => $ip,
+						'by'            => $banningUser->getID(),
+						'reason'        => wfMessage( 'blockandnuke-message' )->text(),
+						'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
+						'createAccount' => true,
+						'blockEmail'    => true
+					)
+				);
 				$blk->isAutoBlocking( true );
 				if( $blk->insert() ) {
 					$log = new LogPage('block');
-					$log->addEntry('block', Title::makeTitle( NS_USER, $ip ),
-						'Blocked through Special:BlockandNuke', array('infinite', $ip,  'nocreate'));
+					$log->addEntry(
+						'block',
+						Title::makeTitle( NS_USER, $ip ),
+						'Blocked through Special:BlockandNuke',
+						array( 'infinite', $ip,  'nocreate' )
+					);
 					$ret[] = $ip;
 					if( $sp ) {
 						$sp->getOutput()->addHTML( wfMessage( "blockandnuke-banned-ip", $ip ) );
@@ -124,7 +146,7 @@ class BanPests {
 			}
 		}
 		$ret = array_filter( $ret );
-		return $ret ? true : false;
+		return (bool)$ret;
 	}
 
 	static function banUser( $user, $banningUser, $spammer, $um ) {
@@ -135,19 +157,26 @@ class BanPests {
 			$ret = $um->merge( $user, $spammer, "block", $banningUser );
 		} else {
 			if( !Block::newFromTarget( $user->getName() ) ) {
-				$blk = new Block( array(
-					'address'       => $user->getName(),
-					'user'          => $user->getID(),
-					'by'            => $banningUser->getID(),
-					'reason'        => wfMessage( 'blockandnuke-message' )->text(),
-					'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
-					'createAccount' => true,
-					'blockEmail'    => true ) );
+				$blk = new Block(
+					array(
+						'address'       => $user->getName(),
+						'user'          => $user->getID(),
+						'by'            => $banningUser->getID(),
+						'reason'        => wfMessage( 'blockandnuke-message' )->text(),
+						'expiry'        => wfGetDB( DB_SLAVE )->getInfinity(),
+						'createAccount' => true,
+						'blockEmail'    => true
+					)
+				);
 				$blk->isAutoBlocking( true );
 				if($ret = $blk->insert()) {
 					$log = new LogPage('block');
-					$log->addEntry('block', Title::makeTitle( NS_USER, $user->getName() ),
-						'Blocked through Special:BlockandNuke', array('infinite', $user->getName(),  'nocreate'));
+					$log->addEntry(
+						'block',
+						Title::makeTitle( NS_USER, $user->getName() ),
+						'Blocked through Special:BlockandNuke',
+						array( 'infinite', $user->getName(),  'nocreate' )
+					);
 				}
 			}
 		}
@@ -165,13 +194,13 @@ class BanPests {
 			$ret[] = self::banUser( $thisUserObj, $banningUser, $spammer, $um );
 		}
 		$ret = array_filter( $ret );
-		return $ret  ? true : false;
+		return (bool)$ret;
 	}
 
 	static function deletePage( $title, $sp = null ) {
 		$ret = null;
 		$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
-		if ($file) {
+		if ( $file ) {
 			$reason= wfMessage( "blockandnuke-delete-file" )->text();
 			$oldimage = null; // Must be passed by reference
 			$ret = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );
@@ -190,11 +219,11 @@ class BanPests {
 
 	static function deletePages( $pages, $sp = null ) {
 		$ret = array();
-		foreach((array)$pages as $page) {
-			$ret[] = self::deletePage( Title::newFromText($page), $sp );
+		foreach( (array)$pages as $page ) {
+			$ret[] = self::deletePage( Title::newFromText( $page ), $sp );
 		}
 		$ret = array_filter( $ret );
-		return $ret  ? true : false;
+		return (bool)$ret;
 	}
 
 }
