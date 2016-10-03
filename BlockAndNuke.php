@@ -1,46 +1,14 @@
 <?php
-/**
- * BlockAndNuke extension by Eliora Stahl
- */
-
-// Entry point protection
-if( !defined( 'MEDIAWIKI' ) ) {
-	die( 'Not an entry point.' );
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'BlockAndNuke' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['BlockAndNuke'] = __DIR__ . '/i18n';
+	/*wfWarn(
+		'Deprecated PHP entry point used for BlockAndNuke extension. ' .
+		'Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);*/
+	return;
+} else {
+	die( 'This version of the BlockAndNuke extension requires MediaWiki 1.28+' );
 }
-
-// Load internationalization files
-$wgMessagesDirs['BlockAndNuke'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['BlockAndNuke'] = __DIR__ . '/BlockandNuke.i18n.php';
-
-// Register extension
-$wgExtensionCredits['specialpage'][] = array(
-	'path' => __FILE__,
-	'name' => 'BlockAndNuke',
-	'descriptionmsg' => 'blockandnuke-desc',
-	'author' => array(
-		'Eliora Stahl',
-		'...'
-	),
-	'url' => 'https://www.mediawiki.org/wiki/Extension:BlockAndNuke',
-	'license-name' => 'GPL-3.0+'
-);
-
-// Setup permissions - not recognised as admin
-$wgGroupPermissions['sysop']['blockandnuke'] = true;
-$wgAvailableRights[] = 'blockandnuke';
-
-// Load classes
-$wgAutoloadClasses['SpecialBlock_Nuke'] = __DIR__ . '/BlockAndNuke.body.php';
-$wgAutoloadClasses['BanPests'] = __DIR__ . '/BanPests.php';
-$wgAutoloadClasses['BlockAndNukeHooks'] = __DIR__ . '/BlockAndNuke.hooks.php';
-
-// Setup special page and its class name 'Block_Nuke'
-$wgSpecialPages['BlockandNuke'] = 'SpecialBlock_Nuke';
-
-// Extension parameters
-$wgBaNwhitelist = __DIR__ . "/whitelist.txt";
-$wgBaNSpamUser = "Spammer";
-
-// Register hooks
-$wgHooks['PerformRetroactiveAutoblock'][] = 'BlockAndNukeHooks::onPerformRetroactiveAutoblock';
-$wgHooks['LanguageGetSpecialPageAliases'][] = 'BlockAndNukeHooks::onLanguageGetSpecialPageAliases';
