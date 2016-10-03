@@ -2,7 +2,7 @@
 
 class BanPests {
 
-	static function getWhitelist() {
+	public static function getWhitelist() {
 		global $wgBaNwhitelist, $wgWhitelist;
 
 		/* Backward compatibility */
@@ -20,7 +20,7 @@ class BanPests {
 		return preg_split( '/\r\n|\r|\n/', $file );
 	}
 
-	static function getBannableUsers() {
+	public static function getBannableUsers() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$cond = array( 'rc_new' => 1 ); /* Anyone creating new pages */
 		$cond[] = $dbr->makeList(		/* Anyone uploading stuff */
@@ -56,7 +56,7 @@ class BanPests {
 		);
 	}
 
-	static function getBannableIP( $user ) {
+	public static function getBannableIP( $user ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$ip = array();
 		if( is_array( $user ) ) {
@@ -87,7 +87,7 @@ class BanPests {
 		);
 	}
 
-	static function getBannablePages( $user ) {
+	public static function getBannablePages( $user ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = null;
 		if( $user ) {
@@ -115,7 +115,7 @@ class BanPests {
 		return $pages;
 	}
 
-	static function banIPs( $ips, $banningUser, $sp = null ) {
+	public static function banIPs( $ips, $banningUser, $sp = null ) {
 		$ret = array();
 		foreach( (array)$ips as $ip ) {
 			if( !Block::newFromTarget( $ip ) ) {
@@ -149,12 +149,19 @@ class BanPests {
 		return (bool)$ret;
 	}
 
-	static function banUser( $user, $banningUser, $spammer, $um ) {
+	/**
+	 * @param User $user User to be banned
+	 * @param User $banningUser User doing the ban
+	 * @param User $spammer User for account to be merged into if UserMerge installed
+	 * @return array|bool|null
+	 */
+	public static function banUser( $user, $banningUser, $spammer ) {
 		$ret = null;
 		if ( !is_object( $user ) ) {
 			/* Skip this one */
-		} elseif ( $user->getID() != 0 && $um ) {
-			$ret = $um->merge( $user, $spammer, "block", $banningUser );
+		} elseif ( $user->getID() != 0 && class_exists( "MergeUser" ) ) {
+			$um = new MergeUser( $spammer, $user );
+			$ret = $um->merge( $banningUser, __METHOD__ );
 		} else {
 			if( !Block::newFromTarget( $user->getName() ) ) {
 				$blk = new Block(
@@ -183,7 +190,7 @@ class BanPests {
 		return $ret;
 	}
 
-	static function blockUser($user, $user_id, $banningUser, $spammer, $um) {
+	public static function blockUser($user, $user_id, $banningUser, $spammer ) {
 		$ret = array();
 		for($c = 0; $c < max( count($user), count($user_id) ); $c++ ){
 			if( isset( $user[$c] ) ) {
@@ -191,13 +198,13 @@ class BanPests {
 			} elseif( isset( $user_id[$c] ) ) {
 				$thisUserObj = User::newFromId( $user_id[$c] );
 			}
-			$ret[] = self::banUser( $thisUserObj, $banningUser, $spammer, $um );
+			$ret[] = self::banUser( $thisUserObj, $banningUser, $spammer );
 		}
 		$ret = array_filter( $ret );
 		return (bool)$ret;
 	}
 
-	static function deletePage( $title, $sp = null ) {
+	public static function deletePage( $title, $sp = null ) {
 		$ret = null;
 		$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 		if ( $file ) {
@@ -217,7 +224,7 @@ class BanPests {
 		return $ret;
 	}
 
-	static function deletePages( $pages, $sp = null ) {
+	public static function deletePages( $pages, $sp = null ) {
 		$ret = array();
 		foreach( (array)$pages as $page ) {
 			$ret[] = self::deletePage( Title::newFromText( $page ), $sp );

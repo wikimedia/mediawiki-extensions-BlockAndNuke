@@ -53,10 +53,6 @@ class BanHammer extends Maintenance {
 
 		$spammer = User::newFromName( $wgBaNSpamUser );
 		$banningUser = User::newFromName( "WikiSysop" );
-		$um = null;
-		if( class_exists( "UserMerger" ) ) {
-			$um = new UserMerger( null );
-		}
 		if( count( $bannable ) ) {
 			$this->maybeOutput( "Users\n" );
 			foreach( $bannable as $user ) {
@@ -70,7 +66,7 @@ class BanHammer extends Maintenance {
 				if( $real ) {
 					$this->maybeOutput( " ... banning\n" );
 					if( $u !== false ) {
-						BanPests::banUser( $u, $banningUser, $spammer, $um );
+						BanPests::banUser( $u, $banningUser, $spammer );
 					}
 					if( $ips ) {
 						foreach($ips as $ip) {

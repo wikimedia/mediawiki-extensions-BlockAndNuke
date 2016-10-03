@@ -22,9 +22,6 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		$um = null;
 		$spammer = User::newFromName( $wgBaNSpamUser );
-		if( class_exists( 'UserMerger' ) && $spammer->getID() != 0 )  {
-			$um = new UserMerger( $this );
-		}
 		$posted = $wgRequest->wasPosted();
 		if( $posted ) {
 			$user_id = $wgRequest->getArray( 'userid' );
@@ -39,7 +36,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			} elseif( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
 				$wgOut->addHTML( $this->msg( 'blockandnuke-banning' )->escaped() );
 				$v = false;
-				$v = BanPests::blockUser( $user_2, $user_id, $wgUser, $spammer, $um )
+				$v = BanPests::blockUser( $user_2, $user_id, $wgUser, $spammer )
 					|| BanPests::deletePages( $pages, $this )
 					|| BanPests::banIPs( $ips, $wgUser, $this );
 				if( !$v ) {
