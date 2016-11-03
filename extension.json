@@ -8,7 +8,6 @@
 	"descriptionmsg": "blockandnuke-desc",
 	"license-name": "GPL-3.0+",
 	"type": "specialpage",
-	"callback": "BlockAndNukeHooks::onRegistration",
 	"GroupPermissions": {
 		"sysop": {
 			"blockandnuke": true
@@ -35,8 +34,13 @@
 		"LanguageGetSpecialPageAliases": "BlockAndNukeHooks::onLanguageGetSpecialPageAliases"
 	},
 	"config": {
-		"BaNwhitelist": null,
-		"BaNSpamUser": "Spammer"
+		"BaNwhitelist": {
+			"value": "whitelist.txt",
+			"path": true
+		},
+		"BaNSpamUser": {
+			"value": "Spammer"
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
