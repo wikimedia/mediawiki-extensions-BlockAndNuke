@@ -105,13 +105,14 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		$pages = BanPests::getBannablePages( $user );
 		$ips = BanPests::getBannableIP( $user );
+		$linkRenderer = $this->getLinkRenderer();
 
 		if( count( $pages ) ) {
 			$wgOut->addHTML( "<h2>" . $this->msg( "blockandnuke-pages" )->escaped() . "</h2>" );
 
 			$wgOut->addHtml( "<ul>" );
 			foreach( $pages as $title ) {
-				$wgOut->addHtml( "<li>". Linker::link( $title ) );
+				$wgOut->addHtml( "<li>". $linkRenderer->makeLink( $title ) );
 				$wgOut->addHtml( Html::hidden( 'pages[]', $title ) );
 			}
 			$wgOut->addHtml( "</ul>\n" );
@@ -144,7 +145,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 						$seen[$user_2] = true;
 						$wgOut->addHtml(
 							"<li>" .
-							Linker::link( Title::newFromText( $user_2, NS_USER ) )
+							$linkRenderer->makeLink( Title::newFromText( $user_2, NS_USER ) )
 						);
 						$wgOut->addHTML(
 							Html::hidden( 'names_2[]', $user_2 ).
@@ -166,7 +167,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 					$seen[$ip] = true;
 					$wgOut->addHtml(
 						"<li>" .
-						Linker::link( Title::newFromText( $ip, NS_USER ) )
+						$linkRenderer->makeLink( Title::newFromText( $ip, NS_USER ) )
 					);
 					$wgOut->addHTML( Html::hidden( 'ip[]', $ip ) );
 				}
