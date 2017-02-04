@@ -25,14 +25,16 @@
 			"i18n"
 		]
 	},
+	"ExtensionMessagesFiles": {
+		"BlockAndNukeAlias": "BlockAndNuke.alias.php"
+	},
 	"AutoloadClasses": {
 		"SpecialBlock_Nuke": "BlockAndNuke.body.php",
 		"BanPests": "BanPests.php",
 		"BlockAndNukeHooks": "BlockAndNuke.hooks.php"
 	},
 	"Hooks": {
-		"PerformRetroactiveAutoblock": "BlockAndNukeHooks::onPerformRetroactiveAutoblock",
-		"LanguageGetSpecialPageAliases": "BlockAndNukeHooks::onLanguageGetSpecialPageAliases"
+		"PerformRetroactiveAutoblock": "BlockAndNukeHooks::onPerformRetroactiveAutoblock"
 	},
 	"config": {
 		"BaNwhitelist": {
