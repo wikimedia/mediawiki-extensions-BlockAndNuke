@@ -206,7 +206,7 @@ class BanPests {
 
 	public static function deletePage( $title, $sp = null ) {
 		$ret = null;
-		$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
+		$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
 		if ( $file ) {
 			$reason= wfMessage( "blockandnuke-delete-file" )->text();
 			$oldimage = null; // Must be passed by reference
