@@ -12,9 +12,7 @@ class BanPests {
 			throw new MWException( 'You need to specify a whitelist!  $wgBaNwhitelist should point to a filename that contains the whitelist.' );
 		}
 
-		$fh = fopen($wgBaNwhitelist, 'r');
-		$file = fread($fh,200);
-		fclose($fh);
+		$file = file_get_contents( $wgBaNwhitelist );
 		return (preg_split('/\r\n|\r|\n/', $file));
 	}
 
