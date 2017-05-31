@@ -14,9 +14,7 @@ class BanPests {
 			);
 		}
 
-		$fh = fopen( $wgBaNwhitelist, 'r' );
-		$file = fread( $fh, 200 );
-		fclose( $fh );
+		$file = file_get_contents( $wgBaNwhitelist );
 		return preg_split( '/\r\n|\r|\n/', $file );
 	}
 
