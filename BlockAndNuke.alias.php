@@ -13,3 +13,8 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'BlockandNuke' => array( 'BlockandNuke' ),
 );
+
+/** Spanish (español) */
+$specialPageAliases['es'] = array(
+	'BlockandNuke' => array( 'Bloquear_y_borrar' ),
+);
