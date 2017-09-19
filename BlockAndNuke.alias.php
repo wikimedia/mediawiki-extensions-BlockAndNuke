@@ -5,16 +5,15 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'BlockandNuke' => array( 'BlockandNuke' ),
-);
+$specialPageAliases['en'] = [
+	'BlockandNuke' => [ 'BlockandNuke' ],
+];
 
 /** Spanish (español) */
-$specialPageAliases['es'] = array(
-	'BlockandNuke' => array( 'Bloquear_y_borrar' ),
-);
+$specialPageAliases['es'] = [
+	'BlockandNuke' => [ 'Bloquear_y_borrar' ],
+];
