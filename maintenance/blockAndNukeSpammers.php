@@ -1,6 +1,16 @@
 <?php
 
-require_once( dirname( dirname( __DIR__ ) ) . '/maintenance/Maintenance.php' );
+/**
+ * Aggresive maintenance script to block recent users not found in the whitelist.txt
+ * extension file and mass deleting its contributions.
+ *
+ * PLEASE USE WITH CAUTION. ALL USERS *NOT* IN THE WHITELIST WILL BE BLOCKED AND ITS
+ * CONTRIBUTIONS DELETED!
+ *
+ * @license GPL-3.0+ <https://www.gnu.org/licenses/gpl-3.0.html>
+ */
+
+require_once( dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenance.php' );
 
 class BanHammer extends Maintenance {
 	public function __construct() {
