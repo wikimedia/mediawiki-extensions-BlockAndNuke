@@ -1,18 +1,19 @@
 <?php
 
-if( !defined( 'MEDIAWIKI' ) )
+if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
+}
 
 class SpecialBlock_Nuke extends SpecialPage {
 	function __construct() {
-		//restrict access only to users with blockandnuke right
+		// restrict access only to users with blockandnuke right
 		parent::__construct( 'blockandnuke', 'blockandnuke' );
 	}
 
-	function execute( $par ){
+	function execute( $par ) {
 		global $wgUser, $wgRequest, $wgOut, $wgBaNSpamUser;
 
-		if( !$this->userCanExecute( $wgUser ) ){
+		if ( !$this->userCanExecute( $wgUser ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -23,23 +24,23 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$um = null;
 		$spammer = User::newFromName( $wgBaNSpamUser );
 		$posted = $wgRequest->wasPosted();
-		if( $posted ) {
+		if ( $posted ) {
 			$user_id = $wgRequest->getArray( 'userid' );
 			$user = $wgRequest->getArray( 'names' );
 			$pages = $wgRequest->getArray( 'pages' );
 			$user_2 = $wgRequest->getArray( 'names_2' );
 			$ips = $wgRequest->getArray( 'ip' );
 
-			if($user){
+			if ( $user ) {
 				$wgOut->addHTML( $this->msg( 'blockandnuke-banhammer' )->escaped() );
-				$this->getNewPages($user);
-			} elseif( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
+				$this->getNewPages( $user );
+			} elseif ( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
 				$wgOut->addHTML( $this->msg( 'blockandnuke-banning' )->escaped() );
 				$v = false;
 				$v = BanPests::blockUser( $user_2, $user_id, $wgUser, $spammer )
 					|| BanPests::deletePages( $pages, $this )
 					|| BanPests::banIPs( $ips, $wgUser, $this );
-				if( !$v ) {
+				if ( !$v ) {
 					$wgOut->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
 				}
 			} else {
@@ -58,22 +59,22 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		$wgOut->addWikiMsg( 'blockandnuke-tools' );
 		$wgOut->addHTML(
-			Xml::openElement( 'form', array(
+			Xml::openElement( 'form', [
 				'action' => $this->getTitle()->getLocalURL( 'action=submit' ),
-				'method' => 'post' )
+				'method' => 'post' ]
 			).
 			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ).
 			( '<ul>' )
 		);
 
-		//make into links  $sk = $wgUser->getSkin();
+		// make into links  $sk = $wgUser->getSkin();
 
-		foreach($names as $user){
+		foreach ( $names as $user ) {
 			if ( !in_array( $user, $whitelist ) ) {
 				$wgOut->addHTML(
 					'<li>' .
 					Xml::check( 'names[]', true,
-						array( 'value' =>  $user )
+						[ 'value' => $user ]
 					) .
 					$user .
 					"</li>\n"
@@ -88,16 +89,16 @@ class SpecialBlock_Nuke extends SpecialPage {
 		);
 	}
 
-	function getNewPages($user) {
+	function getNewPages( $user ) {
 		global $wgOut, $wgUser;
 
 		$wgOut->addHTML(
 			Xml::openElement(
 				'form',
-				array(
+				[
 					'action' => $this->getTitle()->getLocalURL( 'action=delete' ),
 					'method' => 'post'
-				)
+				]
 			) .
 			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ) .
 			'<ul>'
@@ -107,41 +108,41 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$ips = BanPests::getBannableIP( $user );
 		$linkRenderer = $this->getLinkRenderer();
 
-		if( count( $pages ) ) {
+		if ( count( $pages ) ) {
 			$wgOut->addHTML( "<h2>" . $this->msg( "blockandnuke-pages" )->escaped() . "</h2>" );
 
 			$wgOut->addHtml( "<ul>" );
-			foreach( $pages as $title ) {
+			foreach ( $pages as $title ) {
 				$wgOut->addHtml( "<li>". $linkRenderer->makeLink( $title ) );
 				$wgOut->addHtml( Html::hidden( 'pages[]', $title ) );
 			}
 			$wgOut->addHtml( "</ul>\n" );
 		}
 
-		if( count( $user ) ) {
+		if ( count( $user ) ) {
 			$wgOut->addHTML( "<h2>" . $this->msg( "blockandnuke-users" )->escaped() . "</h2>" );
 
-			foreach($user as $users){
-				$dbr = wfGetDB( DB_SLAVE );
+			foreach ( $user as $users ) {
+				$dbr = wfGetDB( DB_REPLICA );
 				$result = $dbr->select(
 					'recentchanges',
-					array( 'rc_user', 'rc_user_text' ),
-					array( 'rc_user_text' => $users ),
+					[ 'rc_user', 'rc_user_text' ],
+					[ 'rc_user_text' => $users ],
 					__METHOD__,
-					array(
+					[
 						'ORDER BY' => 'rc_user ASC',
-					)
+					]
 				);
-				$name = array();
-				foreach( $result as $row ) {
-					$name[] = array( $row->rc_user_text, $row->rc_user );
+				$name = [];
+				foreach ( $result as $row ) {
+					$name[] = [ $row->rc_user_text, $row->rc_user ];
 				}
 
 				$wgOut->addHtml( "<ul>" );
-				$seen = array();
-				foreach( $name as $infos ) {
+				$seen = [];
+				foreach ( $name as $infos ) {
 					list( $user_2, $user_id ) = $infos;
-					if( !isset( $seen[$user_2] ) ) {
+					if ( !isset( $seen[$user_2] ) ) {
 						$seen[$user_2] = true;
 						$wgOut->addHtml(
 							"<li>" .
@@ -157,13 +158,13 @@ class SpecialBlock_Nuke extends SpecialPage {
 			}
 		}
 
-		if( $ips ) {
+		if ( $ips ) {
 			$wgOut->addHTML( "<h2>" . $this->msg( "blockandnuke-ip-addresses" )->escaped() . "</h2>" );
 
-			foreach( $ips as $ip ) {
+			foreach ( $ips as $ip ) {
 				$wgOut->addHtml( "<ul>" );
-				$seen = array();
-				if( !isset( $seen[$ip] ) ) {
+				$seen = [];
+				if ( !isset( $seen[$ip] ) ) {
 					$seen[$ip] = true;
 					$wgOut->addHtml(
 						"<li>" .

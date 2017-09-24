@@ -1,6 +1,7 @@
+*.kate-swp
+*~
+.*.swp
+.svn
 /node_modules/
 /vendor/
-.svn
-*~
-*.kate-swp
-.*.swp
+composer.lock

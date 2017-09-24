@@ -10,7 +10,7 @@
  * @license GPL-3.0+ <https://www.gnu.org/licenses/gpl-3.0.html>
  */
 
-require_once( dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenance.php' );
+require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenance.php';
 
 class BanHammer extends Maintenance {
 	public function __construct() {
@@ -22,7 +22,7 @@ class BanHammer extends Maintenance {
 	}
 
 	public function maybeOutput( $str ) {
-		if(!$this->hasOption( "brief" ) ){
+		if ( !$this->hasOption( "brief" ) ) {
 			$this->output( $str );
 		}
 	}
@@ -30,10 +30,10 @@ class BanHammer extends Maintenance {
 	public function execute() {
 		global $wgBaNSpamUser;
 
-		$this->output( "Starting ");
+		$this->output( "Starting " );
 		$real = $this->hasOption( "hammer" );
 		$brief = $this->hasOption( "brief" );
-		if( !$real ) {
+		if ( !$real ) {
 			$this->output( "dry run\n" );
 		} else {
 			$this->output( "\n" );
@@ -47,12 +47,12 @@ class BanHammer extends Maintenance {
 				"Found %d bannable users and %d pages:\n", count( $bannable ), count( $pages )
 			)
 		);
-		if( count( $pages ) ) {
+		if ( count( $pages ) ) {
 			$this->maybeOutput( "Pages\n" );
-			foreach( $pages as $page ) {
-				if( $page ) {
+			foreach ( $pages as $page ) {
+				if ( $page ) {
 					$this->maybeOutput( "\t$page" );
-					if( $real ) {
+					if ( $real ) {
 						$this->maybeOutput( " ... deleting\n" );
 						BanPests::deletePage( $page );
 					} else {
@@ -64,30 +64,30 @@ class BanHammer extends Maintenance {
 
 		$spammer = User::newFromName( $wgBaNSpamUser );
 		$banningUser = User::newFromName( "WikiSysop" );
-		if( count( $bannable ) ) {
+		if ( count( $bannable ) ) {
 			$this->maybeOutput( "Users\n" );
-			foreach( $bannable as $user ) {
+			foreach ( $bannable as $user ) {
 				$this->maybeOutput( "\t$user" );
 				$u = User::newFromName( $user );
 				if ( $u === false ) {
-					$ips = array( $user );
+					$ips = [ $user ];
 				} else {
 					$ips = BanPests::getBannableIP( $u );
 				}
-				if( $real ) {
+				if ( $real ) {
 					$this->maybeOutput( " ... banning\n" );
-					if( $u !== false ) {
+					if ( $u !== false ) {
 						BanPests::banUser( $u, $banningUser, $spammer );
 					}
-					if( $ips ) {
-						foreach($ips as $ip) {
+					if ( $ips ) {
+						foreach ( $ips as $ip ) {
 							$this->maybeOutput( "\t\tEnsuring ban on $ip\n" );
-							BanPests::banIPs( $ip, $banningUser  );
+							BanPests::banIPs( $ip, $banningUser );
 						}
 					}
 				} else {
 					$this->maybeOutput( "\n" );
-					foreach($ips as $ip) {
+					foreach ( $ips as $ip ) {
 						$this->maybeOutput( "\t\t{$ip}\n" );
 					}
 				}
@@ -97,4 +97,4 @@ class BanHammer extends Maintenance {
 }
 
 $maintClass = "BanHammer";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;
