@@ -186,4 +186,15 @@ class SpecialBlock_Nuke extends SpecialPage {
 	protected function getGroupName() {
 		return 'pagetools';
 	}
+	
+	public function getLinkRenderer() {
+                $link = new linkRenderer();
+                return $link;
+        }
+}
+
+class linkRenderer {
+        public function makeLink($link) {
+                return $link;
+        }
 }
