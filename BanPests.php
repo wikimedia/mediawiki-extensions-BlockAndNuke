@@ -139,7 +139,7 @@ class BanPests {
 					);
 					$ret[] = $ip;
 					if ( $sp ) {
-						$sp->getOutput()->addHTML( wfMessage( "blockandnuke-banned-ip", $ip ) );
+						$sp->getOutput()->addHTML( wfMessage( "blockandnuke-banned-ip", $ip ) . '<br>' );
 					}
 				}
 			}
@@ -218,7 +218,7 @@ class BanPests {
 				$article = new Article( $title );
 				$ret = $article->doDelete( $reason );
 				if ( $ret && $sp ) {
-					$sp->getOutput()->addHTML( wfMessage( "blockandnuke-deleted-page", $title ) );
+					$sp->getOutput()->addHTML( wfMessage( "blockandnuke-deleted-page", $title ) . '<br>' );
 				}
 			}
 		}

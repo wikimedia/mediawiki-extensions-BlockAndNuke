@@ -35,7 +35,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 				$wgOut->addHTML( $this->msg( 'blockandnuke-banhammer' )->escaped() );
 				$this->getNewPages( $user );
 			} elseif ( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
-				$wgOut->addHTML( $this->msg( 'blockandnuke-banning' )->escaped() );
+				$wgOut->addHTML( $this->msg( 'blockandnuke-banning' )->escaped() . '<br>' );
 				$v = false;
 				$v = BanPests::blockUser( $user_2, $user_id, $wgUser, $spammer )
 					|| BanPests::deletePages( $pages, $this )
