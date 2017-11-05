@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wladek92"
+		]
+	},
+	"blockandnuke-defaultreason": "Supression massive de pages ajoutées par $1",
+	"blockandnuke-submit-user": "Bloquer les utilisateurs",
+	"blockandnuke-nothing-to-do": "Rien à faire.",
+	"blockandnuke-banning": "Exclusion en cours ...",
+	"blockandnuke-deleted-page": "Supprimé(s) $1",
+	"blockandnuke-banned-ip": "Adresse IP exclue $1",
+	"blockandnuke-ip-addresses": "Adresses IP",
+	"blockandnuke-users": "Utilisateurs",
+	"blockandnuke-pages": "Pages"
+}

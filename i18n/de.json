@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"FriedhelmW",
+			"Metalhead64"
+		]
+	},
+	"action-blockandnuke": "Seiten zu sperren und massenhaft zu löschen",
+	"blockandnuke": "Sperren und Massenlöschung",
+	"blockandnuke-confirm": "Klicke auf die Schaltfläche, um die ausgewählten Benutzer zu sperren und all ihre Beiträge zu löschen.\n\n(Deaktiviere keines der unten stehenden Kästchen)",
+	"blockandnuke-desc": "Gibt Administratoren die Möglichkeit zum [[Special:BlockandNuke|Sperren und Massenlöschen]] von Seiten",
+	"blockandnuke-nopages": "Keine neuen Seiten von [[Special:Contributions/$1|$1]] in den Letzten Änderungen.",
+	"blockandnuke-list": "Die folgenden Seiten wurden kürzlich von [[Special:Contributions/$1|$1]] erstellt. Füge einen Kommentar ein und klicke auf die Schaltfläche, um sie zu löschen.",
+	"blockandnuke-defaultreason": "Massenlöschung von Seiten, die von $1 hinzugefügt wurden",
+	"blockandnuke-delete-file": "Sperren und Massenlöschung: Spam löschen",
+	"blockandnuke-delete-article": "Sperren und Massenlöschung: Spamartikel löschen",
+	"blockandnuke-tools": "Liste der Benutzer, die kürzlich Bearbeitungen durchgeführt haben und die nicht auf der weißen Liste gefunden wurden:\n\nUm einen Benutzer zur weißen Liste hinzuzufügen, bearbeite die Datei extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Benutzer sperren",
+	"blockandnuke-submit-delete": "Sperren und Massenlöschung",
+	"blockandnuke-block": "Die ausgewählten Benutzer wurden gesperrt und ihre Beiträge gelöscht.",
+	"blockandnuke-message": "Von Sperren und Massenlöschung gesperrte Benutzer.",
+	"blockandnuke-banhammer": "Um die ausgewählten Benutzer zu sperren und all ihre Beiträge zu löschen, klicke auf die unten stehende Schaltfläche.",
+	"blockandnuke-nothing-to-do": "Nichts zu tun!",
+	"blockandnuke-banning": "Sperren …",
+	"blockandnuke-deleted-page": "$1 gelöscht",
+	"blockandnuke-banned-ip": "IP-Adresse $1 gesperrt",
+	"blockandnuke-ip-addresses": "IP-Adressen",
+	"blockandnuke-users": "Benutzer",
+	"blockandnuke-pages": "Seiten"
+}

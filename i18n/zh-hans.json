@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"action-blockandnuke": "封禁并大量删除",
+	"blockandnuke": "封禁并大量删除",
+	"blockandnuke-confirm": "点击封禁并大量删除按钮来封禁选定用户，并删除其各自的贡献。\n\n（不要取消勾选下面任何复选框）",
+	"blockandnuke-desc": "让管理员可以[[Special:BlockandNuke|封禁并大量删除]]页面",
+	"blockandnuke-nopages": "在最近更改中没有[[Special:Contributions/$1|$1]]创建的新页面。",
+	"blockandnuke-list": "以下为[[Special:Contributions/$1|$1]]最近创建的页面；请填写注释再点击按钮删除它们。",
+	"blockandnuke-defaultreason": "大量移除$1添加的页面",
+	"blockandnuke-delete-file": "封禁并大量删除破坏",
+	"blockandnuke-delete-article": "封禁并大量删除破坏条目。",
+	"blockandnuke-tools": "最近有贡献，且并未在白名单中找到的用户列表：\n\n要添加用户至白名单，请编辑“extensions/BlockandNuke/whitelist.txt”",
+	"blockandnuke-submit-user": "封禁用户",
+	"blockandnuke-submit-delete": "封禁并大量删除",
+	"blockandnuke-block": "选定用户已封禁，并且其贡献均已删除。",
+	"blockandnuke-message": "用户已由封禁并大量删除扩展所封禁。",
+	"blockandnuke-banhammer": "要封禁选定用户，并删除其贡献，请点击下面的按钮。",
+	"blockandnuke-nothing-to-do": "没有要做的事！",
+	"blockandnuke-banning": "正在封禁",
+	"blockandnuke-deleted-page": "已删除$1",
+	"blockandnuke-banned-ip": "已封禁IP$1",
+	"blockandnuke-ip-addresses": "IP地址",
+	"blockandnuke-users": "用户",
+	"blockandnuke-pages": "页面"
+}

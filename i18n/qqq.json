@@ -1,5 +1,9 @@
 {
-	"@metadata": {},
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
 	"action-blockandnuke": "{{doc-action|blockandnuke}}",
 	"blockandnuke": "{{doc-special}}",
 	"blockandnuke-confirm": "A button text",
@@ -20,6 +24,6 @@
 	"blockandnuke-deleted-page": "A success message",
 	"blockandnuke-banned-ip": "A success message",
 	"blockandnuke-ip-addresses": "A header message",
-	"blockandnuke-users": "A header message",
-	"blockandnuke-pages": "A header message"
+	"blockandnuke-users": "A header message\n{{Identical|User}}",
+	"blockandnuke-pages": "A header message\n{{Identical|Page}}"
 }

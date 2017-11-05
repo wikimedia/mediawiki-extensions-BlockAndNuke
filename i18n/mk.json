@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"action-blockandnuke": "Блокирај и онеспособи",
+	"blockandnuke": "Блокирај и онеспособи",
+	"blockandnuke-confirm": "Стиснете на копчето „Блокирај и онеспособи“ за да ги блокирате избраните корисници и да им ги избришете сите придонеси.\n\n(Не отштиклирајте ништо од долунаведени кутивчиња)",
+	"blockandnuke-desc": "Им овозможува на администраторите да [[Special:BlockandNuke|блокираат и онеспособуваат]] страници",
+	"blockandnuke-nopages": "Нема нови страници од [[Special:Contributions/$1|$1]] во скорешните промени.",
+	"blockandnuke-list": "Следниве корисници се неодамна создадени со [[Special:Contributions/$1|$1]]; внесете коментар и стиснете на копчето за да ги избришете.",
+	"blockandnuke-defaultreason": "Масовно отстранување на страници додадени од $1",
+	"blockandnuke-delete-file": "Бришење спам со „Блокирај и онеспособи“",
+	"blockandnuke-delete-article": "Бришење спам-статии со „Блокирај и онеспособи“.",
+	"blockandnuke-tools": "Список на корисници што неодамна учествувале, но ги нема на белиот список:\n\nЗа да ставите корисник на белиот список, внесете го во extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Блокирај корисници",
+	"blockandnuke-submit-delete": "Блокирај и онеспособи",
+	"blockandnuke-block": "Избраните корисници се блокирани и нивните продонеси се избришани.",
+	"blockandnuke-message": "Корисниците се блокирани со „Блокирај и онеспособи“.",
+	"blockandnuke-banhammer": "За да ги блокирате избраните корисници и да им ги избришете сите нивни придонеси, стиснете на копчето подолу.",
+	"blockandnuke-nothing-to-do": "Нема што да се изврши!",
+	"blockandnuke-banning": "Забранувам...",
+	"blockandnuke-deleted-page": "Избришан $1",
+	"blockandnuke-banned-ip": "Забранета IP-адресата $1",
+	"blockandnuke-ip-addresses": "IP-адреси",
+	"blockandnuke-users": "Корисници",
+	"blockandnuke-pages": "Страници"
+}
