@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"blockandnuke-defaultreason": "Rimozione massiva delle pagine aggiunte da $1",
+	"blockandnuke-submit-user": "Blocca utenti",
+	"blockandnuke-message": "Utenti bloccati da BlockandNuke.",
+	"blockandnuke-ip-addresses": "Indirizzi IP",
+	"blockandnuke-users": "Utenti",
+	"blockandnuke-pages": "Pagine"
+}

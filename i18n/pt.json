@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"action-blockandnuke": "Bloquear e erradicar",
+	"blockandnuke": "Bloquear e erradicar",
+	"blockandnuke-confirm": "Clicar o botão \"Bloquear e erradicar\" para bloquear os utilizadores selecionados e eliminar todas as suas contribuições.\n\n(Não desmarque nenhuma das caixas abaixo)",
+	"blockandnuke-desc": "Dá aos administradores a capacidade de [[Special:BlockandNuke|bloquear e erradicar]] páginas",
+	"blockandnuke-nopages": "Não existem páginas novas de [[Special:Contributions/$1|$1]] nas mudanças recentes.",
+	"blockandnuke-list": "As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]]; \nintroduza um comentário e pressione o botão para eliminá-las.",
+	"blockandnuke-defaultreason": "Remoção em massa de páginas adicionadas por $1",
+	"blockandnuke-delete-file": "Bloquear e erradicar - eliminar spam",
+	"blockandnuke-delete-article": "Bloquear e erradicar - eliminar artigos de spam.",
+	"blockandnuke-tools": "Lista dos utilizadores com contribuições recentes e que não se encontram na lista branca:\n\nPara adicionar um utilizador à lista branca, edite o ficheiro extensions/BloackandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Bloquear utilizadores",
+	"blockandnuke-submit-delete": "Bloquear e erradicar",
+	"blockandnuke-block": "Os utilizadores selecionadas foram bloqueados e as suas contribuições eliminadas.",
+	"blockandnuke-message": "Utilizadores bloqueados por \"Bloquear e erradicar\".",
+	"blockandnuke-banhammer": "Para bloquear os utilizadores selecionados e eliminar todas as contribuições dos mesmos, clique o botão abaixo.",
+	"blockandnuke-nothing-to-do": "Nada para fazer!",
+	"blockandnuke-banning": "A banir...",
+	"blockandnuke-deleted-page": "$1 foi eliminada",
+	"blockandnuke-banned-ip": "Endereço IP $1 foi banido",
+	"blockandnuke-ip-addresses": "Endereços IP",
+	"blockandnuke-users": "Utilizadores",
+	"blockandnuke-pages": "Páginas"
+}

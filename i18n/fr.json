@@ -1,11 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wladek92"
+			"Wladek92",
+			"Gomoko"
 		]
 	},
+	"action-blockandnuke": "Bloquer et faire exploser",
+	"blockandnuke": "Bloquer et faire exploser",
+	"blockandnuke-confirm": "Cliquer sur le bouton BlockandNuke pour bloquer les utilisateurs sélectionnés et supprimer toutes leurs contributions.\n\n(Ne pas décocher les cases ci-dessous)",
+	"blockandnuke-desc": "Donne aux administrateurs la possibilité de [[Special:BlockandNuke|Bloquer et faire exploser]] les pages",
+	"blockandnuke-nopages": "Aucune nouvelle page par [[Special:Contributions/$1|$1]] dans les modifications récentes.",
+	"blockandnuke-list": "La page suivante a été récemment créée par [[Special:Contributions/$1|$1]] ; mettre un commentaire et appuyer sur le bouton pour les supprimer.",
 	"blockandnuke-defaultreason": "Supression massive de pages ajoutées par $1",
 	"blockandnuke-submit-user": "Bloquer les utilisateurs",
+	"blockandnuke-message": "Utilisateurs bloqués par BlockandNuke.",
 	"blockandnuke-nothing-to-do": "Rien à faire.",
 	"blockandnuke-banning": "Exclusion en cours ...",
 	"blockandnuke-deleted-page": "Supprimé(s) $1",

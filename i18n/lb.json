@@ -4,7 +4,11 @@
 			"Robby"
 		]
 	},
+	"blockandnuke-nopages": "Keng nei Säite vum [[Special:Contributions/$1|$1]] an de rezenten Ännerungen.",
+	"blockandnuke-submit-user": "Benotzer spären",
+	"blockandnuke-nothing-to-do": "Näischt ze maachen!",
 	"blockandnuke-deleted-page": "$1 gouf geläscht",
+	"blockandnuke-ip-addresses": "IP-Adressen",
 	"blockandnuke-users": "Benotzer",
 	"blockandnuke-pages": "Säiten"
 }
