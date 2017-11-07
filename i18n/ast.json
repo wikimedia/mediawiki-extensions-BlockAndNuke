@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"action-blockandnuke": "bloquiar y desaniciar en masa",
+	"blockandnuke": "Bloquiar y desaniciar en masa",
+	"blockandnuke-confirm": "Pulsia nel botón BlockandNuke pa bloquiar a los usuarios seleicionaos y desaniciar toles sos contribuciones.\n\n(Nun desmarques nenguna caxella más abaxo)",
+	"blockandnuke-desc": "Da a los alministradores la capacidá de [[Special:BlockandNuke|bloquiar y desaniciar páxines en masa]]",
+	"blockandnuke-nopages": "Nun hai páxines nueves de [[Special:Contributions/$1|$1]] nos cambios recién.",
+	"blockandnuke-list": "[[Special:Contributions/$1|$1]] recién creó les páxines siguientes; escribi un comentariu y prime nel botón pa desaniciales.",
+	"blockandnuke-defaultreason": "Desaniciu en masa de les páxines amestaes por $1",
+	"blockandnuke-delete-file": "Desaniciu de puxarra con BlockandNuke",
+	"blockandnuke-delete-article": "Desaniciu d'artículos puxarra con BlockandNuke.",
+	"blockandnuke-tools": "Llista d'usuarios que contribuyeron recién y nun s'alcuentren na Llista blanca:\n\nP'amestar un usuariu a la llista blanca, edita extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Bloquiar usuarios",
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "Bloquiáronse los usuarios seleicionaos y desaniciáronse les sos contribuciones.",
+	"blockandnuke-message": "Usuarios bloquiaos por BlockandNuke.",
+	"blockandnuke-banhammer": "Pa bloquiar a los usuarios seleicionaos y desaniciar toles sos contribuciones pulsia nel botón más abaxo.",
+	"blockandnuke-nothing-to-do": "¡Nun hai res que facer!",
+	"blockandnuke-banning": "Torgando...",
+	"blockandnuke-deleted-page": "Desaniciáu $1",
+	"blockandnuke-banned-ip": "IP $1 torgada",
+	"blockandnuke-ip-addresses": "Direiciones IP",
+	"blockandnuke-users": "Usuarios",
+	"blockandnuke-pages": "Páxines"
+}

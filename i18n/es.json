@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"KATRINE1992"
+		]
+	},
+	"action-blockandnuke": "Block y Nuke",
+	"blockandnuke": "Block y Nuke",
+	"blockandnuke-confirm": "Clicar al boton BlockandNuke para bloquear los usuarios seleccionados y borrar todas sus contribuciones",
+	"blockandnuke-desc": "Da a los administratores la posibilidad de {{Special:BlockandNuke|Block and Nuke}} paginas",
+	"blockandnuke-nopages": "No hay ninguna página nueva creada por [[Special:Contributions/$1|$1]] en Cambios recientes.",
+	"blockandnuke-list": "Las paginas siguientes han sido creado reciemente [[Special:Contributions/$1|$1]]; escribir un comentario y clicar a un boton para eliminarlas.",
+	"blockandnuke-defaultreason": "Borrado masivo de páginas añadidas por $1",
+	"blockandnuke-delete-file": "BlockandNuke eliminar spam",
+	"blockandnuke-delete-article": "BlockandNuke eliminan los articulos spam",
+	"blockandnuke-tools": "Lista de usuarios que han contribuido recientemente y que no aparecen en la lista blanca:\n\nPara añadir a un usuario a la lista blanca, modifica extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Bloquear usuarios",
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "Los usuarios seleccionados han sido bloqueado y sus contribuciones borrado.",
+	"blockandnuke-message": "Los usuarios han sido bloqueado por BlockandNuke",
+	"blockandnuke-banhammer": "Para bloquear los usuarios seleccionados y borrar todas sus contribuciones, clicar al boton enseguida.",
+	"blockandnuke-nothing-to-do": "No hay nada por hacer.",
+	"blockandnuke-banning": "Expulsando…",
+	"blockandnuke-deleted-page": "Eliminado $1",
+	"blockandnuke-banned-ip": "Se expulsó a la IP $1",
+	"blockandnuke-ip-addresses": "Direcciones IP",
+	"blockandnuke-users": "Usuarios",
+	"blockandnuke-pages": "Páginas"
+}

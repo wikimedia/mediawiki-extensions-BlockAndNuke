@@ -4,7 +4,26 @@
 			"KATRINE1992"
 		]
 	},
+	"action-blockandnuke": "Block και Nuke",
+	"blockandnuke": "Block και Νuke",
+	"blockandnuke-confirm": "Κάνετε κλικ στο κουμπί BlockandNuke για να μπλοκάρετε τους επιλεγμένους χρήστες και να διαγράψετε όλες τις συνεισφορές τους.",
+	"blockandnuke-desc": "Δίνει στους χειριστές την δυνατότητα να [[Special:BlockandNuke|Block and Nuke]] σελίδες",
+	"blockandnuke-nopages": "Δεν υπάρχουν νέες σελίδες του [[Special:Contributions/$1|$1]] στις πρόσφατες αλλαγές..",
+	"blockandnuke-list": "Οι ακόλουθες σελίδες δημιουργήθηκαν πρόσφατα από το  [[Special:Contributions/$1|$1]]; εισάγετε ένα σχόλιο και πατήστε το κουμπί για να τις διαγράψετε.",
+	"blockandnuke-defaultreason": "Μαζική αφαίρεση σελίδων που προστέθηκαν από το $1",
 	"blockandnuke-delete-file": "BlockandNuke delete spam διαγραφή του spam",
+	"blockandnuke-delete-article": "BlockandNuke διαγράφουν τα άρθρα spam.",
+	"blockandnuke-tools": "Για να προσθέσετε έναν χρήστη στις επεκτάσεις έκδοσης της λευκής λίστας/Blockand/Nuke/whitelist txt",
 	"blockandnuke-submit-user": "Χρήστες Μπλοκ",
-	"blockandnuke-nothing-to-do": "Δεν υπάρχει τίποτα να κάνεις!"
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "Οι επιλεγμένοι χρήστες έχουν μπλοκαριστεί και οι συνεισφορές τους διαγραφεί.",
+	"blockandnuke-message": "Μπλοκαρισμένοι χρήστες από το BlockandNuke",
+	"blockandnuke-banhammer": "Για να μπλοκάρετε τους επιλεγμένους χρήστες και να διαγράψετε όλες τις συνεισφορές τους πατήστε το κουμπί κάτω.",
+	"blockandnuke-nothing-to-do": "Δεν υπάρχει τίποτα να κάνεις!",
+	"blockandnuke-banning": "Απαγόρευση..",
+	"blockandnuke-deleted-page": "Διαγράφηκε $1",
+	"blockandnuke-banned-ip": "Απαγορευμένο ΙΡ $1",
+	"blockandnuke-ip-addresses": "ΙΡ Διευθύνσεις",
+	"blockandnuke-users": "Χρήστες",
+	"blockandnuke-pages": "Σελίδες"
 }
