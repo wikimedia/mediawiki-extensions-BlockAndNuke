@@ -4,6 +4,24 @@
 			"Elisardojm"
 		]
 	},
+	"action-blockandnuke": "Bloquear e borrar",
+	"blockandnuke": "Bloquear e borrar",
+	"blockandnuke-confirm": "Premer o botón BlockandNuke para bloquear os usuarios seleccionados e borrar tódalas súas contribucións.\n\n(Non desmarque ningunha das caixas de abaixo)",
+	"blockandnuke-desc": "Proporciona ós administradores a capacidade de [[Special:BlockandNuke|Bloquear e borrar]] páxinas",
+	"blockandnuke-nopages": "Non hai ningunha páxina nova de [[Special:Contributions/$1|$1]] en Cambios recentes.",
+	"blockandnuke-defaultreason": "Borrado masivo de páxinas engadidas por $1",
+	"blockandnuke-delete-file": "Bloquear e borrar - eliminar publicidade",
+	"blockandnuke-delete-article": "Bloquear e borrar - borrar artigos de publicidade.",
+	"blockandnuke-submit-user": "Bloquear os usuarios",
+	"blockandnuke-submit-delete": "Bloquear e borrar",
+	"blockandnuke-block": "Os usuarios seleccionados foron bloqueados e as súas contribucións borradas.",
+	"blockandnuke-message": "Usuarios bloqueados por BlockandNuke (Bloquear e borrar).",
+	"blockandnuke-banhammer": "Para bloquear os usuarios seleccionados e borrar tódalas súas contribucións, prema o botón de abaixo.",
+	"blockandnuke-nothing-to-do": "Nada para facer!",
+	"blockandnuke-banning": "Expulsando…",
+	"blockandnuke-deleted-page": "Eliminado $1",
+	"blockandnuke-banned-ip": "Expulsouse á IP $1",
+	"blockandnuke-ip-addresses": "Enderezos IP",
 	"blockandnuke-users": "Usuarios",
 	"blockandnuke-pages": "Páxinas"
 }
