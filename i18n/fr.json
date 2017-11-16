@@ -2,16 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Wladek92",
-			"Gomoko"
+			"Gomoko",
+			"Urhixidur"
 		]
 	},
-	"action-blockandnuke": "Bloquer et faire exploser",
-	"blockandnuke": "Bloquer et faire exploser",
+	"action-blockandnuke": "Bloquer et annihiler",
+	"blockandnuke": "Bloquer et annihiler",
 	"blockandnuke-confirm": "Cliquer sur le bouton BlockandNuke pour bloquer les utilisateurs sélectionnés et supprimer toutes leurs contributions.\n\n(Ne pas décocher les cases ci-dessous)",
-	"blockandnuke-desc": "Donne aux administrateurs la possibilité de [[Special:BlockandNuke|Bloquer et faire exploser]] les pages",
+	"blockandnuke-desc": "Donne aux administrateurs la possibilité de [[Special:BlockandNuke|Bloquer et annihiler]] les pages",
 	"blockandnuke-nopages": "Aucune nouvelle page par [[Special:Contributions/$1|$1]] dans les modifications récentes.",
 	"blockandnuke-list": "La page suivante a été récemment créée par [[Special:Contributions/$1|$1]] ; mettre un commentaire et appuyer sur le bouton pour les supprimer.",
-	"blockandnuke-defaultreason": "Supression massive de pages ajoutées par $1",
+	"blockandnuke-defaultreason": "Suppression massive de pages ajoutées par $1",
 	"blockandnuke-delete-file": "pourriel supprimé par BlockandNuke",
 	"blockandnuke-delete-article": "Articles de pourriel détruits par BlockandNuke.",
 	"blockandnuke-tools": "Liste des utilisateurs qui ont récemment contribué et ne se trouvent pas dans la liste blanche :\n\nPour ajouter un utilisateur à la liste blanche, modifier extensions/BlockandNuke/whitelist.txt",
@@ -19,10 +20,10 @@
 	"blockandnuke-submit-delete": "BlockandNuke",
 	"blockandnuke-block": "Les utilisateurs sélectionnés ont été bloqués et leurs contributions ont été supprimées.",
 	"blockandnuke-message": "Utilisateurs bloqués par BlockandNuke.",
-	"blockandnuke-banhammer": "Pour bloquer les utilisateurs sélectionnés et supprimer toutes leurs contributions, cliquez sur le bouton ci-dessous.",
+	"blockandnuke-banhammer": "Pour bloquer les utilisateurs sélectionnés et supprimer toutes leurs contributions, cliquez le bouton ci-dessous.",
 	"blockandnuke-nothing-to-do": "Rien à faire.",
 	"blockandnuke-banning": "Exclusion en cours ...",
-	"blockandnuke-deleted-page": "Supprimé(s) $1",
+	"blockandnuke-deleted-page": "$1 {{PLURAL:$1|supprimé|supprimés}}",
 	"blockandnuke-banned-ip": "Adresse IP exclue $1",
 	"blockandnuke-ip-addresses": "Adresses IP",
 	"blockandnuke-users": "Utilisateurs",
