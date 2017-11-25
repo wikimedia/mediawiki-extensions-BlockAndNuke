@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Liuxinyu970226"
 		]
 	},
 	"action-blockandnuke": "{{doc-action|blockandnuke}}",
@@ -23,7 +24,7 @@
 	"blockandnuke-banning": "A processing message",
 	"blockandnuke-deleted-page": "A success message",
 	"blockandnuke-banned-ip": "A success message",
-	"blockandnuke-ip-addresses": "A header message",
+	"blockandnuke-ip-addresses": "A header message\n{{Identical|IP address}}",
 	"blockandnuke-users": "A header message\n{{Identical|User}}",
 	"blockandnuke-pages": "A header message\n{{Identical|Page}}"
 }
