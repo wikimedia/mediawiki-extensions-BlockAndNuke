@@ -5,10 +5,10 @@
 			"KATRINE1992"
 		]
 	},
-	"action-blockandnuke": "Block y Nuke",
-	"blockandnuke": "Block y Nuke",
-	"blockandnuke-confirm": "Clicar al boton BlockandNuke para bloquear los usuarios seleccionados y borrar todas sus contribuciones",
-	"blockandnuke-desc": "Da a los administratores la posibilidad de {{Special:BlockandNuke|Block and Nuke}} paginas",
+	"action-blockandnuke": "Bloquear y destruir",
+	"blockandnuke": "Bloquear y destruir",
+	"blockandnuke-confirm": "Pulsa en el botón «Bloquear y destruir» para bloquear los usuarios seleccionados y eliminar todas sus contribuciones.\n\n(No desmarques ninguna de las casillas siguientes)",
+	"blockandnuke-desc": "Brinda a los administradores la posibilidad de [[Special:BlockandNuke|bloquear y destruir]] páginas",
 	"blockandnuke-nopages": "No hay ninguna página nueva creada por [[Special:Contributions/$1|$1]] en Cambios recientes.",
 	"blockandnuke-list": "Las paginas siguientes han sido creado reciemente [[Special:Contributions/$1|$1]]; escribir un comentario y clicar a un boton para eliminarlas.",
 	"blockandnuke-defaultreason": "Borrado masivo de páginas añadidas por $1",
@@ -18,7 +18,7 @@
 	"blockandnuke-submit-user": "Bloquear usuarios",
 	"blockandnuke-submit-delete": "BlockandNuke",
 	"blockandnuke-block": "Los usuarios seleccionados han sido bloqueado y sus contribuciones borrado.",
-	"blockandnuke-message": "Los usuarios han sido bloqueado por BlockandNuke",
+	"blockandnuke-message": "Usuarios bloqueados por BlockandNuke.",
 	"blockandnuke-banhammer": "Para bloquear los usuarios seleccionados y borrar todas sus contribuciones, clicar al boton enseguida.",
 	"blockandnuke-nothing-to-do": "No hay nada por hacer.",
 	"blockandnuke-banning": "Expulsando…",
