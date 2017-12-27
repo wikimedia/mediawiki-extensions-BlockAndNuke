@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"action-blockandnuke": "Bloquear e erradicar",
+	"blockandnuke": "Bloquear e erradicar",
+	"blockandnuke-desc": "Dá aos administradores a capacidade de [[Special:BlockandNuke|bloquear e erradicar]] páginas",
+	"blockandnuke-nopages": "Não existem páginas novas de [[Special:Contributions/$1|$1]] nas mudanças recentes.",
+	"blockandnuke-defaultreason": "Remoção em massa de páginas adicionadas por $1",
+	"blockandnuke-delete-file": "Bloquear e erradicar - eliminar spam",
+	"blockandnuke-delete-article": "Bloquear e erradicar - eliminar artigos de spam.",
+	"blockandnuke-submit-user": "Bloquear usuário",
+	"blockandnuke-submit-delete": "Bloquear e erradicar",
+	"blockandnuke-nothing-to-do": "Nada para fazer!",
+	"blockandnuke-banning": "Expulsando…",
+	"blockandnuke-deleted-page": "'$1' foi eliminada",
+	"blockandnuke-banned-ip": "Endereço IP $1 foi banido",
+	"blockandnuke-ip-addresses": "Endereços IP",
+	"blockandnuke-users": "Usuários",
+	"blockandnuke-pages": "Páginas"
+}
