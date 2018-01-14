@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otokoume"
+		]
+	},
+	"action-blockandnuke": "ブロックおよび一括削除",
+	"blockandnuke": "ブロックと一括削除",
+	"blockandnuke-confirm": "「ブロック・一括削除」ボタンをクリックすることで、選択した利用者のブロックと投稿記録の削除を行います。\n\n(以下のチェックボックスからチェックを外さないでください)",
+	"blockandnuke-desc": "管理者がページの[[Special:BlockandNuke|一括削除とブロック]]を同時に実行できるようにする",
+	"blockandnuke-nopages": "最近の更新に [[Special:Contributions/$1|$1]] が新規作成したページはありません。",
+	"blockandnuke-list": "[[Special:Contributions/$1|$1]] は最近、以下のページを作成しました。\nこれらを削除するには、理由を記入してボタンを押してください。",
+	"blockandnuke-defaultreason": "$1 が作成したページを一括削除",
+	"blockandnuke-delete-file": "BlockandNuke によりスパムを削除",
+	"blockandnuke-delete-article": "BlockandNuke によりスパム記事を削除しました。",
+	"blockandnuke-tools": "最近編集した、ホワイトリストに存在しない利用者のリストです。\n\nホワイトリストに利用者を追加するには、extensions/BlockandNuke/whitelist.txt を編集してください。",
+	"blockandnuke-submit-user": "利用者をブロック",
+	"blockandnuke-submit-delete": "ブロック・一括削除",
+	"blockandnuke-block": "選択した利用者はブロックされ、投稿記録は削除されました。",
+	"blockandnuke-message": "BlockandNuke により利用者をブロックしました。",
+	"blockandnuke-banhammer": "以下のボタンをクリックすることで、選択した利用者のブロックと投稿記録の削除を行います。",
+	"blockandnuke-nothing-to-do": "実行できるものはありません。",
+	"blockandnuke-banning": "ブロック中...",
+	"blockandnuke-deleted-page": "$1 を削除しました",
+	"blockandnuke-banned-ip": "IP $1 をブロックしました",
+	"blockandnuke-ip-addresses": "IP アドレス",
+	"blockandnuke-users": "利用者",
+	"blockandnuke-pages": "ページ"
+}
