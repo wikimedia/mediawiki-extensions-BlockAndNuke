@@ -1,9 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wirbel78"
+			"Wirbel78",
+			"Mouse21",
+			"Movses"
 		]
 	},
+	"action-blockandnuke": "Блокировка и множественного удаления",
+	"blockandnuke": "Блокировка и множественного удаления",
+	"blockandnuke-confirm": "Нажмите кнопку BlockandNuke, чтобы заблокировать выбранных пользователей и удалить все их вклады.\n\n(Не снимайте ни один из приведенных ниже боксов)",
+	"blockandnuke-desc": "Даёт администраторам возможность [[Special:BlockandNuke|Блокировка и множественного удаления]] страниц",
+	"blockandnuke-nopages": "Не найдено недавно созданных [[Special:Contributions/$1|$1]] страниц.",
+	"blockandnuke-list": "[[Special:Contributions/$1|$1]] недавно были созданы следующие страницы. Чтобы удалить их, введите комментарий и нажмите на кнопку.",
+	"blockandnuke-defaultreason": "Массовое удаление страниц, добавленных $1",
+	"blockandnuke-delete-file": "BlockandNuke удаляет спам",
+	"blockandnuke-delete-article": "BlockandNuke удаляет спам-статьи.",
+	"blockandnuke-tools": "Список пользователей, которые недавно внесли вклад и не найдены в «белом списке»:\n\nЧтобы добавить пользователя в список редактирования белых списков/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Заблокированные участники",
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "Выбранные пользователи заблокированы и их вклад удален.",
+	"blockandnuke-message": "Пользователи заблокированы BlockandNuke.",
+	"blockandnuke-banhammer": "Чтобы заблокировать выбранных пользователей и удалить все их вклады, нажмите кнопку ниже.",
+	"blockandnuke-nothing-to-do": "Нечего делать!",
+	"blockandnuke-banning": "Запрет...",
+	"blockandnuke-deleted-page": "Удалено $1",
+	"blockandnuke-banned-ip": "Запрещено IP $1",
+	"blockandnuke-ip-addresses": "IP-адреса",
 	"blockandnuke-users": "Пользователи",
 	"blockandnuke-pages": "Страницы"
 }
