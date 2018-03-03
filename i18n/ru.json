@@ -9,7 +9,7 @@
 	},
 	"action-blockandnuke": "Block and Nuke",
 	"blockandnuke": "Block and Nuke",
-	"blockandnuke-confirm": "Нажмите кнопку BlockandNuke, чтобы заблокировать выбранных пользователей и удалить все их вклады.\n\n(Не снимайте ни один из приведенных ниже боксов)",
+	"blockandnuke-confirm": "Нажмите кнопку BlockandNuke, чтобы заблокировать выбранных пользователей и удалить весь их вклад.\n\n(Не отменяйте выбор никаких чекбоксов ниже)",
 	"blockandnuke-desc": "Даёт администраторам возможность [[Special:BlockandNuke|Блокировка и множественного удаления]] страниц",
 	"blockandnuke-nopages": "Не найдено недавно созданных [[Special:Contributions/$1|$1]] страниц.",
 	"blockandnuke-list": "[[Special:Contributions/$1|$1]] недавно были созданы следующие страницы. Чтобы удалить их, введите комментарий и нажмите на кнопку.",
