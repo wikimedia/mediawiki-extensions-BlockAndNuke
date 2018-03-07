@@ -16,7 +16,7 @@
 	"blockandnuke-tools": "Lista dos utilizadores com contribuições recentes e que não se encontram na lista branca:\n\nPara adicionar um utilizador à lista branca, edite o ficheiro extensions/BloackandNuke/whitelist.txt",
 	"blockandnuke-submit-user": "Bloquear utilizadores",
 	"blockandnuke-submit-delete": "Bloquear e erradicar",
-	"blockandnuke-block": "Os utilizadores selecionadas foram bloqueados e as suas contribuições eliminadas.",
+	"blockandnuke-block": "Os utilizadores selecionados foram bloqueados e as suas contribuições eliminadas.",
 	"blockandnuke-message": "Utilizadores bloqueados por \"Bloquear e erradicar\".",
 	"blockandnuke-banhammer": "Para bloquear os utilizadores selecionados e eliminar todas as contribuições dos mesmos, clique o botão abaixo.",
 	"blockandnuke-nothing-to-do": "Nada para fazer!",
