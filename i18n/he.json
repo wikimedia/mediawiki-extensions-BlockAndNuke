@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Guycn2"
+		]
+	},
+	"action-blockandnuke": "לחסום משתמשים ולמחוק את כל תרומותיהם",
+	"blockandnuke": "חסימה ומחיקה מרובה",
+	"blockandnuke-confirm": "יש ללחוץ על הכפתור \"חסימה ומחיקה מרובה\" כדי לחסום את המשתמשים שנבחרו ולמחוק את כל תרומותיהם.\n\n(נא לא לבטל את הסימון של אף אחת מהתיבות שלהלן)",
+	"blockandnuke-desc": "מתן אפשרות למפעילי המערכת [[Special:BlockandNuke|לחסום משתמשים ולמחוק את כל תרומותיהם]]",
+	"blockandnuke-nopages": "אין דפים חדשים שנוצרו על־ידי [[Special:Contributions/$1|$1]] ברשימת השינויים האחרונים.",
+	"blockandnuke-list": "הדפים הבאים נוצרו לאחרונה על־ידי [[Special:Contributions/$1|$1]]; יש לכתוב הסבר למחיקה ולאחר מכן ללחוץ על הכפתור כדי למחוק אותם.",
+	"blockandnuke-defaultreason": "מחיקה מרובה של דפים שנוצרו על־ידי $1",
+	"blockandnuke-delete-file": "חסימה ומחיקה מרובה, לצורך מחיקת ספאם",
+	"blockandnuke-delete-article": "חסימה ומחיקה מרובה, לצורך מחיקת ערכי ספאם.",
+	"blockandnuke-tools": "רשימת משתמשים שתרמו לאחרונה ואינם מופיעים ברשימה הלבנה:\n\nכדי להוסיף משתמש לרשימה הלבנה, יש לערוך את הקובץ extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "חסימת משתמשים",
+	"blockandnuke-submit-delete": "חסימה ומחיקה מרובה",
+	"blockandnuke-block": "המשתמשים שנבחרו נחסמו ותרומותיהם נמחקו.",
+	"blockandnuke-message": "משתמשים שנחסמו באמצעות התכונה \"חסימה ומחיקה מרובה\".",
+	"blockandnuke-banhammer": "כדי לחסום את המשתמשים שנבחרו ולמחוק את כל תרומותיהם, יש ללחוץ על הכפתור שלהלן.",
+	"blockandnuke-nothing-to-do": "אין מה לעשות!",
+	"blockandnuke-banning": "החסימה מתבצעת...",
+	"blockandnuke-deleted-page": "$1 {{PLURAL:$1|נמחק|נמחקו}}",
+	"blockandnuke-banned-ip": "כתובת ה־IP&rlm; $1 נחסמה",
+	"blockandnuke-ip-addresses": "כתובות IP",
+	"blockandnuke-users": "משתמשים",
+	"blockandnuke-pages": "דפים"
+}
