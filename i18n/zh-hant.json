@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Sanmosa"
 		]
 	},
 	"blockandnuke-ip-addresses": "IP位址",
-	"blockandnuke-users": "使用者",
+	"blockandnuke-users": "用戶",
 	"blockandnuke-pages": "頁面"
 }
