@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"action-blockandnuke": "منع وحذف كمي",
+	"blockandnuke": "منع وحذف كمي",
+	"blockandnuke-confirm": "انقر فوق الزر منع وحذف كمي لمنع المستخدمين المحددين وحذف جميع مساهماتهم. \n\n(لا تقم بإلغاء تحديد أي من المربعات أدناه)",
+	"blockandnuke-desc": "يمنح الإداريين القدرة على [[Special:BlockandNuke|المنع واالحذف الكمي]] للصفحات",
+	"blockandnuke-nopages": "لا توجد صفحات جديدة بواسطة [[Special:Contributions/$1|$1]] في أحدث التغييرات.",
+	"blockandnuke-list": "تم إنشاء الصفحات التالية مؤخرا بواسطة [[Special:Contributions/$1|$1]]، ضع في تعليق واضغط على الزر لحذفها.",
+	"blockandnuke-defaultreason": "إزالة كمية للصفحات التي أضافها $1",
+	"blockandnuke-delete-file": "منع وحذف كمي لحذف سخام",
+	"blockandnuke-delete-article": "منع وحذف كمي لحذف مقالات سخام",
+	"blockandnuke-tools": "قائمة المستخدمين الذين ساهموا مؤخرا ولم يتم العثور عليهم في القائمة البيضاء:\n\nلإضافة مستخدم إلى إضافات التعديل في القائمة البيضاء extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "منع المستخدمين",
+	"blockandnuke-submit-delete": "منع وحذف",
+	"blockandnuke-block": "تم منع المستخدمين المحددين وحذف مساهماتهم.",
+	"blockandnuke-message": "المستخدمون الممنوعون بواسطة منع وحذف",
+	"blockandnuke-banhammer": "لحظر المستخدمين المحددين وحذف جميع مساهماتهم; انقر فوق الزر أدناه.",
+	"blockandnuke-nothing-to-do": "لا شيء لفعله!",
+	"blockandnuke-banning": "جارٍ المنع...",
+	"blockandnuke-deleted-page": "تم حذف $1",
+	"blockandnuke-banned-ip": "تم منع الآيبي $1",
+	"blockandnuke-ip-addresses": "عنوان الآيبي",
+	"blockandnuke-users": "المستخدمون",
+	"blockandnuke-pages": "الصفحات"
+}
