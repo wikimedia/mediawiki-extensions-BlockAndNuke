@@ -2,9 +2,29 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Sanmosa"
+			"Sanmosa",
+			"Kly"
 		]
 	},
+	"action-blockandnuke": "Block and Nuke",
+	"blockandnuke": "Block and Nuke",
+	"blockandnuke-confirm": "點擊 BlockandNuke 按鈕來封鎖所選使用者並刪除他們所作出的全部貢獻。\n\n（請不要取消勾選以下的任何勾選框）",
+	"blockandnuke-desc": "給予管理員有關 [[Special:BlockandNuke|Block and Nuke]] 頁面的權限",
+	"blockandnuke-nopages": "在最近變動裡沒有由 [[Special:Contributions/$1|$1]] 建立的新頁面。",
+	"blockandnuke-list": "下列頁面最近由 [[Special:Contributions/$1|$1]] 所建立，請填寫評論並且點選按鈕刪除。",
+	"blockandnuke-defaultreason": "大量移除由 $1 添加的頁面",
+	"blockandnuke-delete-file": "BlockandNuke 刪除破壞內容",
+	"blockandnuke-delete-article": "BlockandNuke 刪除破壞的條目。",
+	"blockandnuke-tools": "近期貢獻的使用者清單未在白名單裡找出：\n\n要添加使用者至白名單，請編輯 extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "封鎖使用者",
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "所選使用者已被封鎖，並被刪除其貢獻。",
+	"blockandnuke-message": "透過 BlockandNuke 封鎖的使用者。",
+	"blockandnuke-banhammer": "要封鎖所選使用者並刪除所有他們的貢獻，請點擊下方按鈕。",
+	"blockandnuke-nothing-to-do": "沒有需要做的事！",
+	"blockandnuke-banning": "封禁中...",
+	"blockandnuke-deleted-page": "已刪除 $1",
+	"blockandnuke-banned-ip": "已封禁 IP $1",
 	"blockandnuke-ip-addresses": "IP位址",
 	"blockandnuke-users": "用戶",
 	"blockandnuke-pages": "頁面"
