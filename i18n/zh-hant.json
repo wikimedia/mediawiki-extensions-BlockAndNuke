@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Sanmosa",
-			"Kly"
+			"Kly",
+			"A2093064"
 		]
 	},
 	"action-blockandnuke": "Block and Nuke",
@@ -26,6 +27,6 @@
 	"blockandnuke-deleted-page": "已刪除 $1",
 	"blockandnuke-banned-ip": "已封禁 IP $1",
 	"blockandnuke-ip-addresses": "IP位址",
-	"blockandnuke-users": "用戶",
+	"blockandnuke-users": "使用者",
 	"blockandnuke-pages": "頁面"
 }
