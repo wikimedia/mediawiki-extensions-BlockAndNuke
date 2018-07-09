@@ -8,5 +8,22 @@
 	"blockandnuke": "Блокування й масове вилучення",
 	"blockandnuke-confirm": "Клацніть кнопку BlockandNuke, щоб заблокувати вибраних користувачів і вилучити їхній внесок.\n\n(Не знімайте будь-які галочки нижче)",
 	"blockandnuke-desc": "Дає адміністраторам можливість [[Special:BlockandNuke|блокувати й масово вилучати]] сторінки",
-	"blockandnuke-nopages": "В нових редагуваннях не було нових сторінок авторства [[Special:Contributions/$1|$1]]."
+	"blockandnuke-nopages": "В нових редагуваннях не було нових сторінок авторства [[Special:Contributions/$1|$1]].",
+	"blockandnuke-list": "[[Special:Contributions/$1|$1]] нещодавно створено вказані сторінки; напишіть коментар і клацніть кнопку, щоб їх вилучити.",
+	"blockandnuke-defaultreason": "Масове вилучення сторінок, доданих $1",
+	"blockandnuke-delete-file": "Вилучення спаму через BlockandNuke",
+	"blockandnuke-delete-article": "Вилучення статей зі спамом через BlockandNuke.",
+	"blockandnuke-tools": "Список користувачів, які нещодавно робили внесок, але не перебувають у білому списку:\n\nЩоб додати користувача в білий список, відредагуйте extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Заблокувати користувачів",
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "Вибраних користувачів заблоковано, а їхній внесок вилучено.",
+	"blockandnuke-message": "Користувачів заблоковано за допомогою BlockandNuke.",
+	"blockandnuke-banhammer": "Щоб заблокувати вибраних користувачів та вилучити весь їхній внесок, клацніть кнопку нижче.",
+	"blockandnuke-nothing-to-do": "Нема що робити!",
+	"blockandnuke-banning": "Блокування...",
+	"blockandnuke-deleted-page": "$1 вилучено",
+	"blockandnuke-banned-ip": "IP-адресу $1 заблоковано",
+	"blockandnuke-ip-addresses": "IP-адреси",
+	"blockandnuke-users": "Користувачі",
+	"blockandnuke-pages": "Сторінки"
 }
