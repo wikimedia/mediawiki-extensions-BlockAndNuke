@@ -1,9 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
+	"action-blockandnuke": "blokowania i masowego usuwania stron użytkownika",
+	"blockandnuke": "Zablokuj i masowo usuń strony",
+	"blockandnuke-confirm": "Kliknij przycisk „zablokuj i masowo usuń strony” aby zablokowac użytkownika i usunąć cały jego wkład.\n\n(Nie odznaczaj żadnego z boksów poniżej)",
+	"blockandnuke-desc": "Daje administratorom funkcję równoczesnego [[Special:BlockandNuke|blokowania i masowego usuwania stron]] użytkownika.",
+	"blockandnuke-nopages": "Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.",
+	"blockandnuke-list": "Następujące strony zostały ostatnio utworzone przez {{GENDER:$1|użytkownika|użytkowniczkę}} [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk, by je usunąć.",
+	"blockandnuke-defaultreason": "Masowe usunięcie stron stworzonych przez {{GENDER:$1|$1}}",
+	"blockandnuke-tools": "Lista ostatnio aktywnych użytkowników, którzy nie zostali odnalezieni na białej liście:\n\nAby dodać użytkownika do białej listy edytuj plik extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Zablokuj użytkowników",
+	"blockandnuke-submit-delete": "Zablokuj i masowo usuń strony",
+	"blockandnuke-block": "Wybrani użytkownicy zostali zablokowani a ich wkład usunięty.",
+	"blockandnuke-banhammer": "Kliknij poniższy przycisk aby zablokować wybranych i usunąć cały ich wkład.",
+	"blockandnuke-banning": "Blokowanie…",
+	"blockandnuke-deleted-page": "Usunięto $1",
+	"blockandnuke-banned-ip": "Zablokowano adres IP $1",
 	"blockandnuke-ip-addresses": "Adresy IP",
 	"blockandnuke-users": "Użytkownicy",
 	"blockandnuke-pages": "Strony"
