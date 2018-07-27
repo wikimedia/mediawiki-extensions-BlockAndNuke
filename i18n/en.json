@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eliora Stahl"
+			"Eliora Stahl",
+			"MarcoAurelio"
 		]
 	},
 	"action-blockandnuke": "Block and Nuke",
@@ -25,5 +26,6 @@
 	"blockandnuke-banned-ip": "Banned IP $1",
 	"blockandnuke-ip-addresses": "IP Addresses",
 	"blockandnuke-users": "Users",
-	"blockandnuke-pages": "Pages"
+	"blockandnuke-pages": "Pages",
+	"right-blockandnuke": "Block a list of users and delete all of their contributions"
 }

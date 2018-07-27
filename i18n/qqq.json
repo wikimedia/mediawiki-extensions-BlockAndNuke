@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"MarcoAurelio"
 		]
 	},
 	"action-blockandnuke": "{{doc-action|blockandnuke}}",
@@ -26,5 +27,6 @@
 	"blockandnuke-banned-ip": "A success message",
 	"blockandnuke-ip-addresses": "A header message\n{{Identical|IP address}}",
 	"blockandnuke-users": "A header message\n{{Identical|User}}",
-	"blockandnuke-pages": "A header message\n{{Identical|Page}}"
+	"blockandnuke-pages": "A header message\n{{Identical|Page}}",
+	"right-blockandnuke": "{{doc-right|blockandnuke}}"
 }
