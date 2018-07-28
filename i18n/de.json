@@ -26,5 +26,6 @@
 	"blockandnuke-banned-ip": "IP-Adresse $1 gesperrt",
 	"blockandnuke-ip-addresses": "IP-Adressen",
 	"blockandnuke-users": "Benutzer",
-	"blockandnuke-pages": "Seiten"
+	"blockandnuke-pages": "Seiten",
+	"right-blockandnuke": "Eine Liste von Benutzern sperren und all ihre Beiträge löschen"
 }
