@@ -27,5 +27,6 @@
 	"blockandnuke-banned-ip": "Adresse IP exclue $1",
 	"blockandnuke-ip-addresses": "Adresses IP",
 	"blockandnuke-users": "Utilisateurs",
-	"blockandnuke-pages": "Pages"
+	"blockandnuke-pages": "Pages",
+	"right-blockandnuke": "Bloquer une liste d'utilisateurs et supprimer toutes leurs contributions"
 }

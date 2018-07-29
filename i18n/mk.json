@@ -25,5 +25,6 @@
 	"blockandnuke-banned-ip": "Забранета IP-адресата $1",
 	"blockandnuke-ip-addresses": "IP-адреси",
 	"blockandnuke-users": "Корисници",
-	"blockandnuke-pages": "Страници"
+	"blockandnuke-pages": "Страници",
+	"right-blockandnuke": "Блокирање на список на корисници и бришење на сите нивни придонеси"
 }

@@ -25,5 +25,6 @@
 	"blockandnuke-banned-ip": "Endereço IP $1 foi banido",
 	"blockandnuke-ip-addresses": "Endereços IP",
 	"blockandnuke-users": "Utilizadores",
-	"blockandnuke-pages": "Páginas"
+	"blockandnuke-pages": "Páginas",
+	"right-blockandnuke": "Bloquear uma lista de utilizadores e eliminar todas as contribuições dos mesmos"
 }

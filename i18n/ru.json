@@ -4,7 +4,8 @@
 			"Wirbel78",
 			"Mouse21",
 			"Movses",
-			"Putnik"
+			"Putnik",
+			"Vlad5250"
 		]
 	},
 	"action-blockandnuke": "Block and Nuke",
@@ -28,5 +29,6 @@
 	"blockandnuke-banned-ip": "Заблокированный IP $1",
 	"blockandnuke-ip-addresses": "IP-адреса",
 	"blockandnuke-users": "Пользователи",
-	"blockandnuke-pages": "Страницы"
+	"blockandnuke-pages": "Страницы",
+	"right-blockandnuke": "блокирование нескольких участников вместе с удалением их правок"
 }

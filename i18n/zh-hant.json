@@ -28,5 +28,6 @@
 	"blockandnuke-banned-ip": "已封禁 IP $1",
 	"blockandnuke-ip-addresses": "IP位址",
 	"blockandnuke-users": "使用者",
-	"blockandnuke-pages": "頁面"
+	"blockandnuke-pages": "頁面",
+	"right-blockandnuke": "封鎖一份使用者清單並刪除掉他們的全部貢獻"
 }

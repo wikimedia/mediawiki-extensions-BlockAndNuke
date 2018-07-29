@@ -14,5 +14,6 @@
 	"blockandnuke-banned-ip": "$1 IP를 차단했습니다",
 	"blockandnuke-ip-addresses": "IP 주소",
 	"blockandnuke-users": "사용자",
-	"blockandnuke-pages": "페이지"
+	"blockandnuke-pages": "페이지",
+	"right-blockandnuke": "사용자 목록을 차단하고 모든 기여를 삭제합니다"
 }
