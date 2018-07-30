@@ -9,5 +9,6 @@
 	"blockandnuke-message": "Utenti bloccati da BlockandNuke.",
 	"blockandnuke-ip-addresses": "Indirizzi IP",
 	"blockandnuke-users": "Utenti",
-	"blockandnuke-pages": "Pagine"
+	"blockandnuke-pages": "Pagine",
+	"right-blockandnuke": "Blocca un elenco di utenti e cancella tutti i loro contributi"
 }
