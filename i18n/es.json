@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"KATRINE1992"
+			"KATRINE1992",
+			"MarcoAurelio"
 		]
 	},
 	"action-blockandnuke": "Bloquear y destruir",
@@ -26,5 +27,6 @@
 	"blockandnuke-banned-ip": "Se expulsó a la IP $1",
 	"blockandnuke-ip-addresses": "Direcciones IP",
 	"blockandnuke-users": "Usuarios",
-	"blockandnuke-pages": "Páginas"
+	"blockandnuke-pages": "Páginas",
+	"right-blockandnuke": "Bloquear a un listado de usuarios y borrar a su vez todas sus contribuciones"
 }

@@ -8,5 +8,6 @@
 	"blockandnuke-submit-user": "Blockera användare",
 	"blockandnuke-message": "Användare som blockerats av BlockandNuke.",
 	"blockandnuke-nothing-to-do": "Inget att göra!",
-	"blockandnuke-banning": "Bannlyser..."
+	"blockandnuke-banning": "Bannlyser...",
+	"right-blockandnuke": "Blockera en lista över användare och radera alla deras bidrag"
 }

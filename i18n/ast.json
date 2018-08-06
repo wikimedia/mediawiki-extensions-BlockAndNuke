@@ -25,5 +25,6 @@
 	"blockandnuke-banned-ip": "IP $1 torgada",
 	"blockandnuke-ip-addresses": "Direiciones IP",
 	"blockandnuke-users": "Usuarios",
-	"blockandnuke-pages": "Páxines"
+	"blockandnuke-pages": "Páxines",
+	"right-blockandnuke": "Bloquiar una llista d'usuarios y desaniciar toles sos contribuciones"
 }
