@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Maria zaos"
 		]
 	},
 	"action-blockandnuke": "Bloquear e borrar",
@@ -23,5 +24,6 @@
 	"blockandnuke-banned-ip": "Expulsouse á IP $1",
 	"blockandnuke-ip-addresses": "Enderezos IP",
 	"blockandnuke-users": "Usuarios",
-	"blockandnuke-pages": "Páxinas"
+	"blockandnuke-pages": "Páxinas",
+	"right-blockandnuke": "Bloquear unha lista de usuarios e eliminar todas as súas contribucións."
 }
