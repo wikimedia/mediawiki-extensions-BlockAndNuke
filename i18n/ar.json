@@ -25,5 +25,6 @@
 	"blockandnuke-banned-ip": "تم منع الآيبي $1",
 	"blockandnuke-ip-addresses": "عنوان الآيبي",
 	"blockandnuke-users": "المستخدمون",
-	"blockandnuke-pages": "الصفحات"
+	"blockandnuke-pages": "الصفحات",
+	"right-blockandnuke": "منع قائمة مستخدمين وحذف جميع مساهماتهم"
 }
