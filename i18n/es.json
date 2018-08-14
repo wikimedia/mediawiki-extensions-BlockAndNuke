@@ -3,7 +3,8 @@
 		"authors": [
 			"Fitoschido",
 			"KATRINE1992",
-			"MarcoAurelio"
+			"MarcoAurelio",
+			"Jelou"
 		]
 	},
 	"action-blockandnuke": "Bloquear y destruir",
@@ -28,5 +29,5 @@
 	"blockandnuke-ip-addresses": "Direcciones IP",
 	"blockandnuke-users": "Usuarios",
 	"blockandnuke-pages": "Páginas",
-	"right-blockandnuke": "Bloquear a un listado de usuarios y borrar a su vez todas sus contribuciones"
+	"right-blockandnuke": "Bloquear una lista de usuarios y borrar todas sus contribuciones"
 }
