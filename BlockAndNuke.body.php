@@ -76,7 +76,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 					Xml::check( 'names[]', true,
 						[ 'value' => $user ]
 					) .
-					$user .
+					htmlspecialchars( $user ) .
 					"</li>\n"
 				);
 			}
