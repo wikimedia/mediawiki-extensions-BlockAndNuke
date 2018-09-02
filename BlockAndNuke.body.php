@@ -62,8 +62,8 @@ class SpecialBlock_Nuke extends SpecialPage {
 			Xml::openElement( 'form', [
 				'action' => $this->getTitle()->getLocalURL( 'action=submit' ),
 				'method' => 'post' ]
-			).
-			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ).
+			) .
+			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ) .
 			( '<ul>' )
 		);
 
@@ -113,7 +113,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 			$wgOut->addHtml( "<ul>" );
 			foreach ( $pages as $title ) {
-				$wgOut->addHtml( "<li>". $linkRenderer->makeLink( $title ) );
+				$wgOut->addHtml( "<li>" . $linkRenderer->makeLink( $title ) );
 				$wgOut->addHtml( Html::hidden( 'pages[]', $title ) );
 			}
 			$wgOut->addHtml( "</ul>\n" );
@@ -149,7 +149,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 							$linkRenderer->makeLink( Title::newFromText( $user_2, NS_USER ) )
 						);
 						$wgOut->addHTML(
-							Html::hidden( 'names_2[]', $user_2 ).
+							Html::hidden( 'names_2[]', $user_2 ) .
 							Html::hidden( 'userid[]', $user_id )
 						);
 					}
@@ -178,7 +178,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		$wgOut->addHTML(
 			"</ul>\n" .
-			XML::submitButton( $this->msg( 'blockandnuke' )->text() ).
+			XML::submitButton( $this->msg( 'blockandnuke' )->text() ) .
 			"</form>"
 		);
 	}
