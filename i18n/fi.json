@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"01miki10"
+		]
+	},
+	"action-blockandnuke": "estää ja massapoistaa",
+	"blockandnuke": "Estä ja massapoista",
+	"blockandnuke-confirm": "Napsauta Estä ja massapoista -painiketta estääksesi valitut käyttäjät ja poistaaksesi kaikki heidän muokkauksensa.\n\n(Älä poista mitään alla olevista valinnoista)",
+	"blockandnuke-desc": "Antaa ylläpitäjille mahdollisuuden [[Special:BlockandNuke|estämiseen ja sivujen massapoistamiseen]]",
+	"blockandnuke-nopages": "Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.",
+	"blockandnuke-list": "Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut. Lisää kommentti ja poista sivut napsauttamalla painiketta.",
+	"blockandnuke-defaultreason": "Käyttäjän $1 lisäämien sivujen massapoisto",
+	"blockandnuke-tools": "Luettelo käyttäjistä, jotka ovat muokanneet äskettäin eivätkä ole valkolistalla.\n\nLisätäksesi käyttäjän valkolistalle muokkaa tiedostoa extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Estä käyttäjät",
+	"blockandnuke-submit-delete": "Estä ja massapoista",
+	"blockandnuke-block": "Valitut käyttäjät on estetty ja heidän muokkauksensa on poistettu.",
+	"blockandnuke-message": "Eston ja massapoiston estämät käyttäjät.",
+	"blockandnuke-banhammer": "Estääksesi valitut käyttäjät ja poistaaksesi kaikki heidän muokkauksensa paina alla olevaa nappulaa.",
+	"blockandnuke-nothing-to-do": "Ei mitään tehtävää!",
+	"blockandnuke-banning": "Estetään...",
+	"blockandnuke-deleted-page": "Poistettiin $1",
+	"blockandnuke-banned-ip": "Estettiin IP $1",
+	"blockandnuke-ip-addresses": "IP-osoitteet",
+	"blockandnuke-users": "Käyttäjät",
+	"blockandnuke-pages": "Sivut",
+	"right-blockandnuke": "Estää luettelo käyttäjistä ja poistaa kaikki heidän muokkauksensa"
+}
