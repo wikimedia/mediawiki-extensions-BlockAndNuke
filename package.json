@@ -1,10 +1,10 @@
 {
-  "scripts": {
-    "test": "grunt test"
-  },
-  "devDependencies": {
-    "grunt": "1.0.1",
-    "grunt-banana-checker": "0.6.0",
-    "grunt-jsonlint": "1.0.7"
-  }
+	"scripts": {
+		"test": "grunt test"
+	},
+	"devDependencies": {
+		"grunt": "1.0.3",
+		"grunt-banana-checker": "0.6.0",
+		"grunt-jsonlint": "1.0.7"
+	}
 }
