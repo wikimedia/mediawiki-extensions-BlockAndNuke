@@ -5,6 +5,9 @@
 		]
 	},
 	"blockandnuke-submit-user": "Gebruiker blokkeren",
+	"blockandnuke-deleted-page": "$1 verwijderd",
+	"blockandnuke-banned-ip": "IP-adres $1 geblokkeerd",
+	"blockandnuke-ip-addresses": "IP-adressen",
 	"blockandnuke-users": "Gebruikers",
 	"blockandnuke-pages": "Pagina's"
 }
