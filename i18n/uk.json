@@ -25,5 +25,6 @@
 	"blockandnuke-banned-ip": "IP-адресу $1 заблоковано",
 	"blockandnuke-ip-addresses": "IP-адреси",
 	"blockandnuke-users": "Користувачі",
-	"blockandnuke-pages": "Сторінки"
+	"blockandnuke-pages": "Сторінки",
+	"right-blockandnuke": "Заблокувати список користувачів і видалити весь їхній внесок"
 }
