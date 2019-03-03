@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"佛壁灯"
 		]
 	},
 	"action-blockandnuke": "封禁并大量删除",
@@ -25,5 +26,6 @@
 	"blockandnuke-banned-ip": "已封禁IP$1",
 	"blockandnuke-ip-addresses": "IP地址",
 	"blockandnuke-users": "用户",
-	"blockandnuke-pages": "页面"
+	"blockandnuke-pages": "页面",
+	"right-blockandnuke": "封禁一系列用户并删除其贡献"
 }
