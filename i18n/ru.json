@@ -5,7 +5,8 @@
 			"Mouse21",
 			"Movses",
 			"Putnik",
-			"Vlad5250"
+			"Vlad5250",
+			"Diralik"
 		]
 	},
 	"action-blockandnuke": "блокировка и массовое удаление",
@@ -20,7 +21,7 @@
 	"blockandnuke-tools": "Список пользователей, которые недавно внесли вклад и не найдены в «белом списке»:\n\nЧтобы добавить пользователя в список, отредактируйте extensions/BlockandNuke/whitelist.txt",
 	"blockandnuke-submit-user": "Заблокировать участников",
 	"blockandnuke-submit-delete": "BlockandNuke",
-	"blockandnuke-block": "Выбранные пользователи заблокированы и их вклад удален.",
+	"blockandnuke-block": "Выбранные пользователи заблокированы и их вклад удалён.",
 	"blockandnuke-message": "Пользователи заблокированы BlockandNuke.",
 	"blockandnuke-banhammer": "Чтобы заблокировать выбранных пользователей и удалить все их вклады, нажмите кнопку ниже.",
 	"blockandnuke-nothing-to-do": "Нечего делать!",
