@@ -7,7 +7,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 class SpecialBlock_Nuke extends SpecialPage {
 	function __construct() {
 		// restrict access only to users with blockandnuke right
-		parent::__construct( 'blockandnuke', 'blockandnuke' );
+		parent::__construct( 'BlockandNuke', 'blockandnuke' );
 	}
 
 	function execute( $par ) {
