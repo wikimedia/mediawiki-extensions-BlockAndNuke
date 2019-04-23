@@ -9,5 +9,10 @@
 	"blockandnuke-message": "Användare som blockerats av BlockandNuke.",
 	"blockandnuke-nothing-to-do": "Inget att göra!",
 	"blockandnuke-banning": "Bannlyser...",
+	"blockandnuke-deleted-page": "Raderade $1",
+	"blockandnuke-banned-ip": "Bannlyste IP-adressen $1",
+	"blockandnuke-ip-addresses": "IP-adresser",
+	"blockandnuke-users": "Användare",
+	"blockandnuke-pages": "Sidor",
 	"right-blockandnuke": "Blockera en lista över användare och radera alla deras bidrag"
 }
