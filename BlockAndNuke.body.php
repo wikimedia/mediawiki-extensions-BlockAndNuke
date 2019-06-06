@@ -60,7 +60,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$wgOut->addWikiMsg( 'blockandnuke-tools' );
 		$wgOut->addHTML(
 			Xml::openElement( 'form', [
-				'action' => $this->getTitle()->getLocalURL( 'action=submit' ),
+				'action' => $this->getPageTitle()->getLocalURL( 'action=submit' ),
 				'method' => 'post' ]
 			) .
 			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ) .
@@ -96,7 +96,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			Xml::openElement(
 				'form',
 				[
-					'action' => $this->getTitle()->getLocalURL( 'action=delete' ),
+					'action' => $this->getPageTitle()->getLocalURL( 'action=delete' ),
 					'method' => 'post'
 				]
 			) .
