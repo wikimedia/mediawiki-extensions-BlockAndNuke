@@ -1,11 +1,28 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
+	"action-blockandnuke": "سد و انهدام",
+	"blockandnuke": "سد و انهدام",
+	"blockandnuke-confirm": "دکمهٔ «سد و انهدام» را بزنید تا کاربران انتخابی مسدود شوند و همهٔ مشارکت‌هایشان حذف شود.",
+	"blockandnuke-desc": "امکان [[Special:BlockandNuke|سد و اانهدام]] صفحه‌ها را در اختیار مدیران می‌گذارد.",
+	"blockandnuke-nopages": "صفحهٔ جدیدی از [[Special:Contributions/$1|$1]] در تغییرات اخیر نیست.",
+	"blockandnuke-list": "صفحه‌های زیر به‌تازگی توسط [[Special:Contributions/$1|$1]] ایجاد شده‌اند. توضیحی درج کنید و دکمه را بزنید تا این صفحه‌ها حذف شوند.",
+	"blockandnuke-defaultreason": "حذف انبوه صفحه‌های افزودده‌شده توسط $1",
 	"blockandnuke-submit-user": "بستن کاربر",
+	"blockandnuke-submit-delete": "«سد و انهدام»",
+	"blockandnuke-block": "کاربران انتخابی مسدود شده‌اند و مشارکت‌هایشان حذف شده است.",
+	"blockandnuke-message": "کاربران مورد نظر به‌وسیلهٔ «سد و انهدام» مسدود شدند.",
+	"blockandnuke-banhammer": "برای مسدود کردن کاربران انتخابی و حذف همهٔ مشارکت‌هایشان دکمهٔ زیر را بزنید.",
+	"blockandnuke-nothing-to-do": "کاری برای اجرا نیست!",
+	"blockandnuke-banning": "در حال مسدود کردن...",
+	"blockandnuke-deleted-page": "$1 حذف شد",
+	"blockandnuke-banned-ip": "آی‌پی مسدود شدهٔ $1",
 	"blockandnuke-ip-addresses": "نشانی آی‌پی",
 	"blockandnuke-users": "کاربران",
-	"blockandnuke-pages": "صفحات"
+	"blockandnuke-pages": "صفحات",
+	"right-blockandnuke": "مسدود کردن فهرستی از کاربران و حذف همهٔ مشارکت‌هایشان"
 }
