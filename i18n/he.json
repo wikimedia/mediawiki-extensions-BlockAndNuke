@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Guycn2"
+			"Guycn2",
+			"Steeve815"
 		]
 	},
 	"action-blockandnuke": "לחסום משתמשים ולמחוק את כל תרומותיהם",
@@ -25,5 +26,6 @@
 	"blockandnuke-banned-ip": "כתובת ה־IP&rlm; $1 נחסמה",
 	"blockandnuke-ip-addresses": "כתובות IP",
 	"blockandnuke-users": "משתמשים",
-	"blockandnuke-pages": "דפים"
+	"blockandnuke-pages": "דפים",
+	"right-blockandnuke": "חסימת רשימת משתמשים ומחיקת כל התרומות שלהם"
 }
