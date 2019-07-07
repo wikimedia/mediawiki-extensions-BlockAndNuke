@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"action-blockandnuke": "Blokiraj i onesposobi",
+	"blockandnuke": "Blokiraj i onesposobi",
+	"blockandnuke-confirm": "Kliknite gumb \"Blokiraj i onesposobi\" da biste blokirali izabrane korisnike i im izbrisali sve doprinose.\n\n(Ne otštiklirajte ništa iz doljenavedenih kutjica)",
+	"blockandnuke-desc": "Omogućuje administratorima [[Special:Nuke|blokirati i onesposobljati]] stranice",
+	"blockandnuke-nopages": "Nema novih stranica od korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.",
+	"blockandnuke-list": "Sledeće stranice su skoro napravjene s korisnikom [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; unesite komentar i pritisnite dugme za njihovo brisanje.",
+	"blockandnuke-defaultreason": "Masovno uklanjanje stranica dodanih korisnikom $1",
+	"blockandnuke-delete-file": "Brisanje neželjenog sadržaja s \"Blokiraj i onesposobi\"",
+	"blockandnuke-delete-article": "Brisanje spam-članaka s \"Blokiraj i onesposobi\".",
+	"blockandnuke-tools": "Spisak korisnika koji su nedavno sudjelovali, ali nisu na bijelom spisku:\n\nDa biste umetnuli korisnika na bijeli spisak, unesite ga u extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Blokiraj korisnike",
+	"blockandnuke-submit-delete": "Blokiraj i onesposobi",
+	"blockandnuke-block": "Izabrani korisnici blokirani su i njihovi su dopronosi izbrisani.",
+	"blockandnuke-message": "Korisnici su blokirani s \"Blokiraj i onesposobi\".",
+	"blockandnuke-banhammer": "Da biste blokirali izabrane korisnike i im izbrisali sve njihove doprinose, kliknite gumb ispod.",
+	"blockandnuke-nothing-to-do": "Nema šta da se učini!",
+	"blockandnuke-banning": "Zabranjivanje...",
+	"blockandnuke-deleted-page": "Obrisan $1",
+	"blockandnuke-banned-ip": "Zabranjena je IP-adresa $1",
+	"blockandnuke-ip-addresses": "IP adrese",
+	"blockandnuke-users": "Korisnici",
+	"blockandnuke-pages": "Stranice",
+	"right-blockandnuke": "Blokiranje spiska korisnika i brisanje svih njihovih doprinosa"
+}
