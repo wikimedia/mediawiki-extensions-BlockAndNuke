@@ -4,9 +4,27 @@
 			"Joetaras"
 		]
 	},
-	"action-blockandnuke": "Blocche e Bombarde",
-	"blockandnuke": "Blocche e Bombarde",
-	"blockandnuke-submit-delete": "BloccheeBombarde",
+	"action-blockandnuke": "Blocche e Scitte",
+	"blockandnuke": "Blocche e Scitte",
+	"blockandnuke-confirm": "Cazze 'u buttone BlockandNuke pe bloccà le utinde scacchiate e scangellà tutte le condrebbute lore.\n\n(No luà nisciune de le signe de sotte)",
+	"blockandnuke-desc": "Dèje a le amministrature l'abbilità de [[Special:BlockandNuke|Bloccà e scettà]] le pàggene",
+	"blockandnuke-nopages": "Nisciuna pàgena nove da [[Special:Contributions/$1|$1]] jndr'à le urteme cangiaminde.",
+	"blockandnuke-list": "Ste pàggene onne state ccrejate da [[Special:Contributions/$1|$1]]; sckaffe 'nu commende e cazze 'u buttone pe scangellarle.",
+	"blockandnuke-defaultreason": "Scangellamende massive de le pàggene aggiunde da $1",
+	"blockandnuke-delete-file": "BlockandNuke scangìlle 'u rummate",
+	"blockandnuke-delete-article": "BlockandNuke scangìlle le vôsce rummate.",
+	"blockandnuke-tools": "Elenghe de le Utinde ca onne condrebbuite urtemamende e non ge stonne jndr'à Lista Vianghe:\n\nPe aggiungere 'n'utende jndr'à lista vianghe cange extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Bluècche l'utinde",
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "Le utinde scacchiate onne state bloccate e le lore condrebbute scangellate.",
+	"blockandnuke-message": "Le utinde bloccate da BlockandNuke.",
+	"blockandnuke-banhammer": "Pe bloccà le utinde scacchiate e scangellà tutte le condrebbute lore cazze 'u buttone aqquà sotte.",
+	"blockandnuke-nothing-to-do": "Ninde da fà!",
+	"blockandnuke-banning": "Stoche e cacce...",
+	"blockandnuke-deleted-page": "Scangellate $1",
+	"blockandnuke-banned-ip": "IP cacciate $1",
+	"blockandnuke-ip-addresses": "Indirizze IP",
 	"blockandnuke-users": "Utinde",
-	"blockandnuke-pages": "Pàggene"
+	"blockandnuke-pages": "Pàggene",
+	"right-blockandnuke": "Blocche 'n'elenghe de utinde e scangìlle tutte le condrebbute lore"
 }
