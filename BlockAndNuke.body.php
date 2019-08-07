@@ -1,9 +1,5 @@
 <?php
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'Not an entry point.' );
-}
-
 class SpecialBlock_Nuke extends SpecialPage {
 	function __construct() {
 		// restrict access only to users with blockandnuke right
