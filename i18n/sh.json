@@ -7,7 +7,7 @@
 	"action-blockandnuke": "Blokiraj i onesposobi",
 	"blockandnuke": "Blokiraj i onesposobi",
 	"blockandnuke-confirm": "Kliknite gumb \"Blokiraj i onesposobi\" da biste blokirali izabrane korisnike i im izbrisali sve doprinose.\n\n(Ne otštiklirajte ništa iz doljenavedenih kutjica)",
-	"blockandnuke-desc": "Omogućuje administratorima [[Special:Nuke|blokirati i onesposobljati]] stranice",
+	"blockandnuke-desc": "Omogućuje administratorima [[Special:BlockandNuke|blokirati i onesposobljati]] stranice",
 	"blockandnuke-nopages": "Nema novih stranica od korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.",
 	"blockandnuke-list": "Sledeće stranice su skoro napravjene s korisnikom [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; unesite komentar i pritisnite dugme za njihovo brisanje.",
 	"blockandnuke-defaultreason": "Masovno uklanjanje stranica dodanih korisnikom $1",
