@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bugoslav"
+		]
+	},
+	"action-blockandnuke": "Blokiraj i onesposobi",
+	"blockandnuke": "Blokiraj i onesposobi",
+	"blockandnuke-confirm": "Kliknite gumb »Blokiraj i onesposobi« da biste blokirali naznačene suradnike, te im izbrisali sve doprinose.\n\n(Nemote odznačivati ništa iz niže navedenih kućica)",
+	"blockandnuke-desc": "Omogućava administratorima [[Special:BlockandNuke|blokirati i onesposobljati]] stranice",
+	"blockandnuke-nopages": "Nema novih stranica suradnika [[Special:Contributions/$1|$1]] u nedavnim promjenama.",
+	"blockandnuke-list": "Sljedeće stranice nedavno je stvorio suradnik [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; unesite komentar i pritisnite gumb za njihovo brisanje.",
+	"blockandnuke-defaultreason": "Masovno uklanjanje stranica koje je stvorio suradnik $1",
+	"blockandnuke-delete-file": "Brisanje neželjenoga sadržaja pomoću »Blokiraj i onesposobi«",
+	"blockandnuke-delete-article": "Brisanje spam-članaka pomoću »Blokiraj i onesposobi«.",
+	"blockandnuke-tools": "Popis suradnika koji su nedavno doprinosili, ali nisu na bijeloj listi.\n\nDa biste dodali suradnika na bijelu listu, unesite ga u extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Blokiraj suradnike",
+	"blockandnuke-submit-delete": "Blokiraj i onesposobi",
+	"blockandnuke-block": "Naznačeni suradnici blokirani su i njihovi su doprinosi izbrisani.",
+	"blockandnuke-message": "Suradnici blokirani pomoću »Blokiraj i onesposobi«.",
+	"blockandnuke-banhammer": "Kako biste blokirali naznačene suradnike te im izbrisali sve njihove doprinose, kliknite niže na gumb.",
+	"blockandnuke-nothing-to-do": "Ništa na popisu rezultata!",
+	"blockandnuke-banning": "Zabranjivanje...",
+	"blockandnuke-deleted-page": "Obrisan $1",
+	"blockandnuke-banned-ip": "Zabranjena je IP-adresa $1",
+	"blockandnuke-ip-addresses": "IP-adrese",
+	"blockandnuke-users": "Suradnici",
+	"blockandnuke-pages": "Stranice",
+	"right-blockandnuke": "Blokiranje suradnika na popisu i brisanje svih njihovih doprinosa"
+}
