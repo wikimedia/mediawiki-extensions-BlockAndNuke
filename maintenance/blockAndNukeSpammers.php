@@ -18,7 +18,7 @@ class BanHammer extends Maintenance {
 		$this->requireExtension( "BlockAndNuke" );
 		$this->addOption( "hammer", "Actually ban and nuke the entries, will dry run otherwise" );
 		$this->addOption( "brief",  "Skip all the nitty-gritty details" );
-		$this->mDescription = "Block and Nuke recent users not found in the whitelist.";
+		$this->addDescription( "Block and Nuke recent users not found in the whitelist." );
 	}
 
 	public function maybeOutput( $str ) {
