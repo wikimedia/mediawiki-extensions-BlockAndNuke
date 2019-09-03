@@ -2,13 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Nerogaf",
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Vlad5250"
 		]
 	},
 	"blockandnuke-submit-user": "Заблякаваць удзельнікаў",
 	"blockandnuke-nothing-to-do": "Няма чаго рабіць!",
 	"blockandnuke-banning": "Блякаваньне...",
 	"blockandnuke-deleted-page": "Выдалена $1",
+	"blockandnuke-ip-addresses": "IP-адрасы",
 	"blockandnuke-users": "Удзельнікі",
 	"blockandnuke-pages": "Старонкі"
 }
