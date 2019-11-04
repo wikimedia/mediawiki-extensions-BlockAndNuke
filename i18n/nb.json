@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"action-blockandnuke": "Blokkere og masseslette",
+	"blockandnuke": "Blokker og masseslett",
+	"blockandnuke-confirm": "Klikk på blokker og masseslett-knappen for å blokkere de valgte brukerne og slette alle bidragene deres.\n\n(Ikke fjern merkingen av noen av boksene nedenfor)",
+	"blockandnuke-desc": "Gir administratorer muligheten til å [[Special:BlockandNuke|blokkere og masseslette]] sider",
+	"blockandnuke-nopages": "Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.",
+	"blockandnuke-list": "Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en kommentar og trykk på knappen for å slette dem.",
+	"blockandnuke-defaultreason": "Massefjerning av sider lagt til av $1",
+	"blockandnuke-delete-file": "Sletter spam",
+	"blockandnuke-delete-article": "Sletter spamartikler.",
+	"blockandnuke-tools": "Liste over brukere som nylig har bidratt og ikke finnes i hvitelisten:\n\nFor å legge til brukere i hvitelisten, rediger extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Blokker brukere",
+	"blockandnuke-submit-delete": "Blokker og masseslett",
+	"blockandnuke-block": "Valgte brukere har blitt blokkert og bidragene deres er slettet.",
+	"blockandnuke-message": "Brukere blokkert via blokkering og massesletting.",
+	"blockandnuke-banhammer": "For å blokkere valgte brukere og slette alle bidragene deres, klikk på knappen nedenfor.",
+	"blockandnuke-nothing-to-do": "Ingenting å gjøre!",
+	"blockandnuke-banning": "Blokkerer …",
+	"blockandnuke-deleted-page": "Slettet $1",
+	"blockandnuke-banned-ip": "Blokkerte IP-en $1",
+	"blockandnuke-ip-addresses": "IP-adresser",
+	"blockandnuke-users": "Brukere",
+	"blockandnuke-pages": "Sider",
+	"right-blockandnuke": "Blokker ei liste over brukere og slett alle bidragene deres"
+}
