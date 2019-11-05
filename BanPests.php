@@ -154,10 +154,12 @@ class BanPests {
 	 * @return array|bool|null
 	 */
 	public static function banUser( $user, $banningUser, $spammer ) {
+		global $wgBaNnomerge;
+
 		$ret = null;
 		if ( !is_object( $user ) ) {
 			/* Skip this one */
-		} elseif ( $user->getID() != 0 && class_exists( "MergeUser" ) ) {
+		} elseif ( !$wgBaNnomerge && $user->getID() != 0 && class_exists( "MergeUser" ) ) {
 			$um = new MergeUser( $spammer, $user );
 			$ret = $um->merge( $banningUser, __METHOD__ );
 		} else {
