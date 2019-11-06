@@ -70,14 +70,17 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		foreach($names as $user){
 			if ( !in_array( $user, $whitelist ) ) {
-				$wgOut->addHTML(
-					'<li>' .
-					Xml::check( 'names[]', true,
-						array( 'value' =>  $user )
-					) .
-					$user .
-					"</li>\n"
-				);
+				$userObject = User::newFromName( $user );
+				if (!$userObject->isBlocked()) {
+					$wgOut->addHTML(
+						'<li>' .
+						Xml::check( 'names[]', true,
+							array( 'value' =>  $user )
+						) .
+						$user .
+						"</li>\n"
+					);
+				}
 			}
 
 		}
