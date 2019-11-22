@@ -1,12 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Mjälten"
 		]
 	},
 	"blockandnuke-nopages": "Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.",
 	"blockandnuke-submit-user": "Blockera användare",
+	"blockandnuke-submit-delete": "Blockera och förstör",
+	"blockandnuke-block": "Utvalda användare har blockerats and deras bidrag har raderats",
 	"blockandnuke-message": "Användare som blockerats av BlockandNuke.",
+	"blockandnuke-banhammer": "För att blockera utvalda användare och radera deras bidrag klicka knappen nedan",
 	"blockandnuke-nothing-to-do": "Inget att göra!",
 	"blockandnuke-banning": "Bannlyser...",
 	"blockandnuke-deleted-page": "Raderade $1",
