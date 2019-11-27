@@ -1,12 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Tizven"
 		]
 	},
 	"blockandnuke-defaultreason": "Rimozione massiva delle pagine aggiunte da $1",
 	"blockandnuke-submit-user": "Blocca utenti",
 	"blockandnuke-message": "Utenti bloccati da BlockandNuke.",
+	"blockandnuke-deleted-page": " $1 eliminato",
+	"blockandnuke-banned-ip": " IP $1 vietato",
 	"blockandnuke-ip-addresses": "Indirizzi IP",
 	"blockandnuke-users": "Utenti",
 	"blockandnuke-pages": "Pagine",
