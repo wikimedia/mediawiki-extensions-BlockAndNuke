@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"action-blockandnuke": "Engel ve Nük",
+	"blockandnuke": "Engel ve Nük",
+	"blockandnuke-confirm": "Seçilen kullanıcıları engellemek ve tüm katkılarını silmek için BlockandNuke düğmesini tıklayın.\n\n(Aşağıdaki kutuların hiçbirini seçmeyin)",
+	"blockandnuke-desc": "Yöneticilere [[Special:BlockandNuke|Engel ve Nük]] sayfalarına yeteneği verir",
+	"blockandnuke-nopages": "Son değişikliklerde [[Special:Contributions/$1|$1]] tarafından yapılan yeni sayfa yok.",
+	"blockandnuke-list": "Aşağıdaki sayfalar kısa bir süre önce [[Special:Contributions/$1|$1]] tarafından oluşturuldu; Yorum yapmak ve silmek için düğmeye basın.",
+	"blockandnuke-defaultreason": "$1 tarafından eklenen sayfaların toplu olarak kaldırılması",
+	"blockandnuke-delete-file": "BlockandNuke spam sil",
+	"blockandnuke-delete-article": "BlockandNuke spam makalelerini sil.",
+	"blockandnuke-tools": "Yakın zamanda katkıda bulunan ve Beyaz Listede bulunmayan Kullanıcıların Listesi:\n\nBeyaz listeye bir kullanıcı eklemek için uzantıları /BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Kullanıcıları Engelle",
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-block": "Seçilen kullanıcılar engellendi ve katkıları silindi.",
+	"blockandnuke-message": "Kullanıcılar BlockandNuke tarafından engellendi.",
+	"blockandnuke-banhammer": "Seçilen kullanıcıları engellemek ve tüm katkılarını silmek için aşağıdaki düğmeyi tıklayın.",
+	"blockandnuke-nothing-to-do": "Yapacak bir şey yok!",
+	"blockandnuke-banning": "Yasaklanıyor...",
+	"blockandnuke-deleted-page": "$1 silindi",
+	"blockandnuke-banned-ip": "$1 IP yasaklandı",
+	"blockandnuke-ip-addresses": "IP Adresleri",
+	"blockandnuke-users": "Kullanıcılar",
+	"blockandnuke-pages": "Sayfalar",
+	"right-blockandnuke": "Bir kullanıcı listesini engelleyin ve tüm katkılarını silin"
+}
