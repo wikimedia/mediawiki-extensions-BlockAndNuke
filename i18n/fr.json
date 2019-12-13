@@ -3,7 +3,8 @@
 		"authors": [
 			"Wladek92",
 			"Gomoko",
-			"Urhixidur"
+			"Urhixidur",
+			"Thibaut120094"
 		]
 	},
 	"action-blockandnuke": "Bloquer et annihiler",
@@ -11,7 +12,7 @@
 	"blockandnuke-confirm": "Cliquer sur le bouton BlockandNuke pour bloquer les utilisateurs sélectionnés et supprimer toutes leurs contributions.\n\n(Ne pas décocher les cases ci-dessous)",
 	"blockandnuke-desc": "Donne aux administrateurs la possibilité de [[Special:BlockandNuke|Bloquer et annihiler]] les pages",
 	"blockandnuke-nopages": "Aucune nouvelle page par [[Special:Contributions/$1|$1]] dans les modifications récentes.",
-	"blockandnuke-list": "La page suivante a été récemment créée par [[Special:Contributions/$1|$1]] ; mettre un commentaire et appuyer sur le bouton pour les supprimer.",
+	"blockandnuke-list": "La page suivante a été récemment créée par [[Special:Contributions/$1|$1]] ; mettre un commentaire et appuyer sur le bouton pour les supprimer.",
 	"blockandnuke-defaultreason": "Suppression massive de pages ajoutées par $1",
 	"blockandnuke-delete-file": "pourriel supprimé par BlockandNuke",
 	"blockandnuke-delete-article": "Articles de pourriel détruits par BlockandNuke.",
