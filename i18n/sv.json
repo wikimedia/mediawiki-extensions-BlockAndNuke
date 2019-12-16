@@ -5,6 +5,8 @@
 			"Mjälten"
 		]
 	},
+	"action-blockandnuke": "Blockera och rensa",
+	"blockandnuke": "Blockera och rensa",
 	"blockandnuke-nopages": "Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.",
 	"blockandnuke-submit-user": "Blockera användare",
 	"blockandnuke-submit-delete": "Blockera och förstör",
