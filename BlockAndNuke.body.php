@@ -7,9 +7,10 @@ class SpecialBlock_Nuke extends SpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgUser, $wgRequest, $wgOut, $wgBaNSpamUser;
+		global $wgBaNSpamUser;
 
-		if ( !$this->userCanExecute( $wgUser ) ) {
+		$user = $this->getUser();
+		if ( !$this->userCanExecute( $user ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -19,28 +20,30 @@ class SpecialBlock_Nuke extends SpecialPage {
 
 		$um = null;
 		$spammer = User::newFromName( $wgBaNSpamUser );
-		$posted = $wgRequest->wasPosted();
-		if ( $posted ) {
-			$user_id = $wgRequest->getArray( 'userid' );
-			$user = $wgRequest->getArray( 'names' );
-			$pages = $wgRequest->getArray( 'pages' );
-			$user_2 = $wgRequest->getArray( 'names_2' );
-			$ips = $wgRequest->getArray( 'ip' );
+		$request = $this->getRequest();
+		if ( $request->wasPosted() ) {
+			$target_id = $request->getArray( 'userid' );
+			$target = $request->getArray( 'names' );
+			$pages = $request->getArray( 'pages' );
+			$target_2 = $request->getArray( 'names_2' );
+			$ips = $request->getArray( 'ip' );
 
-			if ( $user ) {
-				$wgOut->addHTML( $this->msg( 'blockandnuke-banhammer' )->escaped() );
-				$this->getNewPages( $user );
-			} elseif ( count( $pages ) || count( $user_2 ) || count( $ips ) ) {
-				$wgOut->addHTML( $this->msg( 'blockandnuke-banning' )->escaped() . '<br>' );
+			$out = $this->getOutput();
+
+			if ( $target ) {
+				$out->addHTML( $this->msg( 'blockandnuke-banhammer' )->escaped() );
+				$this->getNewPages( $target );
+			} elseif ( count( $pages ) || count( $target_2 ) || count( $ips ) ) {
+				$out->addHTML( $this->msg( 'blockandnuke-banning' )->escaped() . '<br>' );
 				$v = false;
-				$v = BanPests::blockUser( $user_2, $user_id, $wgUser, $spammer )
+				$v = BanPests::blockUser( $target_2, $target_id, $user, $spammer )
 					|| BanPests::deletePages( $pages, $this )
-					|| BanPests::banIPs( $ips, $wgUser, $this );
+					|| BanPests::banIPs( $ips, $user, $this );
 				if ( !$v ) {
-					$wgOut->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
+					$out->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
 				}
 			} else {
-				$wgOut->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
+				$out->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
 			}
 		} else {
 			$this->showUserForm();
@@ -48,26 +51,25 @@ class SpecialBlock_Nuke extends SpecialPage {
 	}
 
 	function showUserForm() {
-		global $wgOut, $wgUser;
-
 		$names = BanPests::getBannableUsers();
 		$whitelist = BanPests::getWhitelist();
+		$out = $this->getOutput();
 
-		$wgOut->addWikiMsg( 'blockandnuke-tools' );
-		$wgOut->addHTML(
+		$out->addWikiMsg( 'blockandnuke-tools' );
+		$out->addHTML(
 			Xml::openElement( 'form', [
 				'action' => $this->getPageTitle()->getLocalURL( 'action=submit' ),
 				'method' => 'post' ]
 			) .
-			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ) .
+			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			( '<ul>' )
 		);
 
-		// make into links  $sk = $wgUser->getSkin();
+		// make into links  $sk = $this->getUser()->getSkin();
 
 		foreach ( $names as $user ) {
 			if ( !in_array( $user, $whitelist ) ) {
-				$wgOut->addHTML(
+				$out->addHTML(
 					'<li>' .
 					Xml::check( 'names[]', true,
 						[ 'value' => $user ]
@@ -78,7 +80,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 			}
 
 		}
-		$wgOut->addHTML(
+		$out->addHTML(
 			"</ul>\n" .
 			Xml::submitButton( $this->msg( 'blockandnuke-submit-user' )->text() ) .
 			"</form>"
@@ -86,9 +88,8 @@ class SpecialBlock_Nuke extends SpecialPage {
 	}
 
 	function getNewPages( $user ) {
-		global $wgOut, $wgUser;
-
-		$wgOut->addHTML(
+		$out = $this->getOutput();
+		$out->addHTML(
 			Xml::openElement(
 				'form',
 				[
@@ -96,7 +97,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 					'method' => 'post'
 				]
 			) .
-			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ) .
+			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			'<ul>'
 		);
 
@@ -105,18 +106,18 @@ class SpecialBlock_Nuke extends SpecialPage {
 		$linkRenderer = $this->getLinkRenderer();
 
 		if ( count( $pages ) ) {
-			$wgOut->addHTML( "<h2>" . $this->msg( "blockandnuke-pages" )->escaped() . "</h2>" );
+			$out->addHTML( "<h2>" . $this->msg( "blockandnuke-pages" )->escaped() . "</h2>" );
 
-			$wgOut->addHtml( "<ul>" );
+			$out->addHtml( "<ul>" );
 			foreach ( $pages as $title ) {
-				$wgOut->addHtml( "<li>" . $linkRenderer->makeLink( $title ) );
-				$wgOut->addHtml( Html::hidden( 'pages[]', $title ) );
+				$out->addHtml( "<li>" . $linkRenderer->makeLink( $title ) );
+				$out->addHtml( Html::hidden( 'pages[]', $title ) );
 			}
-			$wgOut->addHtml( "</ul>\n" );
+			$out->addHtml( "</ul>\n" );
 		}
 
 		if ( count( $user ) ) {
-			$wgOut->addHTML( "<h2>" . $this->msg( "blockandnuke-users" )->escaped() . "</h2>" );
+			$out->addHTML( "<h2>" . $this->msg( "blockandnuke-users" )->escaped() . "</h2>" );
 
 			foreach ( $user as $users ) {
 				$dbr = wfGetDB( DB_REPLICA );
@@ -134,45 +135,45 @@ class SpecialBlock_Nuke extends SpecialPage {
 					$name[] = [ $row->rc_user_text, $row->rc_user ];
 				}
 
-				$wgOut->addHtml( "<ul>" );
+				$out->addHtml( "<ul>" );
 				$seen = [];
 				foreach ( $name as $infos ) {
 					list( $user_2, $user_id ) = $infos;
 					if ( !isset( $seen[$user_2] ) ) {
 						$seen[$user_2] = true;
-						$wgOut->addHtml(
+						$out->addHtml(
 							"<li>" .
 							$linkRenderer->makeLink( Title::newFromText( $user_2, NS_USER ) )
 						);
-						$wgOut->addHTML(
+						$out->addHTML(
 							Html::hidden( 'names_2[]', $user_2 ) .
 							Html::hidden( 'userid[]', $user_id )
 						);
 					}
 				}
-				$wgOut->addHtml( "</ul>\n" );
+				$out->addHtml( "</ul>\n" );
 			}
 		}
 
 		if ( $ips ) {
-			$wgOut->addHTML( "<h2>" . $this->msg( "blockandnuke-ip-addresses" )->escaped() . "</h2>" );
+			$out->addHTML( "<h2>" . $this->msg( "blockandnuke-ip-addresses" )->escaped() . "</h2>" );
 
 			foreach ( $ips as $ip ) {
-				$wgOut->addHtml( "<ul>" );
+				$out->addHtml( "<ul>" );
 				$seen = [];
 				if ( !isset( $seen[$ip] ) ) {
 					$seen[$ip] = true;
-					$wgOut->addHtml(
+					$out->addHtml(
 						"<li>" .
 						$linkRenderer->makeLink( Title::newFromText( $ip, NS_USER ) )
 					);
-					$wgOut->addHTML( Html::hidden( 'ip[]', $ip ) );
+					$out->addHTML( Html::hidden( 'ip[]', $ip ) );
 				}
-				$wgOut->addHtml( "</ul>\n" );
+				$out->addHtml( "</ul>\n" );
 			}
 		}
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			"</ul>\n" .
 			XML::submitButton( $this->msg( 'blockandnuke' )->text() ) .
 			"</form>"
