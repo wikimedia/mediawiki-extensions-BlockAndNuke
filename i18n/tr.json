@@ -4,8 +4,8 @@
 			"BaRaN6161 TURK"
 		]
 	},
-	"action-blockandnuke": "Engel ve Nük",
-	"blockandnuke": "Engel ve Nük",
+	"action-blockandnuke": "Engelle ve Nükle",
+	"blockandnuke": "Engelle ve Nükle",
 	"blockandnuke-confirm": "Seçilen kullanıcıları engellemek ve tüm katkılarını silmek için BlockandNuke düğmesini tıklayın.\n\n(Aşağıdaki kutuların hiçbirini seçmeyin)",
 	"blockandnuke-desc": "Yöneticilere [[Special:BlockandNuke|Engel ve Nük]] sayfalarına yeteneği verir",
 	"blockandnuke-nopages": "Son değişikliklerde [[Special:Contributions/$1|$1]] tarafından yapılan yeni sayfa yok.",
