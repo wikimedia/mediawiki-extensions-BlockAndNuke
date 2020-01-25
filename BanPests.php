@@ -135,7 +135,8 @@ class BanPests {
 						'block',
 						Title::makeTitle( NS_USER, $ip ),
 						'Blocked through Special:BlockandNuke',
-						[ 'infinite', $ip,  'nocreate' ]
+						[ 'infinite', $ip,  'nocreate' ],
+						$banningUser
 					);
 					$ret[] = $ip;
 					if ( $sp ) {
@@ -182,7 +183,8 @@ class BanPests {
 						'block',
 						Title::makeTitle( NS_USER, $user->getName() ),
 						'Blocked through Special:BlockandNuke',
-						[ 'infinite', $user->getName(),  'nocreate' ]
+						[ 'infinite', $user->getName(),  'nocreate' ],
+						$banningUser
 					);
 				}
 			}
