@@ -21,7 +21,7 @@ class BanPests {
 
 	public static function getBannableUsers() {
 		$dbr = wfGetDB( DB_REPLICA );
-		$cond = [ 'rc_new' => 1 ]; /* Anyone creating new pages */
+		$cond = [ 'rc_source' => RecentChange::SRC_NEW ]; /* Anyone creating new pages */
 		$cond[] = $dbr->makeList( /* Anyone uploading stuff */
 			[
 				'rc_log_type' => 'upload',
@@ -90,12 +90,19 @@ class BanPests {
 		$dbr = wfGetDB( DB_REPLICA );
 		$result = null;
 		if ( $user ) {
+			$otherConds = $dbr->makeList( [
+				$dbr->makeList( [
+					'rc_log_type' => 'upload',
+					'rc_log_action' => 'upload'
+				], Database::LIST_AND ),
+				[ 'rc_source' => RecentChange::SRC_NEW ]
+			], Database::LIST_OR );
 			$result = $dbr->select(
 				'recentchanges',
 				[ 'rc_namespace', 'rc_title', 'rc_timestamp', 'COUNT(*) AS edits' ],
 				[
 					'rc_user_text' => $user,
-					'(rc_new = 1) OR (rc_log_type = \'upload\' AND rc_log_action = \'upload\')'
+					$otherConds
 				],
 				__METHOD__,
 				[
