@@ -7,7 +7,7 @@
  * PLEASE USE WITH CAUTION. ALL USERS *NOT* IN THE WHITELIST WILL BE BLOCKED AND ITS
  * CONTRIBUTIONS DELETED!
  *
- * @license GPL-3.0-or-later <https://www.gnu.org/licenses/gpl-3.0.html>
+ * @license GPL-3.0-or-later
  */
 
 require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenance.php';
