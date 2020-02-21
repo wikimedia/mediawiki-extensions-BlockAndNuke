@@ -47,6 +47,7 @@ class BanHammer extends Maintenance {
 				"Found %d bannable users and %d pages:\n", count( $bannable ), count( $pages )
 			)
 		);
+		$banningUser = User::newFromName( "WikiSysop" );
 		if ( count( $pages ) ) {
 			$this->maybeOutput( "Pages\n" );
 			foreach ( $pages as $page ) {
@@ -54,7 +55,7 @@ class BanHammer extends Maintenance {
 					$this->maybeOutput( "\t$page" );
 					if ( $real ) {
 						$this->maybeOutput( " ... deleting\n" );
-						BanPests::deletePage( $page );
+						BanPests::deletePage( $page, $banningUser );
 					} else {
 						$this->maybeOutput( "\n" );
 					}
@@ -63,7 +64,6 @@ class BanHammer extends Maintenance {
 		}
 
 		$spammer = User::newFromName( $wgBaNSpamUser );
-		$banningUser = User::newFromName( "WikiSysop" );
 		if ( count( $bannable ) ) {
 			$this->maybeOutput( "Users\n" );
 			foreach ( $bannable as $user ) {

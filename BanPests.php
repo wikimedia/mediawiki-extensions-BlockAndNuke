@@ -207,13 +207,13 @@ class BanPests {
 		return (bool)$ret;
 	}
 
-	public static function deletePage( $title, $sp = null ) {
+	public static function deletePage( $title, User $deleter, $sp = null ) {
 		$ret = null;
 		$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
 		if ( $file ) {
 			$reason = wfMessage( "blockandnuke-delete-file" )->text();
 			$oldimage = null; // Must be passed by reference
-			$ret = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );
+			$ret = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false, $deleter );
 		} else {
 			$reason = wfMessage( "blockandnuke-delete-article" )->text();
 			if ( $title->isKnown() ) {
@@ -227,10 +227,10 @@ class BanPests {
 		return $ret;
 	}
 
-	public static function deletePages( $pages, $sp = null ) {
+	public static function deletePages( $pages, User $deleter, $sp = null ) {
 		$ret = [];
 		foreach ( (array)$pages as $page ) {
-			$ret[] = self::deletePage( Title::newFromText( $page ), $sp );
+			$ret[] = self::deletePage( Title::newFromText( $page ), $deleter, $sp );
 		}
 		$ret = array_filter( $ret );
 		return (bool)$ret;

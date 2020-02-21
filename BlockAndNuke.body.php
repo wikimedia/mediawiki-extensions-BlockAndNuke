@@ -37,7 +37,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 				$out->addHTML( $this->msg( 'blockandnuke-banning' )->escaped() . '<br>' );
 				$v = false;
 				$v = BanPests::blockUser( $target_2, $target_id, $user, $spammer )
-					|| BanPests::deletePages( $pages, $this )
+					|| BanPests::deletePages( $pages, $user, $this )
 					|| BanPests::banIPs( $ips, $user, $this );
 				if ( !$v ) {
 					$out->addHTML( $this->msg( 'blockandnuke-nothing-to-do' )->escaped() );
