@@ -32,9 +32,9 @@
 		"BlockAndNukeAlias": "BlockAndNuke.alias.php"
 	},
 	"AutoloadClasses": {
-		"SpecialBlock_Nuke": "BlockAndNuke.body.php",
-		"BanPests": "BanPests.php",
-		"BlockAndNukeHooks": "BlockAndNuke.hooks.php"
+		"SpecialBlock_Nuke": "includes/SpecialBlock_Nuke.php",
+		"BanPests": "includes/BanPests.php",
+		"BlockAndNukeHooks": "includes/BlockAndNukeHooks.php"
 	},
 	"Hooks": {
 		"PerformRetroactiveAutoblock": "BlockAndNukeHooks::onPerformRetroactiveAutoblock"
