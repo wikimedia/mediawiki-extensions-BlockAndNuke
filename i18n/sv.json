@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Mjälten"
+			"Mjälten",
+			"Technic2"
 		]
 	},
 	"action-blockandnuke": "Blockera och rensa",
 	"blockandnuke": "Blockera och rensa",
 	"blockandnuke-nopages": "Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.",
+	"blockandnuke-defaultreason": "Massborttagning av sidor tillagd av $1",
 	"blockandnuke-submit-user": "Blockera användare",
 	"blockandnuke-submit-delete": "Blockera och förstör",
 	"blockandnuke-block": "Utvalda användare har blockerats and deras bidrag har raderats",
