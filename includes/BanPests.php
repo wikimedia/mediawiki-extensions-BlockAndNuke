@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class BanPests {
 
 	public static function getWhitelist() {
@@ -216,7 +218,16 @@ class BanPests {
 
 	public static function deletePage( $title, User $deleter, $sp = null ) {
 		$ret = null;
-		$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
+		if ( $title->getNamespace() == NS_FILE ) {
+			if ( method_exists( MediaWikiServices::class, 'getRepoGroup' ) ) {
+				// MediaWiki 1.34+
+				$file = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo()->newFile( $title );
+			} else {
+				$file = wfLocalFile( $title );
+			}
+		} else {
+			$file = false;
+		}
 		if ( $file ) {
 			$reason = wfMessage( "blockandnuke-delete-file" )->text();
 			$oldimage = null; // Must be passed by reference
