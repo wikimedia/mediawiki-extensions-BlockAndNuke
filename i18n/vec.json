@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Conky77"
+			"Conky77",
+			"Fierodelveneto"
 		]
 	},
-	"blockandnuke-nopages": "No ghe xe nove pàgine bde [[Special:Contributions/$1|$1]] ne i ùltimi canbiamenti."
+	"blockandnuke-nopages": "No ghe xé nove pajine [[Special:Contributions/$1|$1]] in tei canbiamenti in ultima."
 }
