@@ -5,6 +5,8 @@
 		]
 	},
 	"blockandnuke-defaultreason": "Massefjernelse af sider tilføjet af $1",
+	"blockandnuke-submit-user": "Bloker brugere",
+	"blockandnuke-deleted-page": "Slettede $1",
 	"blockandnuke-ip-addresses": "IP-adresser",
 	"blockandnuke-users": "Brugere",
 	"blockandnuke-pages": "Sider"
