@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Nieuwsgierige Gebruiker"
 		]
 	},
 	"blockandnuke-submit-user": "Gebruiker blokkeren",
@@ -9,5 +10,6 @@
 	"blockandnuke-banned-ip": "IP-adres $1 geblokkeerd",
 	"blockandnuke-ip-addresses": "IP-adressen",
 	"blockandnuke-users": "Gebruikers",
-	"blockandnuke-pages": "Pagina's"
+	"blockandnuke-pages": "Pagina's",
+	"right-blockandnuke": "Blokkeer een lijst van gebruikers en verwijder al hun bijdragen"
 }
