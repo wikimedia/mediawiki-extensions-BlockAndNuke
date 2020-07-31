@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kkairri",
-			"Otokoume"
+			"Otokoume",
+			"Shirayuki"
 		]
 	},
 	"action-blockandnuke": "ブロックおよび一括削除",
@@ -27,5 +28,5 @@
 	"blockandnuke-ip-addresses": "IP アドレス",
 	"blockandnuke-users": "利用者",
 	"blockandnuke-pages": "ページ",
-	"right-blockandnuke": "一覧の利用者をブロックし、彼らの編集をすべて削除する"
+	"right-blockandnuke": "一覧の利用者をブロックし、彼らの編集をすべて削除"
 }
