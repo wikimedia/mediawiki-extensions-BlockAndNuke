@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bdijkstra",
 			"Mainframe98",
 			"Nieuwsgierige Gebruiker"
 		]
 	},
 	"blockandnuke-submit-user": "Gebruiker blokkeren",
+	"blockandnuke-nothing-to-do": "Niets te doen!",
 	"blockandnuke-deleted-page": "$1 verwijderd",
 	"blockandnuke-banned-ip": "IP-adres $1 geblokkeerd",
 	"blockandnuke-ip-addresses": "IP-adressen",
