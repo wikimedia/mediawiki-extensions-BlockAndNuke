@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"Ted Masters"
 		]
 	},
 	"action-blockandnuke": "Блокиране и масово изтриване",
-	"blockandnuke": "Блокиране и масово изтриване"
+	"blockandnuke": "Блокиране и масово изтриване",
+	"blockandnuke-pages": "Страници"
 }
