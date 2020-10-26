@@ -3,9 +3,11 @@
 		"authors": [
 			"Beta16",
 			"Dansita",
+			"Gianfranco",
 			"Tizven"
 		]
 	},
+	"blockandnuke-nopages": "Non ci sono nuove pagine create da [[Special:Contributions/$1|$1]] nelle ultime modifiche.",
 	"blockandnuke-defaultreason": "Rimozione massiva delle pagine aggiunte da $1",
 	"blockandnuke-submit-user": "Blocca utenti",
 	"blockandnuke-submit-delete": "BlockandNuke",
