@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jan Myšák",
 			"Robins7"
 		]
 	},
+	"blockandnuke-deleted-page": "Smazáno $1",
 	"blockandnuke-ip-addresses": "IP adresy",
 	"blockandnuke-users": "Uživatelé",
 	"blockandnuke-pages": "Stránky"
