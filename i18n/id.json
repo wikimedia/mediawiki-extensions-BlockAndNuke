@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hidayatsrf",
 			"Palladin911"
 		]
 	},
+	"action-blockandnuke": "Blokir dan Nuke",
+	"blockandnuke": "Blokir dan Nuke",
+	"blockandnuke-submit-user": "Blokir pengguna",
 	"blockandnuke-ip-addresses": "Alamat IP",
-	"blockandnuke-users": "Pengguna"
+	"blockandnuke-users": "Pengguna",
+	"blockandnuke-pages": "Halaman"
 }
