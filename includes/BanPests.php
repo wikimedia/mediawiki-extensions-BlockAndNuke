@@ -4,6 +4,10 @@ use MediaWiki\MediaWikiServices;
 
 class BanPests {
 
+	/**
+	 * @throws MWException
+	 * @return string[]
+	 */
 	public static function getWhitelist() {
 		global $wgBaNwhitelist, $wgWhitelist;
 
@@ -21,6 +25,9 @@ class BanPests {
 		return preg_split( '/\r\n|\r|\n/', $file );
 	}
 
+	/**
+	 * @return string[]
+	 */
 	public static function getBannableUsers() {
 		$dbr = wfGetDB( DB_REPLICA );
 		$cond = [ 'rc_source' => RecentChange::SRC_NEW ]; /* Anyone creating new pages */
@@ -57,6 +64,10 @@ class BanPests {
 		);
 	}
 
+	/**
+	 * @param User|string[]|string $user
+	 * @return string[]
+	 */
 	public static function getBannableIP( $user ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$ip = [];
@@ -88,6 +99,10 @@ class BanPests {
 		);
 	}
 
+	/**
+	 * @param User $user
+	 * @return Title[]
+	 */
 	public static function getBannablePages( $user ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$result = null;
@@ -123,6 +138,12 @@ class BanPests {
 		return $pages;
 	}
 
+	/**
+	 * @param string[] $ips IPs to be banned
+	 * @param User $banningUser User doing the ban
+	 * @param User|null $sp
+	 * @return bool
+	 */
 	public static function banIPs( $ips, $banningUser, $sp = null ) {
 		$ret = [];
 		foreach ( (array)$ips as $ip ) {
@@ -201,6 +222,13 @@ class BanPests {
 		return $ret;
 	}
 
+	/**
+	 * @param string[] $user
+	 * @param int[] $user_id
+	 * @param User $banningUser
+	 * @param User $spammer
+	 * @return bool
+	 */
 	public static function blockUser( $user, $user_id, $banningUser, $spammer ) {
 		$ret = [];
 		$max = max( count( $user ), count( $user_id ) );
@@ -216,6 +244,12 @@ class BanPests {
 		return (bool)$ret;
 	}
 
+	/**
+	 * @param Title $title
+	 * @param User $deleter
+	 * @param User|null $sp
+	 * @return mixed
+	 */
 	public static function deletePage( $title, User $deleter, $sp = null ) {
 		$ret = null;
 		if ( $title->getNamespace() == NS_FILE ) {
@@ -245,6 +279,12 @@ class BanPests {
 		return $ret;
 	}
 
+	/**
+	 * @param string[] $pages
+	 * @param User $deleter
+	 * @param User|null $sp
+	 * @return bool
+	 */
 	public static function deletePages( $pages, User $deleter, $sp = null ) {
 		$ret = [];
 		foreach ( (array)$pages as $page ) {

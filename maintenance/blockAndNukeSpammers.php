@@ -21,6 +21,9 @@ class BanHammer extends Maintenance {
 		$this->addDescription( "Block and Nuke recent users not found in the whitelist." );
 	}
 
+	/**
+	 * @param string $str
+	 */
 	public function maybeOutput( $str ) {
 		if ( !$this->hasOption( "brief" ) ) {
 			$this->output( $str );

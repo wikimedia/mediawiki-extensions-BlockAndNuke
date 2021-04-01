@@ -1,11 +1,14 @@
 <?php
 
-class SpecialBlock_Nuke extends SpecialPage {
+class SpecialBlockAndNuke extends SpecialPage {
 	function __construct() {
 		// restrict access only to users with blockandnuke right
 		parent::__construct( 'BlockandNuke', 'blockandnuke' );
 	}
 
+	/**
+	 * @param string|null $par
+	 */
 	function execute( $par ) {
 		global $wgBaNSpamUser;
 
@@ -87,6 +90,9 @@ class SpecialBlock_Nuke extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param User $user
+	 */
 	function getNewPages( $user ) {
 		$out = $this->getOutput();
 		$out->addHTML(
@@ -180,6 +186,7 @@ class SpecialBlock_Nuke extends SpecialPage {
 		);
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'pagetools';
 	}

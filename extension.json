@@ -21,7 +21,7 @@
 		"blockandnuke"
 	],
 	"SpecialPages": {
-		"BlockandNuke": "SpecialBlock_Nuke"
+		"BlockandNuke": "SpecialBlockAndNuke"
 	},
 	"MessagesDirs": {
 		"BlockAndNuke": [
@@ -32,7 +32,7 @@
 		"BlockAndNukeAlias": "BlockAndNuke.alias.php"
 	},
 	"AutoloadClasses": {
-		"SpecialBlock_Nuke": "includes/SpecialBlock_Nuke.php",
+		"SpecialBlockAndNuke": "includes/specials/SpecialBlockAndNuke.php",
 		"BanPests": "includes/BanPests.php",
 		"BlockAndNukeHooks": "includes/BlockAndNukeHooks.php"
 	},
