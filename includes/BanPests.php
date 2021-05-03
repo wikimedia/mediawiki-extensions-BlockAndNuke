@@ -58,7 +58,7 @@ class BanPests {
 		}
 		$whitelist = array_flip( self::getWhitelist() );
 		return array_filter( $names,
-			function ( $u ) use ( $whitelist ) {
+			static function ( $u ) use ( $whitelist ) {
 				return !isset( $whitelist[ $u ] );
 			}
 		);
@@ -93,7 +93,7 @@ class BanPests {
 		}
 		$whitelist = array_flip( self::getWhitelist() );
 		return array_filter( $ip,
-			function ( $u ) use ( $whitelist ) {
+			static function ( $u ) use ( $whitelist ) {
 				return !isset( $whitelist[ $u ] );
 			}
 		);
