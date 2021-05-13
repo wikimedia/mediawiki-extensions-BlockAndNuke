@@ -33,11 +33,7 @@
 	},
 	"AutoloadClasses": {
 		"SpecialBlockAndNuke": "includes/specials/SpecialBlockAndNuke.php",
-		"BanPests": "includes/BanPests.php",
-		"BlockAndNukeHooks": "includes/BlockAndNukeHooks.php"
-	},
-	"Hooks": {
-		"PerformRetroactiveAutoblock": "BlockAndNukeHooks::onPerformRetroactiveAutoblock"
+		"BanPests": "includes/BanPests.php"
 	},
 	"config": {
 		"BaNwhitelist": {
