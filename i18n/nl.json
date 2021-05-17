@@ -3,11 +3,13 @@
 		"authors": [
 			"Bdijkstra",
 			"Mainframe98",
+			"Nickthijssen1994",
 			"Nieuwsgierige Gebruiker"
 		]
 	},
 	"blockandnuke-submit-user": "Gebruiker blokkeren",
 	"blockandnuke-nothing-to-do": "Niets te doen!",
+	"blockandnuke-banning": "Aan het verbannen...",
 	"blockandnuke-deleted-page": "$1 verwijderd",
 	"blockandnuke-banned-ip": "IP-adres $1 geblokkeerd",
 	"blockandnuke-ip-addresses": "IP-adressen",

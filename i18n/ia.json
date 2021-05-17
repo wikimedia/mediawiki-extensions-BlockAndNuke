@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"action-blockandnuke": "blocar e annihilar",
+	"blockandnuke": "Blocar e annihilar",
+	"blockandnuke-confirm": "Clicca sur le button \"Blocar e annihilar\" pro blocar le usatores seligite e deler tote lor contributiones.\n\n(Non dismarca alcun del quadratos hic infra)",
+	"blockandnuke-desc": "Da le possibilitate al administratores de [[Special:BlockandNuke|blocar e annihilar]] paginas",
+	"blockandnuke-nopages": "Nulle nove pagina create per [[Special:Contributions/$1|$1]] trovate in le modificationes recente.",
+	"blockandnuke-list": "Le sequente paginas esseva recentemente create per [[Special:Contributions/$1|$1]]; scribe un commento e clicca sur le button pro deler los.",
+	"blockandnuke-defaultreason": "Deletion in massa de paginas addite per $1",
+	"blockandnuke-delete-file": "Spam blocate e annihilate",
+	"blockandnuke-delete-article": "Articulos de spam blocate e annihilate.",
+	"blockandnuke-tools": "Lista de usatores que ha recentemente contribuite e non se trova sur le lista blanc:\n\nPro adder un usator al lista blanc, modifica extensions/BlockandNuke/whitelist.txt",
+	"blockandnuke-submit-user": "Blocar usatores",
+	"blockandnuke-submit-delete": "Blocar e annihilar",
+	"blockandnuke-block": "Le usatores seligite ha essite blocate e lor contributiones ha essite delite.",
+	"blockandnuke-message": "Usatores blocate per \"Blocar e annihilar\".",
+	"blockandnuke-banhammer": "Pro blocar le usatores seligite e deler tote lor contributiones, clicca sur le button hic infra.",
+	"blockandnuke-nothing-to-do": "Nihil a facer!",
+	"blockandnuke-banning": "Bannimento in curso…",
+	"blockandnuke-deleted-page": "$1 delite",
+	"blockandnuke-banned-ip": "Adresse IP $1 bannite",
+	"blockandnuke-ip-addresses": "Adresses IP",
+	"blockandnuke-users": "Usatores",
+	"blockandnuke-pages": "Paginas",
+	"right-blockandnuke": "Blocar un lista de usatores e deler tote lor contributiones"
+}
