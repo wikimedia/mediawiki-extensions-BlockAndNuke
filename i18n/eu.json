@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"An13sa",
 			"Joseba"
 		]
 	},
 	"action-blockandnuke": "Blokeatu eta bonbardatu",
 	"blockandnuke-submit-user": "Blokeatu erabiltzaileak",
-	"blockandnuke-nothing-to-do": "Ezer ez egiteko!"
+	"blockandnuke-submit-delete": "BlockandNuke",
+	"blockandnuke-nothing-to-do": "Ezer ez egiteko!",
+	"blockandnuke-ip-addresses": "IP helbideak",
+	"blockandnuke-users": "Erabiltzaileak",
+	"blockandnuke-pages": "Orrialdeak"
 }
